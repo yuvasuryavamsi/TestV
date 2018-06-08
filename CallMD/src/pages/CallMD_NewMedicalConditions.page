@@ -1,0 +1,45 @@
+<apex:page standardController="Symptoms__c" extensions="CallMD_SymptomsExtCtrl" sidebar="false" showHeader="true" tabStyle="Medical_Types__tab">
+<c:CallMDStyles />
+<style>
+ .TOD-UI .content .Title{
+      background-color:#3399fe;
+      font-size:14px;
+    }
+    .TOD-UI h3{
+     color:#3399fe;
+   }
+</style>
+<body style="margin:0px;">
+<div style="background-color:white;height:800px;">
+ <apex:form > 
+   <apex:PageBlock >
+   <div class="content-wrapper" style="width:1400px;margin:0px;">
+      <div class="TOD-UI" id="main-content" style="width:1400px;margin:0px;">
+        <div class="content" style="width:1400px;margin:0px;">
+        <header class="Title" style="padding-bottom:40px;padding-top:15px;font-size:14px;">
+          <h1 style="color:blue;">Medical Conditions</h1>
+        </header>
+           
+        <section>
+        <article>
+          
+            <apex:pageBlockSection >
+  
+         <apex:inputField value="{!Symptoms__c.SymptomName__c}" label="Symptoms Name"/>
+         
+        </apex:pageBlockSection>
+        <br/>
+        <div align="center">
+         <apex:commandButton value="Create Medical Conditions" action="{!createSymptoms}" rendered="{!IF($CurrentPage.Parameters.mode=='',true,false)}"/>
+         <apex:commandButton value="Update Medical Conditions" action="{!UpdateSymptoms}" rendered="{!IF($CurrentPage.Parameters.mode='e',true,false)}"/>
+       </div>
+   </article>
+   </section>
+   </div>
+   </div>
+   </div>
+   </apex:pageBlock>
+ </apex:form>
+ </div>
+</body>
+</apex:page>

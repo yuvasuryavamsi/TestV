@@ -1,0 +1,252 @@
+<apex:page standardController="Doctor__c" extensions="CallMD_DoctorExtCtrl" sidebar="false" showHeader="true" tabStyle="Doctors__tab">
+<!--- <style>
+  ul{
+    
+  }
+  li{
+    float:left;
+    list-style:none;
+    margin-top:25px;
+    font-size:13px;
+    font-family:verdana;
+    color:white;
+    font-weight:bold;
+    background-color:#337ab7;
+    line-height:30px;
+    width:200px;
+    text-align:center;
+    padding:3px;
+  }
+</style>  --->
+
+<style>
+ .TOD-UI .content .Title{
+      background-color:#3399fe;
+    }
+    .TOD-UI h3{
+     color:#3399fe;
+   }
+</style>
+
+<c:CallMDStyles />
+
+<!--- <apex:tabPanel style="background:white;">
+  <apex:tab label="Doctor"  style="background:white;width:200px;height:40px;color:blue;" />
+</apex:tabPanel>  --->
+
+ <body style="margin:0px;">
+
+<apex:form >
+ <!--- <ul>
+   <li>DashBoard</li>
+   <li>Doctor</li>
+   <li><apex:outputLink value="/apex/CallMD_Provider" target="_blank">Provider</apex:outputLink></li>
+   <li>Admin</li>
+   <li>Member</li>
+   <li>Accounting</li>
+ </ul> --->
+  <div style="background-color:white;margin:0px;">
+  
+  <apex:pageBlock >
+  
+  
+ <!--- <div align="center">
+   <apex:image value="{!$Resource.CallMDLogo}" width="200px"/><br/>
+   
+  </div><br/>  --->
+  
+   <div class="content-wrapper" style="width:1400px;margin:0px;">
+      <div class="TOD-UI" id="main-content" style="width:1400px;margin:0px;">
+        <div class="content" style="width:1400px;margin:0px;">
+        <header class="Title" style="padding-bottom:40px;padding-top:15px;font-size:14px;">
+          <h1 style="color:blue;">Doctor</h1>
+        </header>
+           
+        <section>
+         <article>
+       <div align="center">
+     <apex:commandButton value="Save" action="{!save}" rendered="{!if(mode=='',true,false)}"/>&nbsp;&nbsp;
+     <apex:commandButton value="Edit" action="{!edit}" rendered="{!if(mode=='s',true,false)}"/>&nbsp;&nbsp;
+     <apex:commandButton value="Update Doctor" action="{!UpdateDoctor}" rendered="{!if(mode=='e',true,false)}"/>&nbsp;&nbsp;
+     <apex:commandButton value="Cancel" action="{!cancel}" rendered="{!if(OR(mode=='e',mode=''),true,false)}"/>&nbsp;&nbsp;
+    </div>
+    <apex:pageMessages />
+     <apex:pageBlockSection columns="2" title="Personal Info">
+      <apex:repeat value="{!$ObjectType.Doctor__c.Fieldsets.Personal_Info}" var="d">
+        <apex:inputField value="{!Doctor__c[d]}" rendered="{!IF(OR(mode=='e',mode==''),true,false)}"/>
+         <apex:outputField value="{!Doctor__c[d]}" rendered="{!IF(mode=='s',true,false)}"/>
+      </apex:repeat>
+    </apex:pageBlockSection>    
+     
+    <apex:pageBlockSection columns="2" title="Communication Details">
+      <apex:repeat value="{!$ObjectType.Doctor__c.Fieldsets.Communication_Details}" var="d">
+        <apex:inputField value="{!Doctor__c[d]}" rendered="{!IF(OR(mode=='e',mode==''),true,false)}"/>
+         <apex:outputField value="{!Doctor__c[d]}" rendered="{!IF(mode=='s',true,false)}"/>
+      </apex:repeat>
+    </apex:pageBlockSection>
+    
+    <apex:pageBlockSection columns="2" title="Doctor Profile">
+      <apex:repeat value="{!$ObjectType.Doctor__c.Fieldsets.Doctor_Profile}" var="d">
+       <apex:inputField value="{!Doctor__c[d]}" rendered="{!IF(OR(mode=='e',mode==''),true,false)}"/>
+         <apex:outputField value="{!Doctor__c[d]}" rendered="{!IF(mode=='s',true,false)}"/>
+      </apex:repeat>
+    </apex:pageBlockSection>
+    
+    
+    <apex:pageBlockSection columns="2" title="Doctor Payable">
+      <apex:repeat value="{!$ObjectType.Doctor__c.Fieldsets.Doctor_Payable}" var="d">
+       <apex:inputField value="{!Doctor__c[d]}" rendered="{!IF(OR(mode=='e',mode==''),true,false)}"/>
+         <apex:outputField value="{!Doctor__c[d]}" rendered="{!IF(mode=='s',true,false)}"/>
+      </apex:repeat>
+    </apex:pageBlockSection>
+    
+    
+    <apex:pageBlockSection columns="2" title="User Credentials">
+      <apex:repeat value="{!$ObjectType.Doctor__c.Fieldsets.User_Credentials}" var="d">
+       <apex:inputField value="{!Doctor__c[d]}" rendered="{!IF(OR(mode=='e',mode==''),true,false)}"/>
+         <apex:outputField value="{!Doctor__c[d]}" rendered="{!IF(mode=='s',true,false)}"/>
+      </apex:repeat>
+    </apex:pageBlockSection>
+    
+    <apex:pageBlockSection columns="2" title="Security Details">
+      <apex:repeat value="{!$ObjectType.Doctor__c.Fieldsets.Security}" var="d">
+       <apex:inputField value="{!Doctor__c[d]}" rendered="{!IF(OR(mode=='e',mode==''),true,false)}"/>
+         <apex:outputField value="{!Doctor__c[d]}" rendered="{!IF(mode=='s',true,false)}"/>
+      </apex:repeat>
+    </apex:pageBlockSection>
+    
+    <br/><br/>
+    <div align="center">
+     <apex:commandButton value="Save" action="{!save}" rendered="{!if(mode=='',true,false)}"/>&nbsp;&nbsp;
+     <apex:commandButton value="Edit" action="{!edit}" rendered="{!if(mode=='s',true,false)}"/>&nbsp;&nbsp;
+     <apex:commandButton value="Update Doctor" action="{!UpdateDoctor}" rendered="{!if(mode=='e',true,false)}"/>&nbsp;&nbsp;
+     <apex:commandButton value="Cancel" action="{!cancel}" rendered="{!if(OR(mode=='e',mode=''),true,false)}"/>&nbsp;&nbsp;
+    </div>
+   
+     </article>
+    </section>
+     </div>
+</div>
+</div>
+
+  </apex:pageBlock>
+  
+  <apex:pageBlock rendered="{!if(OR($CurrentPage.Parameters.mode=='s',$CurrentPage.Parameters.mode=='e'),true,false)}">
+   <div class="content-wrapper" style="width:1400px;margin:0px;">
+      <div class="TOD-UI" id="main-content" style="width:1400px;margin:0px;">
+        <div class="content" style="width:1400px;margin:0px;">
+        <header class="Title" style="padding-bottom:40px;padding-top:15px;font-size:14px;">
+          <h1 style="color:blue;">Timings</h1>
+        </header>
+        <section>
+        <article>
+    <div align="center">
+      <apex:commandButton value="Update Schedule" action="{!UpdateSchedule}" rendered="{!IF(mode=='e',true,false)}"/>
+    </div>
+   <br/>
+     <apex:pageBlockTable value="{!schedulingList}" var="s">
+        <apex:column value="{!s.Day_Of_week__r.Name}"/>
+        <apex:column >
+          <apex:outputLabel value="Start Time"/>
+        </apex:column>
+        <apex:column >
+          <apex:inputField value="{!s.Start_Time__c}" rendered="{!IF(mode=='e',true,false)}"/>
+          <apex:outputField value="{!s.Start_Time__c}" rendered="{!IF(mode=='s',true,false)}"/>
+        </apex:column>
+        <apex:column >
+          <apex:outputLabel value="End Time"/>
+        </apex:column>
+        <apex:column >
+          <apex:inputField value="{!s.End_Time__c}" rendered="{!IF(mode=='e',true,false)}"/>
+          <apex:outputField value="{!s.End_Time__c}" rendered="{!IF(mode=='s',true,false)}"/>
+        </apex:column>
+     </apex:pageBlockTable>
+   
+   </article>
+   </section>
+    </div>
+   </div>
+   </div> 
+   
+  </apex:pageBlock>
+  
+
+   
+   
+  
+  
+  <apex:pageBlock rendered="{!if($CurrentPage.Parameters.mode=='s',true,false)}">
+   <div class="content-wrapper" style="width:1400px;margin:0px;">
+      <div class="TOD-UI" id="main-content" style="width:1400px;margin:0px;">
+        <div class="content" style="width:1400px;margin:0px;">
+        <header class="Title" style="padding-bottom:40px;padding-top:15px;font-size:14px;">
+          <h1 style="color:blue;">License List</h1>
+        </header>
+        <section>
+        <article>
+    <div align="center">
+      <apex:commandButton value="CreateLicenses" action="{!CreateLicense}" style="width:150px;height:30px;"/>
+    </div>
+   <br/>
+    <apex:pageBlockTable value="{!DoctorLicenseList}" var="l">
+      <apex:column headerValue="Number">
+       <apex:outputLink value="CallMD_DoctorLicenses" target="_blank">
+        <apex:outputText value="{!l.Name}"/>
+        <apex:param name="id" value="{!l.id}"/>
+        <apex:param name="name" value="{!Doctor__c.Name}"/>
+        <apex:param name="did" value="{!Doctor__c.id}"/>
+         <apex:param name="mode" value="e"/>
+       </apex:outputLink>
+      </apex:column>
+      <apex:column headerValue="State" value="{!l.States__c}"/>
+      <apex:column headerValue="Expiration Date" value="{!l.Expiration_date__c}"/>
+      <apex:column headerValue="Status" value="{!l.Status__c}"/>
+    </apex:pageBlockTable>
+   </article>
+   </section>
+    </div>
+   </div>
+   </div> 
+   
+  </apex:pageBlock>
+  
+  
+  <apex:pageBlock rendered="{!IF($CurrentPage.Parameters.mode=='s',true,false)}">
+  
+
+   <div class="content-wrapper" style="width:1400px;margin:0px;">
+      <div class="TOD-UI" id="main-content" style="width:1400px;margin:0px;">
+        <div class="content" style="width:1400px;margin:0px;">
+        <header class="Title" style="padding-bottom:40px;padding-top:15px;font-size:14px;">
+          <h1 style="color:blue;">Document</h1>
+        </header>
+           
+        <section>
+        <apex:pageMessages />
+         <article>
+            <apex:pageBlockSection >
+               <apex:inputFile filename="{!filename}" value="{!filebody}"/>
+               <apex:commandButton value="Upload" action="{!Upload}"/>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockTable value="{!docList}" var="p">
+              <apex:column headerValue="Name" value="{!p.Name}"/>
+              <apex:column headerValue="Download">
+                 <apex:outputLink value="/servlet/servlet.FileDownload?file={!p.id}" target="_blank">Click Here</apex:outputLink>
+              </apex:column>
+            </apex:pageBlockTable>
+            
+         </article>
+       </section>
+       
+       
+       </div>
+     </div>
+    </div>
+       
+  </apex:pageBlock>
+  
+</div>
+</apex:form>
+</body>
+</apex:page>

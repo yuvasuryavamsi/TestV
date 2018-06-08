@@ -1,0 +1,54 @@
+<apex:page standardController="License__c" extensions="CallMD_DoctorLicensesExtCtrl" showHeader="true" sidebar="false" tabStyle="Doctors__tab">
+<c:CallMDStyles />
+<style>
+ .TOD-UI .content .Title{
+      background-color:#3399fe;
+      font-size:14px;
+    }
+    .TOD-UI h3{
+     color:#3399fe;
+   }
+   h1{
+     
+   }
+</style>
+<body style="margin:0px;height:800px;">
+<apex:form >
+
+  <apex:pageBlock >
+   <!--- <div align="center">
+   <apex:image value="{!$Resource.CallMDLogo}" width="200px"/><br/>
+   
+  </div><br/>  --->
+  
+   <div class="content-wrapper" style="width:1400px;margin:0px;">
+      <div class="TOD-UI" id="main-content" style="width:1400px;margin:0px;">
+        <div class="content" style="width:1400px;margin:0px;">
+        <header class="Title" style="padding-bottom:40px;padding-top:15px;font-size:14px;">
+          <h1 style="font-size:20px;">Licenses for {!doctorName}</h1>
+        </header>
+           
+        <section>
+         <article>
+         <div align="center">
+         </div>
+    <apex:PageBlockSection columns="2">
+      <apex:repeat value="{!$ObjectType.License__c.fieldsets.Licenses}" var="l">
+        <apex:inputField value="{!License__c[l]}"/>
+      </apex:repeat>
+    </apex:PageBlockSection>
+    
+      <div align="center">
+        <apex:commandButton value="Create" action="{!Save}" rendered="{!IF($CurrentPage.Parameters.mode=='',true,false)}"/>&nbsp;&nbsp;
+        <apex:commandButton value="Update License" action="{!UpdateLicenses}" rendered="{!IF($CurrentPage.Parameters.mode=='e',true,false)}"/>
+      </div>
+    
+    </article>
+    </section>
+    </div>
+    </div>
+    </div>
+  </apex:pageBlock>
+</apex:form>
+</body>
+</apex:page>

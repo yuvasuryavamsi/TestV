@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Doctor</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Doctor</value>
+    </caseValues>
+    <fields>
+        <label><!-- Accent --></label>
+        <name>Accent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Address1 --></label>
+        <name>Address1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Address2 --></label>
+        <name>Address2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Available For Video Cons --></label>
+        <name>Available_For_Video_Cons__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Available for audio cons --></label>
+        <name>Available_for_audio_cons__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Base Link --></label>
+        <name>Base_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Board Cent --></label>
+        <name>Board_Cent__c</name>
+    </fields>
+    <fields>
+        <label><!-- CallMD --></label>
+        <name>CallMD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Changed Password Date --></label>
+        <name>ChangedPasswordDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Choose a time zone: --></label>
+        <name>Choose_a_time_zone__c</name>
+        <picklistValues>
+            <masterLabel>Alaska US</masterLabel>
+            <translation><!-- Alaska US --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Arizona US</masterLabel>
+            <translation><!-- Arizona US --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Central US</masterLabel>
+            <translation><!-- Central US --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Eastern US</masterLabel>
+            <translation><!-- Eastern US --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hawaii US</masterLabel>
+            <translation><!-- Hawaii US --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mountain US</masterLabel>
+            <translation><!-- Mountain US --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pacific  US</masterLabel>
+            <translation><!-- Pacific  US --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Chose a scheduling option: --></label>
+        <name>Chose_a_scheduling_option__c</name>
+        <picklistValues>
+            <masterLabel>Custom</masterLabel>
+            <translation><!-- Custom --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Comments --></label>
+        <name>Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Confirm Password --></label>
+        <name>Confirm_Password__c</name>
+    </fields>
+    <fields>
+        <label><!-- DEA License Expiration Date --></label>
+        <name>DEA_License_Expiration_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- DEA License# --></label>
+        <name>DEA_License__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Of Birth --></label>
+        <name>Date_Of_Birth__c</name>
+    </fields>
+    <fields>
+        <label><!-- Document Signed Options --></label>
+        <name>Document_Signed_Options__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email2 --></label>
+        <name>Email2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email --></label>
+        <name>Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Full Name --></label>
+        <name>Full_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Gender --></label>
+        <name>Gender__c</name>
+        <picklistValues>
+            <masterLabel>Female</masterLabel>
+            <translation><!-- Female --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Male</masterLabel>
+            <translation><!-- Male --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- InActive Licenses --></label>
+        <name>InActive_Licenses__c</name>
+        <picklistValues>
+            <masterLabel>NY</masterLabel>
+            <translation><!-- NY --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- In Active Date --></label>
+        <name>In_Active_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- In Active Reason --></label>
+        <name>In_Active_Reason__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Name --></label>
+        <name>Last_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- License States --></label>
+        <name>License_States__c</name>
+        <picklistValues>
+            <masterLabel>AZ</masterLabel>
+            <translation><!-- AZ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CO</masterLabel>
+            <translation><!-- CO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NY</masterLabel>
+            <translation><!-- NY --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Middle Name --></label>
+        <name>Middle_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mobile --></label>
+        <name>Mobile__c</name>
+    </fields>
+    <fields>
+        <label><!-- Multiple Prescriptions Pad --></label>
+        <name>Multiple_Prescriptions_Pad__c</name>
+    </fields>
+    <fields>
+        <label><!-- NPI# --></label>
+        <name>NPI__c</name>
+    </fields>
+    <fields>
+        <label><!-- Options Comments --></label>
+        <name>Options_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Options Mailed --></label>
+        <name>Options_Mailed__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Password --></label>
+        <name>Password__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payment Method --></label>
+        <name>Payment_Method__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payment Rate --></label>
+        <name>Payment_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Primary Phone --></label>
+        <name>Primary_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Type --></label>
+        <name>Product_Type__c</name>
+        <picklistValues>
+            <masterLabel>CallMD</masterLabel>
+            <translation><!-- CallMD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CorrectionsMD</masterLabel>
+            <translation><!-- CorrectionsMD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DentalMD</masterLabel>
+            <translation><!-- DentalMD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EducationMD</masterLabel>
+            <translation><!-- EducationMD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FitMD</masterLabel>
+            <translation><!-- FitMD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PetMD</masterLabel>
+            <translation><!-- PetMD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TravelMD</masterLabel>
+            <translation><!-- TravelMD --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Quarterly Number --></label>
+        <name>Quarterly_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reset Password Date --></label>
+        <name>Reset_Password_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reviewer --></label>
+        <name>Reviewer__c</name>
+    </fields>
+    <fields>
+        <label><!-- Secondary Phone --></label>
+        <name>Secondary_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Security Answer --></label>
+        <name>Security_Answer__c</name>
+    </fields>
+    <fields>
+        <label><!-- Security Question --></label>
+        <name>Security_Question__c</name>
+        <picklistValues>
+            <masterLabel>What are the last five digits of your driver&apos;s license number?</masterLabel>
+            <translation><!-- What are the last five digits of your driver&apos;s license number? --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>What is your favorite _____?</masterLabel>
+            <translation><!-- What is your favorite _____? --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>What is your pet’s name?</masterLabel>
+            <translation><!-- What is your pet’s name? --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>What is your spouse or partner&apos;s mother&apos;s maiden name?</masterLabel>
+            <translation><!-- What is your spouse or partner&apos;s mother&apos;s maiden name? --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>What were the last four digits of your childhood telephone number?</masterLabel>
+            <translation><!-- What were the last four digits of your childhood telephone number? --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Signature ID --></label>
+        <name>Signature_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Signature Url --></label>
+        <name>Signature_Url__c</name>
+    </fields>
+    <fields>
+        <label><!-- Signature --></label>
+        <name>Signature__c</name>
+    </fields>
+    <fields>
+        <label><!-- Start Date --></label>
+        <name>Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- State --></label>
+        <name>State__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending</masterLabel>
+            <translation><!-- Pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>inActive</masterLabel>
+            <translation><!-- inActive --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Tax ID/W-9 --></label>
+        <name>Tax_ID_W_9__c</name>
+    </fields>
+    <fields>
+        <label><!-- Time Zone --></label>
+        <name>Time_Zone__c</name>
+        <picklistValues>
+            <masterLabel>EST</masterLabel>
+            <translation><!-- EST --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PST</masterLabel>
+            <translation><!-- PST --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Title --></label>
+        <name>Title__c</name>
+        <picklistValues>
+            <masterLabel>Dr.</masterLabel>
+            <translation><!-- Dr. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mr.</masterLabel>
+            <translation><!-- Mr. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mrs.</masterLabel>
+            <translation><!-- Mrs. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ms.</masterLabel>
+            <translation><!-- Ms. --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- User name --></label>
+        <name>Username__c</name>
+    </fields>
+    <fields>
+        <label><!-- Zipcode --></label>
+        <name>Zipcode__c</name>
+    </fields>
+    <fields>
+        <label><!-- isChangePassword --></label>
+        <name>isChangePassword__c</name>
+    </fields>
+    <fields>
+        <label><!-- isResetPassword --></label>
+        <name>isResetPassword__c</name>
+    </fields>
+    <fields>
+        <label><!-- is Active ? --></label>
+        <name>is_Active__c</name>
+    </fields>
+    <layouts>
+        <layout>Doctor Layout</layout>
+        <sections>
+            <label><!-- Communication Details --></label>
+            <section>Communication Details</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Developer View --></label>
+            <section>Developer View</section>
+        </sections>
+        <sections>
+            <label><!-- Doctor Payable --></label>
+            <section>Doctor Payable</section>
+        </sections>
+        <sections>
+            <label><!-- Doctor Profile --></label>
+            <section>Doctor Profile</section>
+        </sections>
+        <sections>
+            <label><!-- Personal Info --></label>
+            <section>Personal Info</section>
+        </sections>
+        <sections>
+            <label><!-- Signature Details --></label>
+            <section>Signature Details</section>
+        </sections>
+        <sections>
+            <label><!-- User Credentails --></label>
+            <section>User Credentails</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

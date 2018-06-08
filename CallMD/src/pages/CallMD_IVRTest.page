@@ -1,0 +1,6 @@
+<apex:page controller="CallMD_IVRTest">
+ <apex:form >
+   <apex:commandButton value="Send" action="{!Send}"/>
+ </apex:form>
+ {!responseBody}
+</apex:page>

@@ -1,0 +1,171 @@
+<apex:page sidebar="false" showHeader="false" controller="CallMDDoctor_ConsultCallSummaryCtrl">
+<head>
+ <c:CallMDStyles />
+ <style>
+ ul{
+  display:block;
+  width:1800px;
+  margin:0px;
+  padding:0px;
+ }
+ .home{
+  list-style:none;
+  float:left;
+  background-color:#3399fe;
+  color:white;
+  font-size:14px;
+  width:290px;
+  height:40px;
+  line-height:40px;
+  text-align:center;
+  font-weight:bold;
+  padding:0px;
+  margin:0px;
+  border:0px solid black;
+ }
+ .ol{
+  text-decoration:none;
+  color:white;
+ }
+ .ol:hover{
+  text-decoration:none;
+  color:white;
+ }
+ .headerRow{
+   height:25px;
+  }
+  .col{
+   height:25px;
+   }
+   .t{
+    background-color:#3399fe ;
+    padding-left:10px;
+  }
+  .l{
+    text-decoration:none;
+    color:white;
+  }
+  .l:hover{
+    text-decoration:none;
+    color:white;
+  }
+  grid-container--fill{
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+}
+
+.grid-container--fit {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+.grid-element {
+ <!--- background-color: deepPink;color: #fff; padding: 20px;--->
+  
+   
+}
+</style>
+</head>
+<apex:form >
+<div class="grid-container grid-container--fit">
+<div style="color:white;background-color:#3399fe;height:65px;">
+ <p style="padding-top:9px;text-align:center;position:relative;text-align:right;right:100px;">
+  <span style="font-size:12px;"><b>Login As:</b></span>&nbsp;&nbsp;{!DoctorInfo.Last_Name__c},&nbsp;{!DoctorInfo.Name},&nbsp;{!DoctorInfo.email__c}
+  &nbsp;
+  <apex:outputLink value="/apex/CallMD_DoctorProfile" style="color:white;">
+    Edit My Account
+    <apex:param name="id" value="{!$CurrentPage.Parameters.did}"/>
+  </apex:outputLink>
+   
+  
+  <br/><br/>
+  <apex:outputLink value="{!$Site.Prefix}/secur/logout.jsp" style="color:white;">{!$Label.site.logout}</apex:outputLink>  <!--- rendered="{!NOT(ISPICKVAL($User.UserType,'Guest'))}" --->
+ </p> 
+ <body style="margin:0px;">
+ <div style="background-color:white;height:800px;">
+  <div style="margin:20px;">
+    <apex:image value="{!$Resource.CallMDLogo}" width="200" height="90"/>
+  </div>
+  
+ <div style="margin-bottom:20px;" class="grid-container grid-container--fit">
+ <center>
+   <ul>
+     <li class="home">
+     <apex:outputLink value="/apex/CallMD_HomePage" styleClass="ol">Dashbaord
+         <apex:param name="did" value="{!$CurrentPage.Parameters.did}"/>
+     </apex:outputLink>
+    </li>
+     <!--- <li class="home"><apex:outputLink value="/apex/CallMD_Doctor" styleClass="ol" target="_blank">Consultations</apex:outputLink></li>  --->
+     <li class="home"><apex:commandLink value="License List" action="{!showLicenses}" styleClass="l"/></li>
+     <li class="home"><apex:commandLink value="Scheduling" action="{!showSchedulling}" styleClass="l"/></li>
+     <li class="home">Reports</li>
+     <li class="home">E-Prescription</li>
+   </ul> <br/><br/>
+  </center>
+  </div>
+ <br/><br/>
+ <apex:pageBlock rendered="{!IF(OR(show=='',show=='License'),true,false)}">
+  <div class="content-wrapper" style="margin:0px;">
+      <div class="TOD-UI grid-container grid-container--fit" id="main-content" style="margin:0px;">
+        <div class="content">
+         <header class="t" style="padding-bottom:40px;padding-top:15px;font-size:12px;">
+           <h1>License State</h1>
+         </header>
+        <section>
+         <article>
+     
+   <apex:pageBlockTable value="{!LicenseList}" var="l">
+      <apex:column headerValue="Name" value="{!l.Name}"/>
+      <apex:column headerValue="States" value="{!l.States__c}"/>
+      <apex:column headerValue="Expiration Date" value="{!l.Expiration_date__c}"/>
+   </apex:pageBlockTable> 
+     </article>
+     </section>
+   </div>
+   </div>
+   </div>
+   
+ </apex:pageBlock>
+
+  <apex:pageBlock rendered="{!IF(show=='Schedulling',true,false)}"> 
+     <div class="content-wrapper" style="width:1400px;margin:0px;">
+      <div class="TOD-UI grid-container grid-container--fit" id="main-content">
+        <div class="content" style="margin:0px;">
+        <header class="t" style="padding-bottom:40px;padding-top:15px;font-size:12px;">
+          <h1 style="color:blue;">Timings</h1>
+        </header>
+        <section>
+        <article>
+    <div align="center">
+       <apex:commandButton value="Update Time" action="{!UpdateSchedule}"/>
+    </div>
+   <br/>
+   <apex:inputField value="{!DoctorInfo.Choose_a_time_zone__c}"/><br/>
+     <apex:pageBlockTable value="{!schedulingList}" var="s">
+        <apex:column value="{!s.Day_Of_week__r.Name}"/>
+        <apex:column >
+          <apex:outputLabel value="Start Time"/>
+        </apex:column>
+        <apex:column >
+          <apex:inputField value="{!s.Start_Time__c}"/>
+        </apex:column>
+        <apex:column >
+          <apex:outputLabel value="End Time"/>
+        </apex:column>
+        <apex:column >
+          <apex:inputField value="{!s.End_Time__c}"/>
+        </apex:column>
+     </apex:pageBlockTable>
+   
+   </article>
+   </section>
+    </div>
+   </div>
+   </div> 
+   
+  </apex:pageBlock>
+ 
+ </div>
+ </body>
+ </div>
+ </div>
+</apex:form>
+</apex:page>

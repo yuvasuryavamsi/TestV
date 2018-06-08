@@ -1,0 +1,60 @@
+<apex:page controller="CallMDSetupCtrl" showHeader="false" standardStylesheets="true" docType="html-5.0">
+  <c:CallMDStyles />
+  <style>
+    .grid-container--fill{
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+}
+
+.grid-container--fit {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+.grid-element {
+ <!--- background-color: deepPink;color: #fff; padding: 20px;--->   
+}
+
+body{
+      background:URl('{!$Resource.CallMDGirl}') no-repeat;
+    }
+
+  </style>
+ <apex:form >
+ <!--- <body style="margin:0px;"> --->
+  <div style="background-color:white;height:1000px;">
+   <div class="content-wrapper grid-container">
+      <div class="TOD-UI grid-container grid-container--fit" id="main-content">
+        <div class="content">
+        <apex:image value="{!$Resource.CallMDLogo}" width="200" height="100"/>
+          <!--- <header class="Title" style="padding-bottom: 58px;background-color:;">
+            <h1>Confirm Members</h1>                  
+          </header>  --->
+           <section>
+           <article>
+    <apex:pageBlock >
+      <apex:pageBlockSection columns="1">
+         <apex:inputField value="{!MemDetails.FirstName__c}" label="First Name"/>
+         <apex:inputField value="{!MemDetails.LastName__c}" label="Last Name"/>
+         <apex:inputField value="{!MemDetails.DateofBirth__c}" label="Date of Birth" required="true"/>
+         <apex:inputField value="{!MemDetails.Cell_Phone__c}" label="Cell Phone" required="true"/>
+         <apex:inputField value="{!MemDetails.State__c}"/>
+         <apex:inputField value="{!MemDetails.Email__c}"/>
+         <apex:inputField value="{!MemDetails.City__c}"/>
+         <apex:inputField value="{!MemDetails.ZipCode__c}"/>
+         <apex:inputField value="{!MemDetails.Gender__c}"/>
+      </apex:pageBlockSection>
+    </apex:pageBlock>
+    </article>
+    </section>
+    
+    <div style="text-align:center;">
+       <apex:commandButton value="Confirm Member" action="{!ConfirmMember}"/>
+    </div>
+     
+  </div>
+   </div>
+    </div>
+     </div>
+   <!---  </body>  --->
+ </apex:form>
+
+</apex:page>

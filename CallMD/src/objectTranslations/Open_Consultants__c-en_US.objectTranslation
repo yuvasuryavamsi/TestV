@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Open Consultation</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Open Consultation</value>
+    </caseValues>
+    <fields>
+        <label><!-- Additional Requested DiagnosticProcedure --></label>
+        <name>Additional_Requested_Diagnostic_Procedur__c</name>
+    </fields>
+    <fields>
+        <label><!-- Address --></label>
+        <name>Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Assigned Nurse: --></label>
+        <name>Assigned_Nurse__c</name>
+    </fields>
+    <fields>
+        <label><!-- B2B/D2C --></label>
+        <name>B2B_D2C__c</name>
+        <picklistValues>
+            <masterLabel>B2B</masterLabel>
+            <translation><!-- B2B --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>D2C</masterLabel>
+            <translation><!-- D2C --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Benefit Provider --></label>
+        <name>Benefit_Provider__c</name>
+    </fields>
+    <fields>
+        <label><!-- CallBack Number --></label>
+        <name>CallBack_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- CallBack Time --></label>
+        <name>CallBack_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Chief Complaint Symptom --></label>
+        <name>Chief_Complaint_Symptom__c</name>
+    </fields>
+    <fields>
+        <label><!-- Comments --></label>
+        <name>Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Consulation Remarks --></label>
+        <name>Consulation_Remarks__c</name>
+    </fields>
+    <fields>
+        <label><!-- Consultation Status --></label>
+        <name>Consultation_Status__c</name>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Consultation Type --></label>
+        <name>Consultation_Type__c</name>
+        <picklistValues>
+            <masterLabel>Chat Consultation</masterLabel>
+            <translation><!-- Chat Consultation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Phone consultation</masterLabel>
+            <translation><!-- Phone consultation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Video Consultation</masterLabel>
+            <translation><!-- Video Consultation --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Created By User --></label>
+        <name>Created_By_User__c</name>
+        <relationshipLabel><!-- Open Consultation (Created By User) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Date &amp; Time of consultation --></label>
+        <name>Date_Time_of_consultation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date --></label>
+        <name>Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Doctor --></label>
+        <name>DoctorC__c</name>
+        <relationshipLabel><!-- Open Consultation --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Doctor Consultation Remark --></label>
+        <name>Doctor_Consultation_Remark__c</name>
+    </fields>
+    <fields>
+        <label><!-- Doctor --></label>
+        <name>Doctor__c</name>
+        <relationshipLabel><!-- Open Consultants --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Follow Up Questions --></label>
+        <name>Follow_Up_Questions__c</name>
+    </fields>
+    <fields>
+        <label><!-- Impression / Diagnosis --></label>
+        <name>Impression_Diagnosis__c</name>
+    </fields>
+    <fields>
+        <label><!-- Incoming Number --></label>
+        <name>Incoming_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Initiated By --></label>
+        <name>Initiated_By__c</name>
+        <picklistValues>
+            <masterLabel>Member</masterLabel>
+            <translation><!-- Member --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Provider</masterLabel>
+            <translation><!-- Provider --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Last Modified By User --></label>
+        <name>Last_Modified_By_User__c</name>
+        <relationshipLabel><!-- Open Consultation (Last Modified By User) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Meds Prescribed During Consultation --></label>
+        <name>Meds_Prescribed_During_Consultation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Member Consultation Type --></label>
+        <name>Member_Consultation_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Member --></label>
+        <name>Member__c</name>
+        <relationshipLabel><!-- Open Consultants --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Other Rx Status --></label>
+        <name>Other_Rx_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payment Status --></label>
+        <name>Payment_Status__c</name>
+        <picklistValues>
+            <masterLabel>False</masterLabel>
+            <translation><!-- False --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>True</masterLabel>
+            <translation><!-- True --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Payment transaction id --></label>
+        <name>Payment_transaction_id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pharmacy Name + Phone: --></label>
+        <name>Pharmacy_Name_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pharmacy Verifier: --></label>
+        <name>Pharmacy_Verifier__c</name>
+    </fields>
+    <fields>
+        <label><!-- Plan --></label>
+        <name>Plan__c</name>
+    </fields>
+    <fields>
+        <label><!-- Patient Complaint --></label>
+        <name>Problem_History__c</name>
+    </fields>
+    <fields>
+        <label><!-- Problem / History: --></label>
+        <name>Problem_History_cs__c</name>
+    </fields>
+    <fields>
+        <label><!-- Products --></label>
+        <name>Products__c</name>
+        <picklistValues>
+            <masterLabel>CallMD</masterLabel>
+            <translation><!-- CallMD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CorrectionsMD</masterLabel>
+            <translation><!-- CorrectionsMD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DentalMD</masterLabel>
+            <translation><!-- DentalMD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DiagonosticsMD</masterLabel>
+            <translation><!-- DiagonosticsMD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EducationMD</masterLabel>
+            <translation><!-- EducationMD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FitMD</masterLabel>
+            <translation><!-- FitMD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HopeMD</masterLabel>
+            <translation><!-- HopeMD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PSYMD</masterLabel>
+            <translation><!-- PSYMD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PetMD</masterLabel>
+            <translation><!-- PetMD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SOSMD</masterLabel>
+            <translation><!-- SOSMD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TravelMD</masterLabel>
+            <translation><!-- TravelMD --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Program --></label>
+        <name>Program__c</name>
+    </fields>
+    <fields>
+        <label><!-- RX Status --></label>
+        <name>RX_Status__c</name>
+        <picklistValues>
+            <masterLabel>Doctor Unavailable for Consultation</masterLabel>
+            <translation><!-- Doctor Unavailable for Consultation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Rx or Compound Medication Prescribed</masterLabel>
+            <translation><!-- No Rx or Compound Medication Prescribed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Patient Not Interested</masterLabel>
+            <translation><!-- Patient Not Interested --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Patient Unavailable for Consultation</masterLabel>
+            <translation><!-- Patient Unavailable for Consultation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prescribed Compound Medication</masterLabel>
+            <translation><!-- Prescribed Compound Medication --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prescribed Rx Medication</masterLabel>
+            <translation><!-- Prescribed Rx Medication --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prescription Form Not Received by Doctor</masterLabel>
+            <translation><!-- Prescription Form Not Received by Doctor --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Recording ID --></label>
+        <name>Recording_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rx Follow Up Remarks --></label>
+        <name>Rx_Follow_Up_Remarks__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rx Follow Up Status: --></label>
+        <name>Rx_Follow_Up_Status__c</name>
+        <picklistValues>
+            <masterLabel>0 - No Medication Prescribed</masterLabel>
+            <translation><!-- 0 - No Medication Prescribed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1 - Prescription for verification</masterLabel>
+            <translation><!-- 1 - Prescription for verification --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2 -  Prescription Not Yet in Pharmacy</masterLabel>
+            <translation><!-- 2 -  Prescription Not Yet in Pharmacy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3 - Prescription Verified</masterLabel>
+            <translation><!-- 3 - Prescription Verified --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Rx Follow-up Date &amp; Time Done --></label>
+        <name>Rx_Follow_up_Date_Time_Done__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rx Follow-up Schedule --></label>
+        <name>Rx_Follow_up_Schedule__c</name>
+    </fields>
+    <fields>
+        <label><!-- Scheduling After 3 Hours --></label>
+        <name>Scheduling_After_3_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stage --></label>
+        <name>Stage__c</name>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Terminated</masterLabel>
+            <translation><!-- Terminated --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- States --></label>
+        <name>States__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status Change --></label>
+        <name>StatusChange__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Subscription --></label>
+        <name>Subscription__c</name>
+        <relationshipLabel><!-- Open Consultation --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- What would you have done with your medic --></label>
+        <name>What_would_you_have_done_with_your_medic__c</name>
+        <picklistValues>
+            <masterLabel>Emergency Room</masterLabel>
+            <translation><!-- Emergency Room --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Primary Care Physician</masterLabel>
+            <translation><!-- Primary Care Physician --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Urgent Care Clinic</masterLabel>
+            <translation><!-- Urgent Care Clinic --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Open Consultants Layout</layout>
+        <sections>
+            <label><!-- Consultation Summary --></label>
+            <section>Consultation Summary</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Open Consultation Details --></label>
+            <section>Open Consultation Details</section>
+        </sections>
+        <sections>
+            <label><!-- RX Followup --></label>
+            <section>RX Followup</section>
+        </sections>
+        <sections>
+            <label><!-- RX Status --></label>
+            <section>RX Status</section>
+        </sections>
+        <sections>
+            <label><!-- Triage --></label>
+            <section>Triage</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- You cannot create consultation until renewal is done --></errorMessage>
+        <name>Subscription_Checking</name>
+    </validationRules>
+</CustomObjectTranslation>

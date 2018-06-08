@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Immunization</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Immunizations</value>
+    </caseValues>
+    <fields>
+        <label><!-- Comment --></label>
+        <name>Comment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date --></label>
+        <name>Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Immunization --></label>
+        <name>Immunization__c</name>
+        <picklistValues>
+            <masterLabel>BCG</masterLabel>
+            <translation><!-- BCG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cholera</masterLabel>
+            <translation><!-- Cholera --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPT(Diptheria,Pertussis,Teanus)</masterLabel>
+            <translation><!-- DPT(Diptheria,Pertussis,Teanus) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FLU</masterLabel>
+            <translation><!-- FLU --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HIB(haemophilus B conjugate)</masterLabel>
+            <translation><!-- HIB(haemophilus B conjugate) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HPV</masterLabel>
+            <translation><!-- HPV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hepatitis A</masterLabel>
+            <translation><!-- Hepatitis A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hepatitis B</masterLabel>
+            <translation><!-- Hepatitis B --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MMR(measles,mumps,rubella)</masterLabel>
+            <translation><!-- MMR(measles,mumps,rubella) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Measles Booster</masterLabel>
+            <translation><!-- Measles Booster --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Others</masterLabel>
+            <translation><!-- Others --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pneumovax</masterLabel>
+            <translation><!-- Pneumovax --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Polio</masterLabel>
+            <translation><!-- Polio --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tetanus Booster</masterLabel>
+            <translation><!-- Tetanus Booster --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Typhoid</masterLabel>
+            <translation><!-- Typhoid --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Varicella</masterLabel>
+            <translation><!-- Varicella --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yellow Fever</masterLabel>
+            <translation><!-- Yellow Fever --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- User --></label>
+        <name>User__c</name>
+        <relationshipLabel><!-- Immunizations --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Immunization Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Immunization Details --></label>
+            <section>Immunization Details</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

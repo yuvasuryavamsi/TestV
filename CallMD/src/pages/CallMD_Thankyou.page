@@ -1,0 +1,8 @@
+<apex:page showHeader="false" standardStylesheets="false">
+
+  <div style="margin:10px;">
+    <apex:image value="{!$Resource.CallMDLogo}" height="90"/>
+    <h1>Thank You</h1>
+    <p style="font-size:20px;">Your password has been reset successfully...</p>
+  </div>
+</apex:page>

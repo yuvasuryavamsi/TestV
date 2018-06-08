@@ -1,0 +1,27 @@
+<apex:page sidebar="false" controller="CallMD_ConsultationReportsCtrl">
+ <c:CallMDStyles />
+ <body style="background-color:white;margin:0px;">
+  <div style="height:1000px;">
+  <apex:pageBlock id="pb">
+  
+   <div class="content-wrapper" style="width:1400px;margin:0px;">
+      <div class="TOD-UI" id="main-content" style="width:1400px;margin:0px;">
+        <div class="content" style="width:1400px;margin:0px;">
+         <header class="Title" style="padding-bottom:40px;padding-top:15px;font-size:14px;">
+           <h1>Consultation Report</h1>
+          </header>
+        <section>
+         <article>
+           
+         
+         
+         </article>
+        </section>
+      </div>
+     </div>
+   </div>
+ </apex:pageBlock>
+ </div>
+ </body>
+ 
+</apex:page>

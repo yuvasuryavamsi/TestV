@@ -1,0 +1,48 @@
+<apex:page standardController="Immunization_Members__c" sidebar="false" extensions="CallMD_ImmunizationMemExt" tabStyle="Members__tab">
+  <c:CallMDStyles />
+  <style>
+  .TOD-UI .content .Title{
+      background-color:#3399fe;
+      font-size:14px;
+    }
+    .TOD-UI h3{
+     color:#3399fe;
+   }
+ </style>
+  <body style="margin:0px;">
+<div style="background-color:white;margin:0px;position:relative;top:0;height:800px;">
+
+  <apex:form >
+  <apex:PageBlock >
+    <div style="width:1400px;margin:0px;">
+      <div class="TOD-UI" id="main-content" style="width:1400px;margin:0px;">
+        <div class="content" style="width:1400px;margin:0px;">
+        <section>
+        <article>
+        <header class="Title" style="padding-bottom:40px;padding-top:15px;font-size:14px;">
+          <h1 style="color:blue;">Immunizations</h1>
+        </header>
+        <br/>
+        <div align="center">
+            <apex:commandButton value="Create Immunization" action="{!Save}"/>&nbsp;&nbsp;
+            <apex:commandButton value="Cancel" action="{!Cancel}"/>
+          </div>
+          <apex:pageBlockSection title=" Information">
+             <apex:repeat value="{!$ObjectType.Immunization_Members__c.fieldsets.Immunization_Members}" var="i">
+               <apex:inputField value="{!Immunization_Members__c[i]}"/>
+             </apex:repeat>
+          </apex:pageBlockSection><br/>
+          <div align="center">
+            <apex:commandButton value="Create Immunization" action="{!Save}"/>&nbsp;&nbsp;
+            <apex:commandButton value="Cancel" action="{!Cancel}"/>
+          </div>
+         </article>
+        </section>
+      </div>
+    </div>
+   </div>
+  </apex:PageBlock>
+ </apex:form>
+</div>
+</body>
+</apex:page>

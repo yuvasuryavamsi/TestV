@@ -1,0 +1,159 @@
+<apex:page showHeader="false" docType="html-5.0" controller="CallMDDoctor_ConsultCallSummaryCtrl">
+<c:CallMDStyles />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<style>
+ ul{
+  display:block;
+  width:1440px;
+  margin:0px;
+  padding:0px;
+ }
+ .home{
+  list-style:none;
+  float:left;
+  background-color:#3399fe;
+  color:white;
+  font-size:14px;
+  width:288px;
+  height:40px;
+  line-height:40px;
+  text-align:center;
+  font-weight:bold;
+  padding:0px;
+  margin:0px;
+  border:0px solid black;
+ }
+ .ol{
+  text-decoration:none;
+  color:white;
+ }
+ .ol:hover{
+  text-decoration:none;
+  color:white;
+ }
+ .headerRow{
+   height:25px;
+  }
+  .col{
+   height:25px;
+   }
+   .t{
+    background-color:#3399fe;
+    padding-left:10px;
+    font-size:14px;
+  }
+  .l{
+    text-decoration:none;
+    color:white;
+  }
+  .l:hover{
+    text-decoration:none;
+    color:white;
+  }
+  body{
+      background:URl('{!$Resource.CallMDGirl}');
+    }
+</style>
+<apex:form >
+<body style="margin:0px;">
+<div class="grid-container grid-container--fit">
+<div style="color:white;background-color:#3399fe;height:65px;">
+ <p style="padding-top:9px;text-align:center;position:relative;text-align:right;right:30px;">
+  <span style="font-size:12px;"><b>Login As:</b></span>&nbsp;&nbsp;{!DoctorInfo.Last_Name__c},&nbsp;{!DoctorInfo.Name},&nbsp;{!DoctorInfo.email__c}
+  &nbsp;
+  <apex:outputLink value="/apex/CallMD_DoctorProfile" style="color:white;">
+    Edit My Account
+    <apex:param name="id" value="{!$CurrentPage.Parameters.did}"/>
+  </apex:outputLink>
+   
+  
+  <br/><br/>
+  <apex:outputLink value="{!$Site.Prefix}/secur/logout.jsp" rendered="{!NOT(ISPICKVAL($User.UserType,'Guest'))}" style="color:white;">{!$Label.site.logout}</apex:outputLink>
+ </p>
+
+ <div style="height:800px;background-color:white;margin:0px;">
+  <div style="margin:20px;">
+    <apex:image value="{!$Resource.CallMDLogo}" width="200" height="90"/>
+  </div>
+  <div style="margin-top:30px;text-align:center;">
+  <center>
+   <ul>
+     <li class="home"><apex:commandLink value="Dashboard" action="{!showDashboard}" styleClass="l"/></li>
+     <!--- <li class="home"><apex:outputLink value="/apex/CallMD_Doctor" styleClass="ol" target="_blank">Consultations</apex:outputLink></li>  --->
+     <li class="home"><apex:outputLink value="/apex/CallMD_DoctorLicense" styleClass="ol">License List
+       <apex:param name="did" value="{!$CurrentPage.Parameters.did}"/>
+     </apex:outputLink></li>
+     <li class="home">
+        <apex:outputLink value="/apex/CallMD_DoctorLicense" styleClass="ol">
+           Scheduling
+           <apex:param name="did" value="{!$CurrentPage.Parameters.did}"/>
+        </apex:outputLink> 
+     </li>
+     <li class="home">Reports</li>
+     <li class="home">
+      <apex:commandLink value="E-Prescription" action="{!EPrescription}"  styleClass="l"/>
+     </li>
+   </ul><br/><br/>
+  </center>
+  </div>  
+  
+  <apex:outputPanel rendered="{!IF(show=='Epres',true,false)}" id="out"> 
+    <h1>E-Prescription Coming Soon...</h1>
+  </apex:outputPanel>
+ 
+ <apex:outputPanel rendered="{!IF(show=='',true,false)}"> 
+ <center>
+  <div style="margin-top:150px;color:white;">
+    <h1 style="font-weight:bold;font-size:24px;color:black;text-align:center;">
+     WELCOME TO CALLMD DOCTOR PORTAL....
+    </h1>
+  </div>
+ </center>
+ </apex:outputPanel> 
+ 
+ <br/><br/>
+
+  <apex:pageBlock rendered="{!IF(show=='Dashboard',true,false)}" id="pb">
+   <div class="content-wrapper" style="width:1400px;margin:0px;">
+      <div class="TOD-UI" id="main-content" style="width:1400px;margin:0px;">
+        <div class="content" style="width:1400px;margin:0px;">
+         <header class="t" style="padding-bottom:40px;padding-top:15px;font-size:14px;">
+           <h1>Consultation Summary</h1>
+         </header>
+        <section>
+         <article>
+    <apex:pageBlockTable value="{!OpenConsList}" var="c">
+      <apex:column headerValue="Name" style="vertical-align:top;margin:10px;width:200px;">
+          <apex:image value="{!$Resource.Video}" width="30" height="30" rendered="{!IF(c.Consultation_Type__c=='Video Consultation',true,false)}"/>
+            <apex:image value="{!$Resource.Phone}" width="30" height="30" rendered="{!IF(c.Consultation_Type__c=='Phone consultation',true,false)}"/>
+            <apex:image value="{!$Resource.Chat}" width="30" height="30" rendered="{!IF(c.Consultation_Type__c=='Chat Consultation',true,false)}"/>&nbsp;&nbsp;
+            <apex:outputLink style="vertical-align:top;font-weight:bold;text-decoration:none;" value="/apex/CallMD_DoctorConsultationSummary" target="_blank">
+                  {!c.Member__r.FirstName__c},{!c.Member__r.LastName__c}
+                  <apex:param name="tab" value="Dashboard"/>
+                  <apex:param name="id" value="{!c.Member__r.id}"/>
+                  <apex:param name="cid" value="{!c.id}"/>
+                  <apex:param name="did" value="{!c.DoctorC__c}"/>
+             </apex:outputLink>
+      </apex:column>
+      <apex:column headerValue="Date" value="{!c.Date__c}"/>
+      <apex:column headerValue="Call Back Time" value="{!c.CallBack_Time__c}"/>
+      <apex:column headerValue="Problem Status"/>
+      <apex:column headerValue="Call Back Time" value="{!c.States__c}"/>
+      <apex:column headerValue="Consultation Status" value="{!c.Consultation_Status__c}"/>
+    </apex:pageBlockTable>
+    </article>
+    </section>
+    </div>
+    </div>
+    </div>
+  </apex:pageBlock>
+  
+ </div>
+
+</div>
+</div>
+ </body>
+</apex:form>
+
+</apex:page>

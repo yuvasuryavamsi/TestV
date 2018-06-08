@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Payments</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Payments</value>
+    </caseValues>
+    <fields>
+        <label><!-- Admin. Fee --></label>
+        <name>Admin_Fee__c</name>
+    </fields>
+    <fields>
+        <label><!-- Amount --></label>
+        <name>Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Consultation Payment --></label>
+        <name>Consultation_Payment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Created By User --></label>
+        <name>Created_By_User__c</name>
+        <relationshipLabel><!-- Payments --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Non-Consultation Payment --></label>
+        <name>Non_Consultation_Payment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Open Consultants --></label>
+        <name>Open_Consultants__c</name>
+        <relationshipLabel><!-- Payments --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Payment Date --></label>
+        <name>Payment_Date__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

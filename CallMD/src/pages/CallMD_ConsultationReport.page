@@ -1,0 +1,38 @@
+<apex:page controller="CallMD_ConsultationReport" sidebar="false">
+
+  <apex:pageBlock >
+    <apex:pageBlockTable value="{!mapConsultReport}" var="r">
+      <apex:column headerValue="Provider Name">
+      <apex:outputText value="{!r}"/>
+        <apex:pageBlockTable value="{!mapConsultReport[r]}" var="m">
+           <apex:column headerValue="Program Name">
+             <apex:outputText value="{!m.ProgramName}"/>
+           </apex:column>
+           <apex:column headerValue="No of Consultations">
+             <apex:outputText value="{!m.ProgramCount}"/>
+           </apex:column>
+        </apex:pageBlockTable>
+       
+      </apex:column>
+    </apex:pageBlockTable>
+  </apex:pageBlock>
+
+
+ <!---  <apex:form >
+     <apex:pageBlock >
+       <apex:pageBlockTable value="{!consultWrapper}" var="c">
+         <apex:column headerValue="{!consultWrapper[c]}">
+         </apex:column>
+       </apex:pageBlockTable>
+     </apex:pageBlock>
+   </apex:form>  --->
+
+ <!--- <apex:form >
+    <apex:pageBlock >
+      <apex:PageBlockTable value="{!mapProv}" var="p">
+        <apex:column headerValue="{!mapProv[p]}">
+        </apex:column>
+      </apex:PageBlockTable>
+    </apex:pageBlock>
+  </apex:form>    --->
+</apex:page>

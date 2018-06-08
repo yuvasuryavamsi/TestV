@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Subscriptions</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Subscriptions</value>
+    </caseValues>
+    <fields>
+        <label><!-- B2B/D2C Ref --></label>
+        <name>B2B_D2C_Ref__c</name>
+    </fields>
+    <fields>
+        <label><!-- B2B/D2C --></label>
+        <name>B2B_D2C__c</name>
+    </fields>
+    <fields>
+        <label><!-- Consultation Renewal --></label>
+        <name>Consultation_Renewal__c</name>
+    </fields>
+    <fields>
+        <label><!-- Copay Amount --></label>
+        <name>Copay_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Copay Yes/No --></label>
+        <name>Copay_Yes_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- Duration --></label>
+        <name>Duration__c</name>
+    </fields>
+    <fields>
+        <label><!-- End Date --></label>
+        <name>End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Member --></label>
+        <name>Member__c</name>
+        <relationshipLabel><!-- Subscriptions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Payment Date --></label>
+        <name>Payment_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payment Method --></label>
+        <name>Payment_Method__c</name>
+        <picklistValues>
+            <masterLabel>Credit Card</masterLabel>
+            <translation><!-- Credit Card --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Debit Card</masterLabel>
+            <translation><!-- Debit Card --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Stripe</masterLabel>
+            <translation><!-- Stripe --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Payment --></label>
+        <name>Payment__c</name>
+        <picklistValues>
+            <masterLabel>Aborted</masterLabel>
+            <translation><!-- Aborted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>InProgress</masterLabel>
+            <translation><!-- InProgress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Successful</masterLabel>
+            <translation><!-- Successful --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Pricing --></label>
+        <name>Pricing__c</name>
+    </fields>
+    <fields>
+        <label><!-- Program Name --></label>
+        <name>Program_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Program --></label>
+        <name>Program__c</name>
+        <relationshipLabel><!-- Subscriptions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Provider Name --></label>
+        <name>Provider_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Provider --></label>
+        <name>Provider__c</name>
+        <relationshipLabel><!-- Subscriptions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Remaining Consultation --></label>
+        <name>Remaining_Consultation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Renewal Status --></label>
+        <name>Renewal_Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>InActive</masterLabel>
+            <translation><!-- InActive --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Stage --></label>
+        <name>Stage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Start Date --></label>
+        <name>Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Subscription Type --></label>
+        <name>Subscription_Type__c</name>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Renewal</masterLabel>
+            <translation><!-- Renewal --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Subscriptions --></label>
+        <name>Subscriptions__c</name>
+        <relationshipLabel><!-- Subscriptions (Child) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Total Consultation To Do --></label>
+        <name>Total_Consultation_To_Do__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Consultations Completed B2B --></label>
+        <name>Total_Consultations_Completed_B2B__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Consultations Done --></label>
+        <name>Total_Consultations_Done__c</name>
+    </fields>
+    <fields>
+        <label><!-- Transaction Id --></label>
+        <name>Transaction_Id__c</name>
+    </fields>
+    <layouts>
+        <layout>Subscriptions Layout</layout>
+        <sections>
+            <label><!-- B2B (Business To Business) --></label>
+            <section>B2B (Business To Business)</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- D2C (Direct To Customer) --></label>
+            <section>D2C (Direct To Customer)</section>
+        </sections>
+        <sections>
+            <label><!-- Member Details --></label>
+            <section>Member Details</section>
+        </sections>
+        <sections>
+            <label><!-- Provider &amp; Program Details --></label>
+            <section>Provider &amp; Program Details</section>
+        </sections>
+        <sections>
+            <label><!-- Subscription Information --></label>
+            <section>Subscription Information</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

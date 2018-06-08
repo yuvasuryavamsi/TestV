@@ -1,0 +1,54 @@
+<apex:page showHeader="false" renderAs="pdf" controller="CallMD_B2BUtilizationReport">
+ <div>
+  <apex:image value="{!$Resource.CallMDLogo}"/><br/><br/>
+   
+  <h2>CallMD Utilization Report</h2>
+  
+  <p style="font-weight:bold;">Dates : {!StartDate} &nbsp;-&nbsp; {!EndDate}</p>
+ 
+  <table width="100%">
+    <tr>
+     <td> <span style="font-weight:bold;">Total Consultations :</span>  </td>  
+     <td> <span style="font-weight:bold;">Total active members :</span>  </td> 
+     <td> <span style="font-weight:bold;">Utilization :</span>           </td>
+    </tr>
+  </table>
+  <br/><br/>
+  <table border="0" width="100%" cellspacing="0" cellpadding="10">
+  <apex:repeat value="{!mapProgProvName}" var="p">
+
+   <tr>       
+     <td><p><b>Provider:</b>&nbsp;&nbsp; <apex:outputText value="{!mapProviderName[p]}"/> </p></td>
+   </tr>
+  </apex:repeat>
+  </table>
+  <p style="font-weight:bold;">Utilization :</p><br/>
+
+   <table border="1" width="100%" cellspacing="0" cellpadding="10">  
+    <tr>
+     <th style="text-align:center;">Program</th>
+     <th style="text-align:center;">Utilization&nbsp;%</th>
+    </tr>    
+    <apex:repeat value="{!mapProgProvName}" var="p">
+     <apex:repeat value="{!mapProgProvName[p]}" var="pp" >
+    <tr>
+      <td> <apex:outputText value="{!mapProgramName[pp]}"/></td>
+      <td> <apex:outputText value="{!mapFinal[pp]} %"/> </td>
+    </tr>
+    </apex:repeat>
+    </apex:repeat>
+  </table>
+ 
+ 
+   <p style="line-height:20px;text-align:center;font-weight:bold;margin-top:200px;">
+    Health Ultimate Global <br/>
+    100 Spectrum Center Drive <br/>
+    Irvine ,California - 92618 <br/>
+    1-888-805-1044
+   </p>
+  
+  
+  
+  
+ </div>
+</apex:page>

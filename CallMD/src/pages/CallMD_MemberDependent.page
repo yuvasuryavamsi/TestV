@@ -1,0 +1,157 @@
+<apex:page standardController="Member__c" extensions="CallMD_MemberDependentCtrl" sidebar="false" showHeader="false">
+  
+  <c:CallMDStyles />
+ <head>
+  <style>
+   .headerRow{
+   height:25px;
+  }
+  .col{
+   height:25px;
+  }
+  .mem{
+    font-weight:bold;
+    color:blue;
+  }
+  .memSec{
+    width:250px;
+  }
+  th{
+   height:38px;
+   color:blue;
+  }
+  .TOD-UI .content .Title{
+      background-color:#3399fe;
+    }
+    .TOD-UI h3{
+     color:#3399fe;
+   }
+    
+ </style>
+ </head>
+ <body style="margin:0px;">
+ 
+ <div style="background-color:white;margin:0px;height:2200px;">
+  
+ <apex:image value="{!$Resource.CallMDLogo}" width="300" height="120"/>
+<apex:form >
+  
+   <apex:pageBlock >
+    <div class="content-wrapper" style="width:1400px;margin:0px;">
+      <div class="TOD-UI" id="main-content" style="width:1400px;margin:0px;">
+        <div class="content" style="width:1400px;margin:0px;">
+        
+        <section>
+         <article>
+  
+       
+   <div style="height:160px;border:0px solid black;padding-left:10px;">
+    <h4 style="color:blue;font-weight:bold;text-align:right;"><u>MEMBER INFORMATION</u></h4><br/><br/>
+    <table class="table table-striped" width="100%" cellpadding="6" cellspacing="6" align="center"> 
+     <colgroup span="6" width="15%"/>
+     <tr>
+      <th>Member:</th><td>{!MemberDetails.FirstName__c}&nbsp;{!MemberDetails.LastName__c}</td>  <th>DOB: </th><td><apex:outputField value="{!MemberDetails.DateofBirth__c}"/></td>   <th>Gender:</th><td>{!MemberDetails.Gender__c}</td>
+     </tr>
+     <tr>
+      <th>Age:</th><td>{!MemberDetails.Age__c}</td>  <th>Weight:</th><td>{!MemberDetails.Weight__c}</td>   <th>Height:</th><td>{!MemberDetails.Height__c}</td>
+     </tr>
+     <tr>
+      <th>Address:</th><td>{!MemberDetails.Address_Line1__c}</td>  <th>City:</th><td>{!MemberDetails.City__c}</td>   <th>State:</th><td>{!MemberDetails.State__c}</td>
+     </tr>
+     <tr>
+      <th>Home Phone:</th><td>{!MemberDetails.Home_Phone__c}</td>  <th>Work Phone:</th><td>{!MemberDetails.Work_Phone__c}</td>   <th>Cell Phone:</th><td>{!MemberDetails.Cell_Phone__c}</td>
+     </tr>
+    </table>
+    
+    
+  </div>
+  
+  <br/><br/>
+   
+       </article>
+       </section>
+    </div>
+    </div>
+    </div>
+  </apex:pageBlock>
+  
+  
+  <apex:pageBlock title="Dependent Info" rendered="{!IF(memSize!=0,true,false)}">
+     <apex:pageBlockTable value="{!membersList}" var="m">
+         <apex:column headerValue="Last Name" value="{!m.LastName__c}"/>
+         <apex:column headerValue="First Name" value="{!m.FirstName__c}"/>
+         <apex:column headerValue="Date Of Birth" value="{!m.DateofBirth__c}"/>
+         <apex:column headerValue="Type" value="{!m.Customer_Type__c}"/>
+         <apex:column headerValue="City" value="{!m.City__c}"/>
+         <apex:column headerValue="State" value="{!m.State__c}"/>
+         <apex:column headerValue="Zip" value="{!m.ZipCode__c}"/>
+    </apex:pageBlockTable> 
+     
+  </apex:pageBlock>
+  
+  
+   <apex:pageBlock >
+  
+  <div class="content-wrapper" style="width:1400px;margin:0px;">
+      <div class="TOD-UI" id="main-content" style="width:1400px;margin:0px;">
+        <div class="content" style="width:1400px;margin:0px;">
+           <header class="t" style="padding-bottom:40px;padding-top:15px;font-size:14px;">
+            <h1 style="color:blue;">Member</h1>
+          </header>
+        
+       <section>
+        <article>
+       
+       <div align="center">
+         <apex:commandButton value="Save" action="{!save}"/>
+       </div> 
+  
+  <apex:pageBlockSection title="Member Information">
+       <apex:repeat value="{!$ObjectType.Member__c.fieldsets.Member_Information}" var="m">
+         <apex:inputField value="{!Member__c[m]}" rendered="{!IF(OR(mode=='e',mode==''),true,false)}"/>
+         <apex:outputField value="{!Member__c[m]}" rendered="{!IF(mode=='s',true,false)}"/>
+       </apex:repeat>
+      
+
+    </apex:pageBlockSection>
+    
+    <apex:pageBlockSection title="Communication Details">
+       <apex:repeat value="{!$ObjectType.Member__c.fieldsets.Communication_Details}" var="m">
+         <apex:inputField value="{!Member__c[m]}" rendered="{!IF(OR(mode=='e',mode==''),true,false)}"/>
+         <apex:outputField value="{!Member__c[m]}" rendered="{!IF(mode=='s',true,false)}"/>
+       </apex:repeat>
+    </apex:pageBlockSection>
+    
+    <apex:pageBlockSection title="Additional Information">
+       <apex:repeat value="{!$ObjectType.Member__c.fieldsets.Additional_Information}" var="m">
+         <apex:inputField value="{!Member__c[m]}" rendered="{!IF(OR(mode=='e',mode==''),true,false)}"/>
+         <apex:outputField value="{!Member__c[m]}" rendered="{!IF(mode=='s',true,false)}"/>
+       </apex:repeat>
+    </apex:pageBlockSection>
+    
+    <apex:pageBlockSection title="User Credentials">
+       <apex:repeat value="{!$ObjectType.Member__c.fieldsets.Member_login_Info}" var="m">
+         <apex:inputField value="{!Member__c[m]}" rendered="{!IF(OR(mode=='e',mode==''),true,false)}"/>
+         <apex:outputField value="{!Member__c[m]}" rendered="{!IF(mode=='s',true,false)}"/>
+       </apex:repeat>
+    </apex:pageBlockSection>
+    
+    </article>
+    </section>
+    
+    <div align="center">
+      <apex:commandButton value="Save" action="{!save}"/>
+    </div>
+
+    </div>
+   </div>
+  </div>
+  </apex:pageBlock>
+ 
+  
+  
+  </apex:form>
+  </div>
+  </body>
+  
+</apex:page>

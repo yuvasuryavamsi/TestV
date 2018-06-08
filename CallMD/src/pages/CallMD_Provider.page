@@ -1,0 +1,201 @@
+<apex:page standardController="Providers__c" extensions="ProviderCtrl" showHeader="true" sidebar="false" tabStyle="Providers__tab">
+   <c:CallMDStyles />
+   <body style="margin:0px;">
+    <div style="background-color:white;margin:0px;width:1500px;">
+ <apex:form >
+  
+  <!--- <div align="center">
+   <apex:image value="{!$Resource.CallMDLogo}" width="200px"/><br/>
+   
+  </div><br/> --->
+  
+  <apex:pageBlock >
+  
+
+   <div class="content-wrapper" style="width:1400px;margin:0px;">
+      <div class="TOD-UI" id="main-content" style="width:1400px;margin:0px;">
+        <div class="content" style="width:1400px;margin:0px;">
+        <header class="Title" style="padding-bottom:40px;padding-top:15px;font-size:14px;">
+          <h1 style="color:blue;">Provider</h1>
+        </header>
+           
+        <section>
+        <apex:pageMessages />
+         <article>
+   <div align="center">
+       <apex:commandButton value="Save" action="{!save}" rendered="{!if(mode=='',true,false)}"/>&nbsp;&nbsp;
+     <apex:commandButton value="Edit" action="{!edit}" rendered="{!if(mode=='s',true,false)}"/>&nbsp;&nbsp;
+     <apex:commandButton value="Update Provider" action="{!UpdateProv}" rendered="{!if(mode=='e',true,false)}"/>&nbsp;&nbsp;
+     <apex:commandButton value="Cancel" action="{!cancel}" rendered="{!if(OR(mode=='e',mode=''),true,false)}"/>&nbsp;&nbsp;
+   </div>
+      <apex:pageBlockSection title="Provider Information">
+        <apex:repeat value="{!$ObjectType.Providers__c.fieldsets.Provider_Information}" var="p">
+         <apex:inputField value="{!Providers__c[p]}" rendered="{!IF(OR(mode=='e',mode==''),true,false)}"/>
+          <apex:outputField value="{!Providers__c[p]}" rendered="{!IF(mode=='s',true,false)}"/>
+        </apex:repeat>
+      </apex:pageBlockSection>
+      
+       <apex:pageBlockSection title="Provider Profile">
+        <apex:repeat value="{!$ObjectType.Providers__c.fieldsets.Provider_Profile}" var="p">
+         <apex:inputField value="{!Providers__c[p]}" rendered="{!IF(OR(mode=='e',mode==''),true,false)}"/>
+          <apex:outputField value="{!Providers__c[p]}" rendered="{!IF(mode=='s',true,false)}"/>
+        </apex:repeat>
+      </apex:pageBlockSection>
+      
+      <apex:pageBlockSection title="Communication Details">
+        <apex:repeat value="{!$ObjectType.Providers__c.fieldsets.Communication_Details}" var="p">
+         <apex:inputField value="{!Providers__c[p]}" rendered="{!IF(OR(mode=='e',mode==''),true,false)}"/>
+          <apex:outputField value="{!Providers__c[p]}" rendered="{!IF(mode=='s',true,false)}"/>
+        </apex:repeat>
+      </apex:pageBlockSection>
+  
+    <div align="center">
+       <apex:commandButton value="Save" action="{!save}" rendered="{!if(mode=='',true,false)}"/>&nbsp;&nbsp;
+     <apex:commandButton value="Edit" action="{!edit}" rendered="{!if(mode=='s',true,false)}"/>&nbsp;&nbsp;
+     <apex:commandButton value="Update Provider" action="{!UpdateProv}" rendered="{!if(mode=='e',true,false)}"/>&nbsp;&nbsp;
+     <apex:commandButton value="Cancel" action="{!cancel}" rendered="{!if(OR(mode=='e',mode=''),true,false)}"/>&nbsp;&nbsp;
+    </div>
+    
+    
+      </article>
+      </section>
+     
+    </div>
+    </div>
+    </div>
+  </apex:pageBlock>
+  
+  <apex:pageBlock rendered="{!IF($CurrentPage.Parameters.mode=='s',true,false)}">
+  
+
+   <div class="content-wrapper" style="width:1400px;margin:0px;">
+      <div class="TOD-UI" id="main-content" style="width:1400px;margin:0px;">
+        <div class="content" style="width:1400px;margin:0px;">
+        <header class="Title" style="padding-bottom:40px;padding-top:15px;font-size:14px;">
+          <h1 style="color:blue;">Document</h1>
+        </header>
+           
+        <section>
+        <apex:pageMessages />
+         <article>
+            <apex:pageBlockSection >
+               <apex:inputFile filename="{!filename}" value="{!filebody}"/>
+               <apex:commandButton value="Upload" action="{!Upload}"/>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockTable value="{!docList}" var="p">
+              <apex:column headerValue="Name" value="{!p.Name}"/>
+              <apex:column headerValue="Download">
+                 <apex:outputLink value="/servlet/servlet.FileDownload?file={!p.id}" target="_blank">Click Here</apex:outputLink>
+              </apex:column>
+            </apex:pageBlockTable>
+            
+         </article>
+       </section>
+       
+       
+       </div>
+     </div>
+    </div>
+       
+  </apex:pageBlock>
+  
+  
+  
+  </apex:form>  
+  
+  <apex:outputPanel rendered="{!IF($CurrentPage.Parameters.mode=='s',true,false)}"> 
+    <div class="content-wrapper">
+      <div class="TOD-UI" id="main-content2" style="margin:0px;background-color:white;">
+        <div class="content" style="width:1500px;margin-left:0px;padding:0px;background-color:white;">
+        
+         <header class="Title" style="padding-bottom:40px;padding-top:15px;font-size:14px;">
+            <h4 style="color:white;">Programs</h4>
+         </header>
+ 
+       <br/><br/>
+       
+     <div style="margin-left:15px;">
+       <apex:outputLink value="/apex/CallMD_Programs">
+         Add Program
+         <apex:param name="provid" value="{!$CurrentPage.Parameters.id}"/>
+        </apex:outputLink>
+       <br/><br/>
+       <div style="margin-left:20px;margin-bottom:10px;">
+        <apex:form >
+         <apex:selectRadio layout="pageDirection" value="{!ProgramStatus}">
+           <apex:selectOption itemLabel="All" itemValue=""/>
+           <apex:selectOption itemLabel="Active" itemValue="Active"/>
+           <apex:selectOption itemLabel="inActive" itemValue="inActive"/>
+            <apex:actionSupport event="onchange" action="{!ChangeProgramStatus}" reRender="pb"/>
+         </apex:selectRadio>
+        </apex:form>
+       </div>                           
+    </div>
+      
+    <apex:pageBlock id="pb">
+    <apex:pageBlockTable value="{!ProgramList}" var="p">
+      <apex:column headerValue="Name">
+        <apex:outputLink value="/apex/CallMD_Programs">
+         <apex:outputText value="{!p.Name}"/>
+         <apex:param name="id" value="{!p.id}"/>
+         <apex:param name="provid" value="{!p.Providers__c}"/>
+          <apex:param name="mode" value="e"/>
+        </apex:outputLink>
+     </apex:column>
+     
+     <apex:column headerValue="Parent Program">   
+        <apex:outputLink value="/apex/CallMD_ProgramEdit">
+         <apex:outputText value="{!p.Programs__c}"/>
+         <apex:param name="ProgId" value="{!p.Parent_Program_Name__c}"/>
+         </apex:outputLink>
+     </apex:column>
+     
+     <apex:column headerValue="Program Status">  
+       <apex:outputText value="{!p.Program_Status__c}"/>
+    </apex:column>
+    
+    <apex:column headerValue="Product">
+       <apex:outputText value="{!p.Product__c}"/>
+    </apex:column>
+    
+     <apex:column headerValue="Pricing">
+       <apex:outputText value="{!p.Pricing__c}"/>
+    </apex:column>
+    
+    <apex:column headerValue="No of Consultation">
+       <apex:outputText value="{!p.No_of_Consultations__c}"/>
+    </apex:column>
+    
+     <apex:column headerValue="Free Consultation">
+       <apex:outputText value="{!p.Free_Consultations__c}"/>
+    </apex:column>
+    
+    <apex:column headerValue="Copay Yes/No">
+       <apex:outputText value="{!p.Copay_Yes_No__c}" style="background-color:{!IF(p.Copay_Yes_No__c=='Yes','Orange','red')};color:white;width:100px;"/>
+    </apex:column>
+  
+    <apex:column headerValue="Copay Amount">
+       <apex:outputText value="{!p.Copay__c}" style="background-color:{!IF(p.Copay_Yes_No__c=='Yes','Orange','red')};color:white;width:100px;"/>
+     </apex:column>
+   
+   
+   <apex:column headerValue="Sub Program">
+       <apex:outputLink value="/apex/CallMD_Programs">Add Sub Program
+         <apex:param name="provid" value="{!$CurrentPage.Parameters.id}"/>
+         <apex:param name="progid" value="{!p.id}"/> 
+       </apex:outputLink>
+   </apex:column>
+   
+     </apex:pageBlockTable> 
+    </apex:pageBlock> 
+    
+   
+   </div>
+ </div>
+</div>
+  
+ </apex:outputPanel>
+ </div> 
+ </body>
+</apex:page>

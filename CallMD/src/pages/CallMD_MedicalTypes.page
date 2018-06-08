@@ -1,0 +1,135 @@
+<apex:page standardController="MedicalTypes__c" extensions="CallMD_MedicalTypesExtCtrl" showHeader="true" tabStyle="Medical_Types__tab" sidebar="false">
+<c:CallMDStyles />
+<style>
+ .headerRow{
+  height:30px;
+ }
+ .col{
+  height:30px;
+  }
+  .t{
+    background-color:#3399fe ;
+ }
+ .TOD-UI .content .Title{
+      background-color:#3399fe;
+      font-size:14px;
+    }
+    .TOD-UI h3{
+     color:#3399fe;
+   }
+  .grid-container--fill{
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+}
+
+.grid-container--fit {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+.grid-element {
+ <!--- background-color: deepPink;color: #fff; padding: 20px;--->
+  
+   
+}
+</style>
+<body style="margin:0px;">
+<apex:form >
+  
+    <apex:PageBlock id="pb">
+   <div class="content-wrapper">
+      <div class="TOD-UI grid-container grid-container--fit" id="main-content">
+        <div class="content">
+        <header class="Title" style="padding-bottom:40px;padding-top:15px;font-size:14px;">
+          <h1 style="color:blue;">Medical Types</h1>
+        </header>
+           
+        <section>
+        <article>
+          
+            
+    <apex:pageBlockTable value="{!MediTypes}" var="m">
+       <apex:column value="{!m.Name__c}" styleClass="col"/>
+       <apex:column styleClass="col">
+        <apex:outputLink value="/apex/CallMD_NewMedicalTypes">Edit
+                                            <apex:param name="tab" value="Admin"/>
+                                            <apex:param name="id" value="{!m.id}"/>
+                                            <apex:param name="mode" value="e"/>
+                                        </apex:outputLink>
+       </apex:column>
+       <apex:column styleClass="col">
+        <apex:commandLink value="Delete" action="{!deleteMed}">
+             <apex:param name="recordid" value="{!m.id}" assignTo="{!recordId}"/>
+         </apex:commandLink>
+       </apex:column>
+       <apex:column styleClass="col">
+        <apex:outputLink value="/apex/CallMD_MedicalConditions">View Conditions
+                                            <apex:param name="tab" value="Admin"/>
+                                            <apex:param name="id" value="{!m.id}"/>
+                                        </apex:outputLink>
+       </apex:column>
+       <apex:column styleClass="col">
+         <apex:outputLink value="/apex/CallMD_NewMedicalConditions">Add New Conditions
+                                            <apex:param name="tab" value="Admin"/>
+                                            <apex:param name="MediTypeId" value="{!m.id}"/>
+                                        </apex:outputLink>
+       </apex:column>
+    </apex:pageBlockTable>
+    </article>
+    </section>
+    </div>
+  </div>
+  </div>
+  </apex:pageBlock>
+  
+</apex:form>
+   <!--- <apex:composition template="CallMD_Template">
+        <apex:define name="body">
+            <apex:form >
+                <div>  
+                    <div style="margin-left:20px;margin-top:20px;">
+                        <apex:outputLink value="/apex/CallMD_NewMedicalTypes">New Medical Types</apex:outputLink>
+                    </div> <br/>   
+                    
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <apex:repeat value="{!MediTypes}" var="m">
+                                <tr>
+                                    <td><apex:outputText value="{!m.Name__c}"/></td>
+                                    <td>
+                                        <apex:outputLink value="/apex/CallMD_NewMedicalTypes">Edit
+                                            <apex:param name="tab" value="Admin"/>
+                                            <apex:param name="MedTypeId" value="{!m.id}"/>
+                                        </apex:outputLink>
+                                    </td>
+                                    <td>
+                                        <apex:commandLink value="Delete" action="{!deleteMedi}">
+                                            <apex:param name="recordid" value="{!m.id}" assignTo="{!recordId}"/>
+                                        </apex:commandLink>
+                                    </td>
+                                    <td>
+                                        <apex:outputLink value="/apex/CallMD_MedicalConditions">View Conditions
+                                            <apex:param name="tab" value="Admin"/>
+                                            <apex:param name="MedTypeId" value="{!m.id}"/>
+                                        </apex:outputLink>
+                                    </td>
+                                    <td>
+                                        <apex:outputLink value="/apex/CallMD_MedicalConditions">Add New Conditions
+                                            <apex:param name="tab" value="Admin"/>
+                                            <apex:param name="MedTypeId" value="{!m.id}"/>
+                                        </apex:outputLink>
+                                    </td>
+                                </tr>
+                            </apex:repeat>
+                        </tbody>
+                    </table>
+                </div>
+            </apex:form>
+        </apex:define>
+        <br/>
+    </apex:composition>  --->
+    </body>
+</apex:page>

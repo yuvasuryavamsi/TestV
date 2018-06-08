@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Allergies</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Allergies</value>
+    </caseValues>
+    <fields>
+        <label><!-- Member --></label>
+        <name>Member__c</name>
+        <relationshipLabel><!-- Allergies --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Reaction --></label>
+        <name>Reaction__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

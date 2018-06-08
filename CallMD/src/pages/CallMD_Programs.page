@@ -1,0 +1,86 @@
+<apex:page standardController="Programs__c" extensions="ProgramsCtrl" showHeader="true" sidebar="false" tabStyle="Providers__tab">
+  <c:CallMDStyles /> 
+  <body style="margin:0px;">
+ <apex:form >
+  <div style="background-color:white;margin:0px;">
+  <!--- <div align="center">
+   <apex:image value="{!$Resource.CallMDLogo}" width="200px"/><br/>
+   
+  </div><br/> --->
+  
+  <apex:pageBlock >
+
+   <div class="content-wrapper" style="width:1400px;margin:0px;">
+      <div class="TOD-UI" id="main-content" style="width:1400px;margin:0px;">
+        <div class="content" style="width:1400px;margin:0px;">
+        <header class="Title" style="padding-bottom:40px;padding-top:15px;font-size:14px;">
+          <h1 style="color:blue;">Programs</h1>
+        </header>
+           <apex:pageMessages id="errMsg"/>
+        <section>
+         <article>
+    <div align="center">
+     <apex:commandButton value="Create Program" action="{!save}" rendered="{!IF($CurrentPage.Parameters.mode=='',true,false)}"/>
+     <apex:commandButton value="Update Program" action="{!updateProg}" rendered="{!IF($CurrentPage.Parameters.mode=='e',true,false)}" />
+    </div>
+    
+      <apex:pageBlockSection title="Program Information">
+         <apex:repeat value="{!$ObjectType.Programs__c.fieldsets.Information}" var="p">
+           <apex:inputField value="{!Programs__c[p]}"/>
+         </apex:repeat>
+      </apex:pageBlockSection>
+      
+      <apex:pageBlockSection title="Pricing & Consultation Information">
+         <apex:repeat value="{!$ObjectType.Programs__c.fieldsets.Pricing_Consultation_Info}" var="p">
+           <apex:inputField value="{!Programs__c[p]}"/>
+         </apex:repeat>
+      </apex:pageBlockSection>
+      
+      
+     
+      
+      <apex:pageBlockSection title="General Information">
+         <apex:repeat value="{!$ObjectType.Programs__c.fieldsets.General_Information}" var="p">
+           <apex:inputField value="{!Programs__c[p]}"/>
+         </apex:repeat>
+      </apex:pageBlockSection>
+      
+      <apex:pageBlockSection title="Contact Information">
+         <apex:repeat value="{!$ObjectType.Programs__c.fieldsets.Contact_Information}" var="p">
+           <apex:inputField value="{!Programs__c[p]}"/>
+         </apex:repeat>
+      </apex:pageBlockSection>
+      
+      <apex:pageBlockSection title="Billing Information">
+         <apex:repeat value="{!$ObjectType.Programs__c.fieldsets.Billing_Information}" var="p">
+           <apex:inputField value="{!Programs__c[p]}"/>
+         </apex:repeat>
+      </apex:pageBlockSection>
+      
+     
+      
+      <apex:pageBlockSection title="Script">
+        <apex:repeat value="{!$ObjectType.Programs__c.fieldsets.Script}" var="p">
+           <apex:inputField value="{!Programs__c[p]}"/>
+         </apex:repeat>
+      </apex:pageBlockSection>
+      
+     
+    
+    <div align="center">
+     <apex:commandButton value="Create Program" action="{!save}" rendered="{!IF($CurrentPage.Parameters.mode=='',true,false)}"/>
+     <apex:commandButton value="Update Program" action="{!updateProg}" rendered="{!IF($CurrentPage.Parameters.mode=='e',true,false)}"/>
+    </div>
+    
+      </article>
+      </section>
+    
+    </div>
+    </div>
+    </div>
+   </apex:pageBlock>
+  </div> 
+</apex:form>   
+    
+ </body>   
+</apex:page>

@@ -1,0 +1,54 @@
+<apex:page controller="CallMD_ChiefComplaintCtrl" showHeader="false">
+ <c:CallMDStyles />
+<style>
+   .headerRow{
+   height:25px;
+  }
+  .col{
+   height:25px;
+  }
+ </style>
+ <div style="background-color:white;margin:0px;height:1000px;">
+  
+ 
+<apex:form >
+ <div align="center">
+   <apex:image value="{!$Resource.CallMDLogo}" width="200px"/><br/>
+   
+  </div><br/>
+  
+  <apex:pageBlock title="" id="pb">
+  
+   <div class="content-wrapper" style="width:1400px;margin:0px;">
+      <div class="TOD-UI" id="main-content" style="width:1400px;margin:0px;">
+        <div class="content" style="width:1400px;margin:0px;">
+    
+        <section>
+         <article>
+   <apex:pageBlockSection title="Chief Complaint" columns="2">
+   
+   </apex:pageBlockSection>
+   <apex:pageBlockTable value="{!ChiefComplaintSymList}" var="c">
+      <apex:column headervalue="Name" value="{!c.Name}"/>
+      <apex:column >
+       <apex:commandLink value="Delete" action="{!deleteChiefCompliant}" oncomplete="window.location.reload();">
+          <apex:param name="id" value="{!c.id}" assignTo="{!ChiefComplaintId}"/>
+        </apex:commandLink>
+      </apex:column>
+   </apex:pageBlockTable><br/><br/>
+   <div align="center">
+    <apex:commandLink value="<< First" action="{!First}" reRender="pb" rendered="{!hasPrevious}"/>&nbsp;&nbsp;
+    <apex:commandLink value="< Previous" action="{!previous}" reRender="pb" rendered="{!hasPrevious}"/>&nbsp;&nbsp;
+    <apex:commandLink value="Next >" action="{!Next}" reRender="pb" rendered="{!hasNext}"/>&nbsp;&nbsp;
+    <apex:commandLink value="Last >>" action="{!Last}" reRender="pb" rendered="{!hasNext}"/>
+   </div>
+   </article>
+   </section>
+   </div>
+   </div>
+   </div>
+ </apex:pageBlock>
+ </apex:form>
+ </div>
+ 
+</apex:page>

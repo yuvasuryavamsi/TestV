@@ -1,0 +1,27 @@
+<apex:page sidebar="false" controller="passingParametersCtrl">
+   
+   <c:CallMDStyles />
+   {!category}
+   <apex:form >
+     <apex:actionFunction name="passToController" action="{!send}" reRender="pb">
+        <apex:param name="s" value=""/>
+     </apex:actionFunction>
+     
+     <apex:pageBlock id="pb">
+     
+     <apex:commandButton value="Send" onclick="pass();return false;" />
+      
+     
+    </apex:pageBlock>
+    
+   </apex:form>
+
+
+ <script>
+  function pass(){
+  
+    passToController('testing of vf');
+  }
+ </script>
+  
+</apex:page>

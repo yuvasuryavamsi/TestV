@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Medications</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Medications</value>
+    </caseValues>
+    <fields>
+        <label><!-- Current --></label>
+        <name>Current__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dosage Units --></label>
+        <name>Dosage_Units__c</name>
+        <picklistValues>
+            <masterLabel>drops</masterLabel>
+            <translation><!-- drops --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>mcg</masterLabel>
+            <translation><!-- mcg --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>mg</masterLabel>
+            <translation><!-- mg --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>units</masterLabel>
+            <translation><!-- units --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Dosage --></label>
+        <name>Dosage__c</name>
+    </fields>
+    <fields>
+        <label><!-- How often --></label>
+        <name>How_often__c</name>
+    </fields>
+    <fields>
+        <label><!-- Member --></label>
+        <name>Member__c</name>
+        <relationshipLabel><!-- Medications --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

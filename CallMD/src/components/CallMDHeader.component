@@ -1,0 +1,232 @@
+<apex:component >
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!--- <apex:stylesheet value="{!$Resource.CALLMD}"/> --->
+  <apex:attribute name="tabname" type="string" description="tab name which is active"/>
+<style>
+body {font-family: Arial;}
+
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: gray;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color:#F08080;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 16px;
+    color:black;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 13px;}
+}
+.tablinks{
+  color:white;
+}
+.tab_active{
+  
+}
+.radio{
+     font-size:14px;
+     line-height:5px;
+   
+   }
+   .cc{
+    font-size:14px;
+   }
+</style>
+<div style="background-color:white;">
+ <div style="text-align:right;color:black;margin-right:20px;font-size:12px;"> 
+    <h5><span>Logged In As</span>&nbsp;{!$User.FirstName}&nbsp;<span>{!Today()}</span></h5>
+</div>
+
+<center>
+ <apex:image value="{!$Resource.CallMDLogo}" width="250" height="100"/>
+</center>
+</div>
+<div class="tab">
+<button class="tablinks" onclick="openNav('D')" style="background-color:{!IF($CurrentPage.parameters.tab=='Dashboard','darkblue','gray')}">Dashboard</button>
+<button class="tablinks" onclick="openNav('M')" style="background-color:{!IF($CurrentPage.parameters.tab=='Members','darkblue','gray')}">Members</button>
+<button class="tablinks" onclick="openNav('Doc')" style="background-color:{!IF($CurrentPage.parameters.tab=='Doctors','darkblue','gray')}">Doctors</button>
+<button class="tablinks" onclick="openNav('P')" style="background-color:{!IF($CurrentPage.parameters.tab=='Providers','darkblue','gray')}">Providers</button>
+<button class="tablinks" onclick="openNav('A')" style="background-color:{!IF($CurrentPage.parameters.tab=='Admin','darkblue','gray')}">Admin</button>
+<button class="tablinks" onclick="openNav('Acc')" style="background-color:{!IF($CurrentPage.parameters.tab=='Accounting','darkblue','gray')}">Accounting</button>
+<button class="tablinks" onclick="openNav('EP')" style="background-color:{!IF($CurrentPage.parameters.tab=='Epre','darkblue','gray')}">E-Prescription</button>
+
+</div>
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav('D')">&times;</a>
+  <a href="/apex/CallMD_OpenConsultations?tab=Dashboard">Open Consultations</a>
+  <a href="/apex/CallMD_ConsultationReports?tab=Dashboard">Consultation Report</a>
+  <a href="/apex/CallMD_CustomerProgram?tab=Dashboard">Customer Program</a>
+  <a href="/apex/CallMD_ConsultationFollowReport?tab=Dashboard">Consultation &amp; RX Followup Report</a>
+</div>
+
+<div id="mySidenav2" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav('M')">&times;</a>
+  <a href="/apex/CallMD_SearchMembers?tab=Members">Search Member</a>
+  <!--- <a>Search Member</a> --->
+  <a href="/apex/CallMD_NewMember?tab=Members">New Member</a>
+  <a href="/apex/CallMD_UploadMembers?tab=Members">Upload Members</a>
+  <a href="/apex/CallMD_UploadPayments?tab=Members">Upload Payments</a>
+</div>
+
+<div id="mySidenav3" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav('Doc')">&times;</a>
+  <a href="/apex/CallMD_SearchDoctors?tab=Doctors">Search Doctors</a>
+  <a href="/apex/CallMD_NewDoctor?tab=Doctors">New Doctor</a>
+</div>
+
+<div id="mySidenav4" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav('P')">&times;</a>
+  <a href="/apex/CallMD_ProvidersList?tab=Providers">Providers List</a>
+  <a href="/apex/CallMD_NewProvider?tab=Providers">New Provider</a>
+  <a href="/apex/CallMD_ActiveMemberReport?tab=Providers">Active Member Report</a>
+  <a href="/apex/CallMD_UtilizationReports?tab=Providers">Utilization Report</a>
+  <a href="/apex/CallMD_UtilizationExpandedReport?tab=Providers">Utilization Expanded Report</a>
+  <a href="/apex/CallMD_NewUtilizationReport?tab=Providers">New Utilization Report</a>
+</div>
+
+<div id="mySidenav5" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav('A')">&times;</a>
+  <a href="/apex/CallMD_Users?tab=Admin">Users</a>
+  <a href="/apex/CallMD_UserList?tab=Admin">User List</a>
+  <a href="/apex/CallMD_MedicalTypes?tab=Admin">Medical Types</a>
+  <a href="/apex/CallMD_Immunizations?tab=Admin">Immunizations</a>
+  <a href="/apex/CallMD_PrescribedMedications?tab=Admin">Prescribed Medications</a>
+  <a href="/apex/CallMD_ChiefComplaint?tab=Admin">List Chief Compliant Symptoms</a>
+</div>
+
+<div id="mySidenav6" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav('Acc')">&times;</a>
+  <a href="/apex/CallMD_BillingReport?tab=Accounting">Billing Report</a>
+  <a href="/apex/CallMD_DoctorReport?tab=Accounting">Doctor Report</a>
+  <a href="/apex/CallMD_DoctorContacted?tab=Accounting">Doctor Contacted</a>
+  <a href="/apex/CallMD_ConsultationReport?tab=Accounting">Consultation Report</a>
+</div>
+
+
+<!--- <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav('Doc')">&times;</a>
+  <a href="#"></a>
+  <a href="#"></a>
+</div> --->
+
+
+<script>
+
+function openNav(type) {
+  if(type=='D'){
+    document.getElementById("mySidenav").style.width = "250px";
+   }
+   else if(type=='M'){
+    document.getElementById("mySidenav2").style.width = "250px";
+   }
+   else if(type=='Doc'){
+    document.getElementById("mySidenav3").style.width = "250px";
+   }
+   else if(type=='P'){
+    document.getElementById("mySidenav4").style.width = "250px";
+   }
+   else if(type=='A'){
+    document.getElementById("mySidenav5").style.width = "250px";
+   }
+   else if(type=='Acc'){
+    document.getElementById("mySidenav6").style.width = "250px";
+   }
+    document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav(type) {
+  
+  if(type=='D'){
+    document.getElementById("mySidenav").style.width = "0";
+  }
+  else if(type=='M'){
+    document.getElementById("mySidenav2").style.width = "0";
+  }
+  else if(type=='Doc'){
+    document.getElementById("mySidenav3").style.width = "0";
+  }
+  else if(type=='P'){
+    document.getElementById("mySidenav4").style.width = "0";
+  }
+  else if(type=='A'){
+    document.getElementById("mySidenav5").style.width = "0";
+  }
+  else if(type=='Acc'){
+    document.getElementById("mySidenav6").style.width = "0";
+  }
+   document.getElementById("main").style.marginLeft= "0";
+}
+</script>
+</apex:component>

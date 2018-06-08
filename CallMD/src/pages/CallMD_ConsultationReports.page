@@ -1,0 +1,21 @@
+<apex:page controller="CallMD_ConsultationReports" sidebar="false">
+  <apex:form >
+    <apex:pageBlock >
+      <apex:pageBlockTable value="{!mapConsult}" var="c">
+         <apex:column headerValue="Provider Name">
+           <apex:outputText value="{!c}"/><br/>
+             <apex:pageBlockTable value="{!mapConsult[c]}" var="cc">
+                <apex:column headerValue="Program Name">
+                 <apex:outputLink value="/apex/CallMD_ConsultationMemberInfo" target="_blank">
+                  <apex:outputText value="{!cc.ProgramName}"/>
+                  </apex:outputLink>
+                </apex:column>
+                <apex:column headerValue="No of Consultations">
+                  <apex:outputText value="{!cc.NoOfConsultations}"/>
+                </apex:column>
+             </apex:pageBlockTable>
+         </apex:column>
+      </apex:pageBlockTable>
+    </apex:pageBlock>
+  </apex:form>
+</apex:page>

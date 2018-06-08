@@ -1,0 +1,22 @@
+<apex:component >
+ <style>
+  .footer{
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color:silver;
+   color:white;
+   text-align: center;
+   padding:5px 5px 5px 5px;
+   height:60px;
+   line-height:60px;
+   font-size:13px;
+   margin-top:50px;
+    }
+ </style>
+ <!--- 
+ <div class="footer">
+       Health Utlimate Corporation &copy; All Right Reserved 2017-2018
+    </div>  --->
+</apex:component>

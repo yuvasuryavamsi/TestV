@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Prescribed Medicine</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Prescribed Medicines</value>
+    </caseValues>
+    <fields>
+        <label><!-- Doctor --></label>
+        <name>Doctor__c</name>
+        <relationshipLabel><!-- Prescribed Medicines --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Instructions --></label>
+        <name>Instructions__c</name>
+    </fields>
+    <fields>
+        <label><!-- Medicine --></label>
+        <name>Medicine__c</name>
+        <relationshipLabel><!-- Prescribed Medicines --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Member --></label>
+        <name>Member__c</name>
+        <relationshipLabel><!-- Prescribed Medicines --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Open Consultation --></label>
+        <name>Open_Consultation__c</name>
+        <relationshipLabel><!-- Prescribed Medicines --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Strength &amp; Form --></label>
+        <name>Strength_Form__c</name>
+    </fields>
+    <fields>
+        <label><!-- Synonyms --></label>
+        <name>Synonyms__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

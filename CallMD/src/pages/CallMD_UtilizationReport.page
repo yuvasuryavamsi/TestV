@@ -1,0 +1,122 @@
+<apex:page controller="CallMD_UtilizationReportCtrl" sidebar="false">
+  <c:CallMDStyles />
+   <style>
+   .headerRow{
+   height:30px;
+  }
+  .col{
+   height:30px;
+  }
+  .h{
+   width:200px;
+  }
+  .t{
+    background-color:#3399fe;
+  }
+  .TODO h3{
+    color:#3399fe;
+    padding:0px;
+  }
+  .grid-container {
+    display: grid;
+  }
+
+  .grid-container--fill{
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+
+  .grid-container--fit {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+
+ .grid-element {
+ <!--- background-color: deepPink;color: #fff; padding: 20px;--->
+  }
+ 
+ body {
+  padding:0px;
+ }
+
+ </style>
+  
+ <body style="margin:0px;">
+   
+ <apex:form >
+  <apex:pageBlock id="pb">
+    
+   <div class="grid-container grid-container--fit" id="main-content" style="margin:0px;background-color:white;">
+    <div class="content" style="margin:0px;">
+      <header class="t" style="padding-left:10px;padding-bottom:10px;padding-top:15px;font-size:14px;color:white;font-weight:normal;">
+         <h1>Utilization Report</h1>
+      </header>
+       <section>
+        <article>
+          
+          <apex:pageBlockTable value="{!providerList}" var="p">
+            <apex:column > 
+              <b>Provider:</b>&nbsp;<apex:outputText value="{!p.Name}"/><br/><br/>
+              
+              <b>Utilization:</b>
+              
+              <apex:pageBlockTable value="{!mapUtilization[p.Name]}" var="u">
+                 <apex:column headerValue="Program" value="{!u.programName}"/>
+                 <apex:column headerValue="Total Consults" value="{!u.totalConsults}"/>
+                 <apex:column headerValue="Average Active Members" value="{!u.members}"/>
+                 <apex:column headerValue="Utilization %" value="{!u.Utilizationper}"/>
+              
+              </apex:pageBlockTable>
+              
+            </apex:column>
+          </apex:pageBlockTable>
+          
+        
+        
+        
+        
+        
+        
+        <!---  <br/><br/> <apex:inputText value="{!programName}"/>&nbsp;&nbsp;
+                     <apex:commandButton value="Search" action="{!search}"/>
+         <br/><br/>
+        
+           <apex:pageBlockTable value="{!progUtilizationList}" var="prog">
+              <apex:column headerValue="Program Name">
+               <apex:outputLink value="/apex/CallMD_ProgramMemberList" target="_blank">
+                 <apex:outputText value="{!prog.Name}"/>
+                 <apex:param name="id" value="{!prog.id}"/>
+               </apex:outputLink>
+              </apex:column>
+              <apex:column headerValue="Provider Name">
+                 <apex:outputText value="{!prog.Provider_Name__c}"/>
+              </apex:column>
+              <apex:column headerValue="Product">
+                 <apex:outputText value="{!prog.Product__c}"/>
+              </apex:column>
+              <apex:column headerValue="Total Member Count">
+                 <apex:outputText value="{!prog.Total_Member_Count__c}"/>
+              </apex:column>
+              <apex:column headerValue="Total Member Count">
+                 <apex:outputText value="{!prog.Utilization__c}"/>
+              </apex:column>
+              <apex:column headerValue="Total No Of Consultations">
+                 <apex:outputText value="{!prog.Total_No_Of_Consultations_For_B2B__c}"/>
+              </apex:column>
+              <apex:column headerValue="Consultation Exceeded">
+                 <apex:outputText value="{!prog.B2B_Consultation_Exceeded__c}"/>
+              </apex:column>
+               <apex:column headerValue="Utilization Exceeded">
+                 <apex:outputText value="{!prog.Utilization_Exceeded__c}"/>
+              </apex:column>                          
+           </apex:pageBlockTable> --->
+        </article>
+       </section>
+     </div>
+   </div>  
+ 
+  </apex:pageBlock>
+  
+  </apex:form>
+ </body>
+ 
+ 
+</apex:page>

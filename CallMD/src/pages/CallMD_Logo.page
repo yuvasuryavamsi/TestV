@@ -1,0 +1,6 @@
+<apex:page standardController="Providers__c" extensions="Logoctrl" showHeader="false">
+<apex:form >
+<b>Logo</b>&nbsp;&nbsp;<apex:inputFile value="{!LogoBody}" fileName="{!LogoName}"/>
+<apex:commandButton value="Upload" action="{!Upload}"/>
+</apex:form> 
+</apex:page>

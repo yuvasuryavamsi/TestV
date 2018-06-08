@@ -1,0 +1,725 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Member</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Members</value>
+    </caseValues>
+    <fields>
+        <label><!-- Address Line1 --></label>
+        <name>Address_Line1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Address Line2 --></label>
+        <name>Address_Line2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Age --></label>
+        <name>Age__c</name>
+    </fields>
+    <fields>
+        <label><!-- Answer --></label>
+        <name>Answer__c</name>
+    </fields>
+    <fields>
+        <label><!-- B2B Programs --></label>
+        <name>B2B_Programs__c</name>
+        <relationshipLabel><!-- Members --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- BIN --></label>
+        <name>BIN__c</name>
+    </fields>
+    <fields>
+        <label><!-- Benefits Provider --></label>
+        <name>BenefitsProvider__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Benefit services of America</masterLabel>
+            <translation><!-- Benefit services of America --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CallMD</masterLabel>
+            <translation><!-- CallMD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CallMD sample</masterLabel>
+            <translation><!-- CallMD sample --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Car Spa</masterLabel>
+            <translation><!-- Car Spa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Careington</masterLabel>
+            <translation><!-- Careington --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Competitive Health</masterLabel>
+            <translation><!-- Competitive Health --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Family Care</masterLabel>
+            <translation><!-- Family Care --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Future Benefits Corportation</masterLabel>
+            <translation><!-- Future Benefits Corportation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Med Watch</masterLabel>
+            <translation><!-- Med Watch --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>National Benefit Builders.Inc</masterLabel>
+            <translation><!-- National Benefit Builders.Inc --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ncs Medical Group</masterLabel>
+            <translation><!-- Ncs Medical Group --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pine Creek Medical Center</masterLabel>
+            <translation><!-- Pine Creek Medical Center --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional Center Pharmacy</masterLabel>
+            <translation><!-- Professional Center Pharmacy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SBAofAmerica(National Administration Co.Inc)</masterLabel>
+            <translation><!-- SBAofAmerica(National Administration Co.Inc) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Telerian Inc</masterLabel>
+            <translation><!-- Telerian Inc --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UHPOA</masterLabel>
+            <translation><!-- UHPOA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>US Health</masterLabel>
+            <translation><!-- US Health --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Visionary Healthcare Solutions</masterLabel>
+            <translation><!-- Visionary Healthcare Solutions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>White Glove Health</masterLabel>
+            <translation><!-- White Glove Health --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>eDoc America</masterLabel>
+            <translation><!-- eDoc America --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- CallMDUserName --></label>
+        <name>CallMDUserName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Carrier Phone --></label>
+        <name>Carrier_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cell Phone --></label>
+        <name>Cell_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- City --></label>
+        <name>City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Confirm Member Pin --></label>
+        <name>Confirm_Member_Pin__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Type --></label>
+        <name>Customer_Type__c</name>
+        <picklistValues>
+            <masterLabel>B2B</masterLabel>
+            <translation><!-- B2B --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>D2C</masterLabel>
+            <translation><!-- D2C --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Date of Birth --></label>
+        <name>DateofBirth__c</name>
+    </fields>
+    <fields>
+        <label><!-- Deactivated Date --></label>
+        <name>Deactivated_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email --></label>
+        <name>Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Employer --></label>
+        <name>Employer__c</name>
+    </fields>
+    <fields>
+        <label><!-- Expiration Date --></label>
+        <name>Expiration_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- First Name --></label>
+        <name>FirstName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Full Name --></label>
+        <name>Full_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fullfillment Mailed Date --></label>
+        <name>Fullfillment_Mailed_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Gender --></label>
+        <name>Gender__c</name>
+        <picklistValues>
+            <masterLabel>Female</masterLabel>
+            <translation><!-- Female --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Male</masterLabel>
+            <translation><!-- Male --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Group id --></label>
+        <name>Group_id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Height --></label>
+        <name>Height__c</name>
+    </fields>
+    <fields>
+        <label><!-- Home Phone --></label>
+        <name>Home_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- IVR/UI Flow --></label>
+        <name>IVR_UI_Flow__c</name>
+        <picklistValues>
+            <masterLabel>New Consultation</masterLabel>
+            <translation><!-- New Consultation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Subscription</masterLabel>
+            <translation><!-- New Subscription --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Update Consultation</masterLabel>
+            <translation><!-- Update Consultation --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Insurance Carrier --></label>
+        <name>Insurance_Carrier__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Name --></label>
+        <name>LastName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Disposition --></label>
+        <name>Last_Disposition__c</name>
+    </fields>
+    <fields>
+        <label><!-- Member Pin --></label>
+        <name>Member_Pin__c</name>
+    </fields>
+    <fields>
+        <label><!-- Member Type --></label>
+        <name>Member_Type__c</name>
+        <picklistValues>
+            <masterLabel>Dependent</masterLabel>
+            <translation><!-- Dependent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Primary</masterLabel>
+            <translation><!-- Primary --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Number --></label>
+        <name>Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- PCN --></label>
+        <name>PCN__c</name>
+    </fields>
+    <fields>
+        <label><!-- Packages --></label>
+        <name>Packages__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent Member --></label>
+        <name>Parent_Member__c</name>
+        <relationshipLabel><!-- Members --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Patient Id --></label>
+        <name>Patient_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pin --></label>
+        <name>Pin__c</name>
+    </fields>
+    <fields>
+        <label><!-- Program Status --></label>
+        <name>Program_Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>InActive</masterLabel>
+            <translation><!-- InActive --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Program --></label>
+        <name>Program__c</name>
+        <picklistValues>
+            <masterLabel>24 Hour On Call Doc</masterLabel>
+            <translation><!-- 24 Hour On Call Doc --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Access Plans</masterLabel>
+            <translation><!-- Access Plans --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>American Health Advantage True Care Discount Medical</masterLabel>
+            <translation><!-- American Health Advantage True Care Discount Medical --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>American Independent Business Coalition</masterLabel>
+            <translation><!-- American Independent Business Coalition --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>American Seniors Association Discount Plan</masterLabel>
+            <translation><!-- American Seniors Association Discount Plan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Arrow Electric</masterLabel>
+            <translation><!-- Arrow Electric --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Babbitt Stream Specialty Co</masterLabel>
+            <translation><!-- Babbitt Stream Specialty Co --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Baker Benefits Administrators.Inc</masterLabel>
+            <translation><!-- Baker Benefits Administrators.Inc --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ben-e-lect</masterLabel>
+            <translation><!-- Ben-e-lect --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Benefit Assistance Corporation Ripley</masterLabel>
+            <translation><!-- Benefit Assistance Corporation Ripley --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Benefit Management,LLC Commercial Groups</masterLabel>
+            <translation><!-- Benefit Management,LLC Commercial Groups --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Benefit Services Of America-Test</masterLabel>
+            <translation><!-- Benefit Services Of America-Test --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Benefit Services of America</masterLabel>
+            <translation><!-- Benefit Services of America --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Call BAA</masterLabel>
+            <translation><!-- Call BAA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CallMD 24/7 Family Annual</masterLabel>
+            <translation><!-- CallMD 24/7 Family Annual --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CallMD 24/7 Family Monthly</masterLabel>
+            <translation><!-- CallMD 24/7 Family Monthly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CallMD Complimentary</masterLabel>
+            <translation><!-- CallMD Complimentary --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CallMD One Time Consultation</masterLabel>
+            <translation><!-- CallMD One Time Consultation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CallMD Sample</masterLabel>
+            <translation><!-- CallMD Sample --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CareExpress</masterLabel>
+            <translation><!-- CareExpress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CiProduct</masterLabel>
+            <translation><!-- CiProduct --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>City of Pasco</masterLabel>
+            <translation><!-- City of Pasco --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Classic Cars Limited Partnership</masterLabel>
+            <translation><!-- Classic Cars Limited Partnership --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Colonial Life</masterLabel>
+            <translation><!-- Colonial Life --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Comunity Living.Inc</masterLabel>
+            <translation><!-- Comunity Living.Inc --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deboer&amp;Sons Trucking Inc</masterLabel>
+            <translation><!-- Deboer&amp;Sons Trucking Inc --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dental Service Advisors LLC</masterLabel>
+            <translation><!-- Dental Service Advisors LLC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Doctors</masterLabel>
+            <translation><!-- Doctors --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Donald J.Lowe</masterLabel>
+            <translation><!-- Donald J.Lowe --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EnergyPlus</masterLabel>
+            <translation><!-- EnergyPlus --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Engines Inc</masterLabel>
+            <translation><!-- Engines Inc --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Family Care</masterLabel>
+            <translation><!-- Family Care --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Five Points Benefits</masterLabel>
+            <translation><!-- Five Points Benefits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fleis And Vandenbrink</masterLabel>
+            <translation><!-- Fleis And Vandenbrink --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GlobalLife</masterLabel>
+            <translation><!-- GlobalLife --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Group Administrators.LTD</masterLabel>
+            <translation><!-- Group Administrators.LTD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Group Insurance Service Center,Inc</masterLabel>
+            <translation><!-- Group Insurance Service Center,Inc --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Health Insurance Innovations-Extra Care Packag</masterLabel>
+            <translation><!-- Health Insurance Innovations-Extra Care Packag --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Health Plans</masterLabel>
+            <translation><!-- Health Plans --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Henry Mast Greenhouses,Inc</masterLabel>
+            <translation><!-- Henry Mast Greenhouses,Inc --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hougen Manufacturing</masterLabel>
+            <translation><!-- Hougen Manufacturing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Housing Authority of the city of Fort Wayne</masterLabel>
+            <translation><!-- Housing Authority of the city of Fort Wayne --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>India Network Foundation,Inc</masterLabel>
+            <translation><!-- India Network Foundation,Inc --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Iwaki America</masterLabel>
+            <translation><!-- Iwaki America --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LifePerks</masterLabel>
+            <translation><!-- LifePerks --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LifeStyle</masterLabel>
+            <translation><!-- LifeStyle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Luttmann Precision Mold,Inc</masterLabel>
+            <translation><!-- Luttmann Precision Mold,Inc --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>McNabb Carpets</masterLabel>
+            <translation><!-- McNabb Carpets --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Med LifePlus</masterLabel>
+            <translation><!-- Med LifePlus --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Med Shield Discount Plan</masterLabel>
+            <translation><!-- Med Shield Discount Plan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MedWatch-Complex</masterLabel>
+            <translation><!-- MedWatch-Complex --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MidWest Fastener Corp</masterLabel>
+            <translation><!-- MidWest Fastener Corp --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Missouri Cooperatives Employees Health Care Fund</masterLabel>
+            <translation><!-- Missouri Cooperatives Employees Health Care Fund --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NBBI</masterLabel>
+            <translation><!-- NBBI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>National Congress of Employers</masterLabel>
+            <translation><!-- National Congress of Employers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>National Health Patners/Care Express</masterLabel>
+            <translation><!-- National Health Patners/Care Express --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OnCall Doctor</masterLabel>
+            <translation><!-- OnCall Doctor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Phoenix MD</masterLabel>
+            <translation><!-- Phoenix MD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Physician Synergy Group LLC</masterLabel>
+            <translation><!-- Physician Synergy Group LLC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pine Creek Medical Center</masterLabel>
+            <translation><!-- Pine Creek Medical Center --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Platinum</masterLabel>
+            <translation><!-- Platinum --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pro-Claim Plus,Inc</masterLabel>
+            <translation><!-- Pro-Claim Plus,Inc --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional Benefits Services</masterLabel>
+            <translation><!-- Professional Benefits Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional Benefits Services Staff</masterLabel>
+            <translation><!-- Professional Benefits Services Staff --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional Benefits Services,Inc</masterLabel>
+            <translation><!-- Professional Benefits Services,Inc --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Southwest Advantage discount Plan</masterLabel>
+            <translation><!-- Southwest Advantage discount Plan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Textile Processors Union Local No1 Disability Benefit Fund</masterLabel>
+            <translation><!-- Textile Processors Union Local No1 Disability Benefit Fund --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>The Access Organization(TAO)</masterLabel>
+            <translation><!-- The Access Organization(TAO) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>The Cadmus Group</masterLabel>
+            <translation><!-- The Cadmus Group --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>U.S.HealthCare Association</masterLabel>
+            <translation><!-- U.S.HealthCare Association --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UMass Memorial Health Care</masterLabel>
+            <translation><!-- UMass Memorial Health Care --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>USH-PADD</masterLabel>
+            <translation><!-- USH-PADD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>USHealth</masterLabel>
+            <translation><!-- USHealth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>USHealth Group</masterLabel>
+            <translation><!-- USHealth Group --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Union Leader Corporation</masterLabel>
+            <translation><!-- Union Leader Corporation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>University of Saint Francis</masterLabel>
+            <translation><!-- University of Saint Francis --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Upton County</masterLabel>
+            <translation><!-- Upton County --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Varipro</masterLabel>
+            <translation><!-- Varipro --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Varipro staff</masterLabel>
+            <translation><!-- Varipro staff --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Visionary</masterLabel>
+            <translation><!-- Visionary --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Waltonen Engineering,Inc</masterLabel>
+            <translation><!-- Waltonen Engineering,Inc --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Waltonen Independence Tooling System</masterLabel>
+            <translation><!-- Waltonen Independence Tooling System --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Waltonen WS3,LLC</masterLabel>
+            <translation><!-- Waltonen WS3,LLC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WellCard</masterLabel>
+            <translation><!-- WellCard --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wellness Sheild-CallMD,Labs And Imaging</masterLabel>
+            <translation><!-- Wellness Sheild-CallMD,Labs And Imaging --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wellness Shield-CallMD</masterLabel>
+            <translation><!-- Wellness Shield-CallMD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>West Michigan Conference of the United Methodist Church</masterLabel>
+            <translation><!-- West Michigan Conference of the United Methodist Church --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Programs --></label>
+        <name>Programs__c</name>
+    </fields>
+    <fields>
+        <label><!-- Provider --></label>
+        <name>Provider__c</name>
+    </fields>
+    <fields>
+        <label><!-- Start Date --></label>
+        <name>Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- State --></label>
+        <name>State__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>InActive</masterLabel>
+            <translation><!-- InActive --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Verification Code --></label>
+        <name>Verification_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Weight --></label>
+        <name>Weight__c</name>
+    </fields>
+    <fields>
+        <label><!-- Work Phone --></label>
+        <name>Work_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- ZipCode --></label>
+        <name>ZipCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- isMemberPin --></label>
+        <name>isMemberPin__c</name>
+    </fields>
+    <layouts>
+        <layout>Member Layout</layout>
+        <sections>
+            <label><!-- Additional Information --></label>
+            <section>Additional Information</section>
+        </sections>
+        <sections>
+            <label><!-- Communication Details --></label>
+            <section>Communication Details</section>
+        </sections>
+        <sections>
+            <label><!-- Credentails --></label>
+            <section>Credentails</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Member Information --></label>
+            <section>Member Information</section>
+        </sections>
+        <sections>
+            <label><!-- Program Info --></label>
+            <section>Program Info</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- CallMD Username must be numeric --></errorMessage>
+        <name>CallMD_User_Account_Number</name>
+    </validationRules>
+</CustomObjectTranslation>

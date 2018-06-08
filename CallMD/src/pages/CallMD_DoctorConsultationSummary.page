@@ -1,0 +1,213 @@
+<apex:page controller="CallMDDoctor_ConsultCallSummaryCtrl" sidebar="false" showHeader="false">
+ <c:CallMDStyles />
+  <head>
+  <style>
+   .headerRow{
+   height:25px;
+  }
+  .col{
+   height:25px;
+  }
+  .mem{
+    font-weight:bold;
+    color:green;
+  }
+  .memSec{
+    width:250px;
+  }
+  th{
+   height:38px;
+   color:#3399fe;
+  }
+  .t{
+     color:#3399fe;
+     padding-left:20px;
+    }
+ 
+  .TOD-UI .content .Title{
+      background-color:#3399fe;
+      font-size:14px;
+    }
+    .TOD-UI h3{
+     color:#3399fe;
+   }
+   grid-container--fill{
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+}
+
+.grid-container--fit {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+.grid-element {
+ <!--- background-color: deepPink;color: #fff; padding: 20px;--->
+  
+   
+}
+ </style>
+ </head>
+
+ 
+ 
+ <apex:form > 
+ <div class="grid-container grid-container--fit">
+ <div style="color:white;background-color:#3399fe;height:70px;">
+ <p style="padding-top:9px;text-align:center;position:relative;text-align:right;right:100px;">
+  <span style="font-size:12px;"><b>Login As:</b></span>&nbsp;&nbsp;{!DoctorInfo.Last_Name__c},&nbsp;{!DoctorInfo.Name},&nbsp;{!DoctorInfo.email__c}
+  &nbsp;
+  <apex:outputLink value="/apex/CallMD_DoctorProfile" style="color:white;">
+    Edit My Account
+    <apex:param name="id" value="{!$CurrentPage.Parameters.did}"/>
+  </apex:outputLink>
+   
+  
+  <br/><br/>
+  <apex:outputLink value="{!$Site.Prefix}/secur/logout.jsp" rendered="{!NOT(ISPICKVAL($User.UserType,'Guest'))}" style="color:white;">{!$Label.site.logout}</apex:outputLink>
+ </p> 
+ <body style="margin:0px;background-color:white;">
+ 
+   <div style="margin:0px;background-color:white;">
+   <apex:image value="{!$Resource.CallMDLogo}" width="200" height="80"/>
+   
+   <apex:pageBlock >
+    <div class="content-wrapper" style="width:1400px;margin:0px;">
+      <div class="TOD-UI" id="main-content" style="width:1400px;margin:0px;">
+        <div class="content" style="width:1400px;margin:0px;">
+    
+        <section>
+         <article>
+         
+         
+         <div style="height:160px;border:0px solid black;padding-left:10px;">
+    <h4 style="color:#3399fe;font-weight:bold;text-align:right;"><u>MEMBER INFORMATION</u></h4><br/><br/>
+    <table class="table table-striped" width="100%" cellpadding="6" cellspacing="6" align="center"> 
+     <colgroup span="6" width="15%"/>
+     <tr>
+      <th>Member:</th><td>{!MemberDetails.FirstName__c}&nbsp;{!MemberDetails.LastName__c}</td>  <th>DOB: </th><td><apex:outputField value="{!MemberDetails.DateofBirth__c}"/></td>   <th>Gender:</th><td>{!MemberDetails.Gender__c}</td>
+     </tr>
+     <tr>
+      <th>Age:</th><td>{!MemberDetails.Age__c}</td>  <th>Weight:</th><td>{!MemberDetails.Weight__c}</td>   <th>Height:</th><td>{!MemberDetails.Height__c}</td>
+     </tr>
+     <tr>
+      <th>Address:</th><td>{!MemberDetails.Address_Line1__c}</td>  <th>City:</th><td>{!MemberDetails.City__c}</td>   <th>State:</th><td>{!MemberDetails.State__c}</td>
+     </tr>
+     <tr>
+      <th>Home Phone:</th><td>{!MemberDetails.Home_Phone__c}</td>  <th>Work Phone:</th><td>{!MemberDetails.Work_Phone__c}</td>   <th>Cell Phone:</th><td>{!MemberDetails.Cell_Phone__c}</td>
+     </tr>
+    </table>
+      
+    </div>
+    
+    <br/>
+    <div align="center">
+       <apex:commandButton value="initiate a Call"/>
+       
+       <apex:commandButton value="Complaint Recording"/> 
+    </div> 
+       </article>
+       </section>
+    </div>
+    </div>
+    </div>
+  </apex:pageBlock>
+  
+  
+   
+   <apex:pageBlock title="Consultation Details">
+ 
+   <div class="content-wrapper" style="width:1400px;margin:0px;">
+      <div class="TOD-UI" id="main-content" style="width:1400px;margin:0px;">
+        <div class="content" style="width:1400px;margin:0px;">
+        <header class="t" style="padding-bottom:40px;padding-top:15px;">
+          <h1>Consultation</h1>
+        </header>
+        <section>
+         <article>
+           <apex:pageBlockSection columns="1"> 
+           
+            <apex:outputField value="{!OpenCons.Problem_History__c}" label="Problem History"/>
+          
+            <apex:outputField value="{!OpenCons.CallBack_Time__c}" label="CallBack Time"/>
+          
+            <apex:outputField value="{!OpenCons.CallBack_Number__c}" label="CallBack Number"/>
+
+           </apex:pageBlockSection>
+         
+         
+         <apex:pageBlockSection columns="1" title="Consultation Summary">
+           <apex:inputTextarea value="{!OpenCons.Problem_History_cs__c}" rows="4" cols="90" label="Problem History"/>
+           <apex:inputTextarea value="{!OpenCons.Impression_Diagnosis__c}" rows="4" cols="90" label="Impression Diagnosis"/>
+           <apex:inputTextarea value="{!OpenCons.Plan__c}" rows="4" cols="90" label="Plan"/>
+           <apex:inputTextarea value="{!OpenCons.Comments__c}" rows="4" cols="90" label="Comments"/>
+           <apex:inputTextarea value="{!OpenCons.Additional_Requested_Diagnostic_Procedur__c}" rows="4" cols="90" label="Additional Requested Diagnostic Procedur"/>
+           <apex:inputTextarea value="{!OpenCons.Rx_Follow_Up_Remarks__c}" rows="4" cols="90" label="Rx Follow Up Remarks"/>
+         </apex:pageBlockSection>
+
+      <center>
+     
+     <apex:pageBlockSection columns="1" title="Prescribed Medicines">
+       <apex:pageBlockTable value="{!pw}" var="p">
+          <apex:column headerValue="Prescribed Medicine">
+           <apex:selectList size="1" value="{!p.prescribOption}">
+            <apex:selectOptions value="{!p.pOpt}"/>
+           </apex:selectList>
+          </apex:column>
+          <apex:column headervalue="Instructions">
+            <apex:inputText value="{!p.Instructions}"/>
+          </apex:column>
+          <apex:column headerValue="Strength Form">
+            <apex:inputText value="{!p.StrengthForm}"/>
+          </apex:column>
+          <apex:column headerValue="Synonyms">
+            <apex:inputText value="{!p.Synonyms}"/>
+          </apex:column>
+        </apex:pageBlockTable>  
+      </apex:pageBlockSection>  
+        
+      
+      
+      
+        <apex:commandButton value="Complete Call Summary" action="{!UpdateConsult}"/>
+      </center>
+         </article>
+        </section>
+      </div>
+     </div>
+   </div>
+  </apex:pageBlock>
+  
+  <apex:PageBlock title="Medical Conditions">
+  <div class="content-wrapper" style="width:1400px;margin:0px;">
+      <div class="TOD-UI" id="main-content" style="width:1400px;margin:0px;">
+        <div class="content" style="width:1400px;margin:0px;">
+        <section>
+        <article>
+         <apex:pageBlockSection columns="1" title="Medical Conditions">
+            <c:MedicalConditions isCreate="false"/>
+         </apex:pageBlockSection>
+         
+         <apex:pageBlockSection columns="1" title="Allergies">
+            <c:Allergies isCreate="false"/>
+         </apex:pageBlockSection>
+         
+         <apex:pageBlockSection columns="1" title="Surgeries">
+            <c:Surgeries isCreate="false"/>
+          </apex:pageBlockSection>
+         
+         <apex:pageBlockSection columns="1" title="Medications">
+            <c:Medications isCreate="false"/>
+          </apex:pageBlockSection>
+         
+          </article>
+        </section>
+     </div>
+   </div>
+  </div>
+ 
+ </apex:PageBlock>
+ </div>
+ </body>
+ </div> 
+ </div>
+ </apex:form>
+</apex:page>

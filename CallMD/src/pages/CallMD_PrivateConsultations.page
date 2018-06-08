@@ -1,0 +1,277 @@
+<apex:page controller="CallMD_PrivateConsultationCtrl" sidebar="false" tabStyle="Consultations__tab">
+ <c:CallMDStyles />
+ <style>
+   
+    .TOD-UI .content .Title{
+      background-color:#3399fe;
+    }
+    .TOD-UI h3{
+     color:#3399fe;
+   }
+   .grid-container {
+    display: grid;
+   
+}
+
+.grid-container--fill{
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+}
+
+.grid-container--fit {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+.grid-element {
+ <!--- background-color: deepPink;color: #fff; padding: 20px;--->
+  
+  
+  
+
+   
+}
+body {
+  padding:0px;
+  
+}
+.content-wrapper{
+  width:100%;
+}
+ </style>
+ <body style="margin:0px;">
+ <div style="background-color:white;height:1600px;">
+ <apex:form >
+  <center>
+  <ul style="width:600px;border:0px solid black;">
+   <li style="list-style:none;float:left;background-color:#3399fe;width:200px;height:35px;color:white;text-align:center;line-height:35px;">
+    <apex:commandLink value="Consultation" action="{!consultation}" style="color:white;text-decoration:none;font-size:14px;" immediate="true"/>
+   </li>
+   <li style="list-style:none;float:left;background-color:#3399fe;width:200px;height:35px;color:white;text-align:center;line-height:35px;">
+    <apex:commandLink value="Find Doctor" action="{!finddoctors}" style="color:white;text-decoration:none;font-size:14px;" immediate="true"/>
+   </li>
+  <!--- <li style="list-style:none;float:left;background-color:#0076A8;width:200px;height:35px;color:white;text-align:center;line-height:35px;">
+   <apex:commandLink value="Payments" style="color:white;text-decoration:none;font-size:14px;"/>
+   </li>   --->
+  </ul>
+  
+  </center>
+  
+   <apex:outputPanel rendered="{!IF(OR(type=='consultation'||type==''),true,false)}">
+   
+   
+  <apex:pageBlock >
+ 
+   <div class="content-wrapper grid-container">
+      <div class="TOD-UI grid-container grid-container--fit" id="main-content">
+        <div class="content">
+        <header class="Title" style="padding-bottom:40px;padding-top:15px;">
+          <h1>Consultation</h1>
+        </header>
+        <section>
+         <article>
+           
+    <apex:pageBlockSection title="Consultation Details">
+       <apex:inputField value="{!OpenCons.Date__c}"/>
+       <apex:inputField value="{!OpenCons.Date_Time_of_consultation__c}"/>
+       <apex:inputField value="{!OpenCons.StatusChange__c}"/>
+       <apex:inputTextarea value="{!OpenCons.Consulation_Remarks__c}" label="Consultation Remark" cols="100" rows="5"/>
+    </apex:pageBlockSection>
+         
+         
+    <apex:pageBlockSection title="Consultation Summary" rendered="false">
+        <apex:inputField value="{!OpenCons.Problem_History_cs__c}"/>
+        <apex:inputField value="{!OpenCons.Impression_Diagnosis__c}"/>
+        <apex:inputField value="{!OpenCons.Plan__c}"/>
+  </apex:pageBlockSection>
+  
+   <apex:pageBlockSection title="Doctor Consultation Remarks">
+       <apex:inputField value="{!openCons.Doctor_Consultation_Remark__c}"/>
+   </apex:pageBlockSection>
+  
+  <apex:pageBlockSection title="Trigg">
+     <apex:pageBlockSectionItem dataStyle="vertical-align:top;">
+      <apex:outputLabel value="Consultation Type"/>
+      <apex:outputPanel style="vertical-align:top;">
+      <apex:image value="{!$Resource.Video}" width="30" height="30" rendered="{!IF(OpenCons.Consultation_Type__c=='Video Consultation',true,false)}"/>
+      <apex:image value="{!$Resource.Phone}" width="30" height="30" rendered="{!IF(OpenCons.Consultation_Type__c=='Phone consultation',true,false)}"/>
+      <apex:image value="{!$Resource.Chat}" width="30" height="30" rendered="{!IF(OpenCons.Consultation_Type__c=='Chat Consultation',true,false)}"/>&nbsp;&nbsp;
+      <apex:outputField value="{!OpenCons.Consultation_Type__c}" style="vertical-align:top;"/>
+      </apex:outputPanel>
+    </apex:pageBlockSectionItem>
+      <apex:pageBlockSectionItem >
+       <apex:outputLabel value="Initiated By:"/>
+      <apex:selectRadio value="{!OpenCons.Initiated_By__c}" layout="pageDirection" style="line-height:30px;">
+          <apex:selectOption itemLabel="Provider" itemValue="Provider"/>
+          <apex:selectOption itemLabel="Member" itemValue="Member"/>
+         </apex:selectRadio>
+      </apex:pageBlockSectionItem>
+         <apex:inputField value="{!openCons.CallBack_Number__c}"/>
+         <apex:inputField value="{!OpenCons.Problem_History__c}"/>
+         <apex:pageBlockSectionItem >
+         <apex:outputLabel value="What would you have done with your medical concern had you not called CallMD?" style="line-height:25px;"/>
+         <apex:selectRadio value="{!OpenCons.What_would_you_have_done_with_your_medic__c}" layout="pageDirection"  style="line-height:30px;">
+            <apex:selectOption itemLabel="Emergency Room" itemValue="Emergency Room"/>
+            <apex:selectOption itemLabel="Urgent Care Clinic" itemValue="Urgent Care Clinic"/>
+            <apex:selectOption itemLabel="Primary Care Physician" itemValue="Primary Care Physician"/>
+          </apex:selectRadio>
+          </apex:pageBlockSectionItem>
+        <apex:inputField value="{!OpenCons.Address__c}"/>
+        <apex:inputField value="{!OpenCons.States__c}"/>
+        <apex:inputField value="{!OpenCons.Scheduling_After_3_Hours__c}"/>
+        <apex:inputField value="{!OpenCons.Pharmacy_Name_Phone__c}"/>
+        <apex:inputField value="{!OpenCons.Meds_Prescribed_During_Consultation__c}"/>
+  </apex:pageBlockSection>     
+ 
+ 
+  <!--- <div style="height:440px;border:0px solid black;">
+   
+    <h4 style="text-align:center;color:blue;">Consultation Summary</h4><br/><br/>  --->
+        
+    <!--- <table width="100%" border="0" class="table table-striped">
+      <colgroup span="12" width="6%"/>
+       <tr>
+        <th>Doctor</th><td>{!OpenCons.Doctorc__r.Name}</td>
+        <th>DEA#:</th><td>{!OpenCons.Doctorc__r.DEA_License__c}</td>
+        <th>NPI#:</th><td>{!OpenCons.Doctorc__r.NPI__c}</td>
+        <th>Primary:</th><td>{!OpenCons.Doctorc__r.Primary_Phone__c}</td>
+        <th>Secondary:</th><td>{!OpenCons.Doctorc__r.Secondary_Phone__c}</td>
+        <th>Cell:</th><td>{!OpenCons.Doctorc__r.MobilePhone}</td>
+       </tr>
+     </table>  --->
+
+ <!--- <apex:pageBlockSection title="RX Status">
+    <apex:pageBlockSectionItem >
+     <apex:selectRadio layout="pageDirection"  value="{!OpenCons.RX_Status__c}" style="font-size:12px;padding:10px;line-height:30px;">
+       <apex:selectOption itemValue="Prescribed Rx Medication" itemLabel="Prescribed Rx Medication"/>
+       <apex:selectOption itemValue="Prescribed Compound Medication" itemLabel="Prescribed Compound Medication"/>
+       <apex:selectOption itemValue="No Rx or Compound Medication Prescribed" itemLabel="No Rx or Compound Medication Prescribed"/>
+       <apex:selectOption itemValue="Patient Unavailable for Consultation" itemLabel="Patient Unavailable for Consultation"/>
+       <apex:selectOption itemValue="Doctor Unavailable for Consultation" itemLabel="Doctor Unavailable for Consultation "/>
+       <apex:selectOption itemValue="Patient Not Interested" itemLabel="Patient Not Interested"/>
+       <apex:selectOption itemValue="Prescription Form Not Received by Doctor" itemLabel="Prescription Form Not Received by Doctor"/>
+       <apex:selectOption itemValue="Other" itemLabel="Other"/>
+     </apex:selectRadio>
+  </apex:pageBlockSectionItem>
+  </apex:pageBlockSection>  --->
+  
+
+   <apex:pageBlockSection title="Rx Follow Up">
+     
+       <apex:inputField value="{!OpenCons.Pharmacy_Verifier__c}"/>
+       <apex:inputField value="{!OpenCons.Rx_Follow_Up_Remarks__c}"/>
+       <apex:inputField value="{!OpenCons.Rx_Follow_Up_Status__c}"/>
+      
+   </apex:pageBlockSection>
+
+  <!--- <div style="height:160px;border:0px solid black;"> 
+    <h4 style="text-align:center;color:blue;">Notes</h4> <br/>
+    
+    <table width="80%" border="0" align="center" class="table table-striped">
+     <tr>
+      <td align="center" colspan="3"><apex:commandButton value="Add New Notes"/></td>
+     </tr>   
+     <tr>
+      <th>Added At</th>
+      <th>Updated At</th>
+      <th>Added By</th>
+      <th>Note</th>
+     </tr>
+     
+     <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+     </tr>
+     
+     <tr>
+      <td colspan="4">
+       <center>
+       <br/>
+       
+      </center>
+      </td>
+     </tr>
+     
+    </table>
+
+  </div> --->
+  
+  <div align="center">
+    <apex:commandButton value="Update Consultation" action="{!updateConsultation}"/>
+  </div>
+  
+  
+  </article>
+  </section>
+  </div>
+  </div>
+  </div>
+  </apex:pageBlock>
+  
+ </apex:outputPanel>
+
+ <apex:outputPanel rendered="{!IF(type=='findDoctors',true,false)}">
+  <apex:pageBlock >
+  <div class="content-wrapper" style="width:1400px;margin:0px;">
+      <div class="TOD-UI" id="main-content" style="width:1400px;margin:0px;">
+        <div class="content" style="width:1400px;margin:0px;">
+         <header class="Title" style="padding-bottom:40px;padding-top:15px;">
+          <h1 style="color:blue;">Find Doctor</h1>
+        </header>
+        <section>
+         <article>
+    <apex:pageBlockSection title="License State"/>
+    
+       <apex:pageBlockTable value="{!findDoctor}" var="doc">
+         <apex:column headerValue="Name" value="{!doc.Doctor__r.Name}"  style="background-color:{!IF(opencons.Doctorc__r.id==doc.Doctor__r.id,'red','')}"/>
+         <apex:column headerValue="Mobile Phone" value="{!doc.Doctor__r.Mobile__c}"  style="background-color:{!IF(opencons.Doctorc__r.id==doc.Doctor__r.id,'red','')}"/>
+         <apex:column headerValue="Email" value="{!doc.Doctor__r.Email__c}"  style="background-color:{!IF(opencons.Doctorc__r.id==doc.Doctor__r.id,'red','')}"/>
+         <apex:column headerValue="Board Cent" value="{!doc.Doctor__r.Board_Cent__c}"  style="background-color:{!IF(opencons.Doctorc__r.id==doc.Doctor__r.id,'red','')}"/>
+         <apex:column headerValue="Comments" value="{!doc.Doctor__r.Comments__c}"  style="background-color:{!IF(opencons.Doctorc__r.id==doc.Doctor__r.id,'red','')}"/>
+         <apex:column headerValue="Action">
+           <apex:commandLink value="Contacted"/>&nbsp;|&nbsp;
+            <apex:commandLink value="Assign" action="{!Assign}" onComplete="window.location.reload();">
+              <apex:param name="doctorid" value="{!doc.Doctor__r.id}" assignTo="{!DoctorId}"/>
+            </apex:commandLink>
+            |&nbsp;
+            <apex:commandLink value="Resend" action="{!Resend}" >
+            </apex:commandLink>
+         </apex:column>
+       </apex:pageBlockTable>
+    
+    
+  </article>
+  </section>
+  </div>
+  </div>
+  </div>
+  </apex:pageBlock>
+  </apex:outputPanel>
+
+  <apex:outputPanel rendered="false">
+    <div>
+   
+   <h4 style="text-align:center;color:blue;"> Payments</h4>
+    
+    <table width="80%" align="center" class="table table-striped">
+     <colgroup span="4" width="10%"/>
+      <tr>
+       <th>Consultation Payment</th><td>Price:&nbsp;$5.00</td>
+       <th>Admin Fee</th><td>Price:&nbsp;$5.00</td>
+      </tr>
+      <tr>
+       <th>Non Consultation Payment</th><td>Price:&nbsp;$8.00</td>
+      </tr>
+      <tr>
+       <th>Total:</th><td>Price:&nbsp;$13.00</td>
+      </tr>
+    </table>
+   
+  </div>
+  <hr/>
+  </apex:outputPanel>
+  
+ </apex:form> 
+ </div>
+ </body>
+</apex:page>

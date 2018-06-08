@@ -1,0 +1,51 @@
+<apex:component >
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <apex:stylesheet value="{!URLFOR($Resource.CallMDStyles, 'Main.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.CallMDStyles, 'normalize.css')}" />
+    <style>
+     #col1,#col2{width:49%;display:inline-block;}
+        
+        .hide
+        {
+        display : none;
+        }
+        
+        .TOD-UI {
+        max-width: 1139px;
+        }
+        
+        .TOD-UI h1 {
+        font-size: 27px;
+        color: white !important;
+        }
+        
+        .TOD-UI .row dt {       
+        color: orange!important;
+        font-weight: bold !important;
+        }
+        
+        .lookupInput a {
+        right: 11px;
+        }
+        .error
+        {
+        border: 1px solid #ccc !important;
+        }
+        
+        .pbSubheader {
+        overflow: none !important;
+        background-color: white !important  ;
+        }
+        
+        .todHeader{
+            background-color: black;
+        }
+        
+        
+        .todHeader .dnetHeader {
+            display: block!important;
+        }
+  </style>
+</apex:component>

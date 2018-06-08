@@ -1,0 +1,80 @@
+<apex:page controller="CallMD_DoctorLoginPasswordCtrl" showHeader="false" docType="html-5.0">
+ <style>
+   .inp{
+     width:350px;
+     height:40px;
+     border-radius:0px;
+     font-size:14px;
+   }
+   .row{
+     height:70px;
+   }
+   body{
+      background:URl('{!$Resource.CallMDGirl}') no-repeat;
+    }
+   .grid-container {
+    display: grid;
+   }
+
+.grid-container--fill{
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+}
+
+.grid-container--fit {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+.grid-element {
+ <!--- background-color: deepPink;color: #fff; padding: 20px;--->
+  
+   
+}
+ </style>
+   <apex:form id="f">
+     <div class="grid-container grid-container--fit">
+       <table align="center" border="0" style="border:0px solid black;position:relative;top:300px;">
+        <!--- <tr>
+           <td align="center" class="row"><apex:image value="{!$Resource.CallMDLogo}" width="200" height="100"/></td>
+         </tr>  --->
+         <tr>
+           <td class="row">
+             <apex:input type="text" value="{!username}" html-placeholder="Username" styleClass="inp" id="usd"/>
+           </td>
+         </tr>
+         <tr>
+           <td class="row">
+             <apex:inputSecret value="{!password}" html-placeholder="Password" styleClass="inp" id="pwd"/>
+           </td>
+         </tr>
+         <tr>
+           <td align="center" class="row">
+            <apex:commandButton value="SIGN ON" style="background:blue;color:white;font-size:12px;width:140px;height:40px;" action="{!login}"/>
+           </td>
+         </tr>
+         <tr>
+           <td>
+             <div><a href="/apex/CallMD_ResetPassword">Reset Password?</a></div>
+           </td>
+         </tr>
+      </table>
+     </div>
+   <apex:actionFunction name="login" action="{!login}"/>
+   
+  </apex:form>  
+  <script>
+    function validateLogin(){
+    
+    
+      login();
+      <!--- var username=document.getElementById('usd').value;
+      var password=document.getElementById('{!$component.pwd}').value;
+      
+      alert('Checking:'+username); --->
+      
+      <!--- if(username!=''&&password!=''){
+        alert('Cannot be Empty');
+      } --->
+    
+    }
+  </script>
+</apex:page>

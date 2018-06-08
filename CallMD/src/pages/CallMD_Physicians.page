@@ -1,0 +1,47 @@
+<apex:page standardController="Physicians__c" sidebar="false" extensions="CallMD_Physicians" tabStyle="Members__tab">
+  <c:CallMDStyles />
+  <style>
+  .TOD-UI .content .Title{
+      background-color:#3399fe;
+      font-size:14px;
+    }
+    .TOD-UI h3{
+     color:#3399fe;
+   }
+ </style>
+   <body style="margin:0px;">
+<div style="background-color:white;margin:0px;position:relative;top:0;height:800px;">
+
+  <apex:form >
+  <apex:PageBlock >
+    <div class="content-wrapper" style="width:1400px;margin:0px;">
+      <div class="TOD-UI" id="main-content" style="width:1400px;margin:0px;">
+        <div class="content" style="width:1400px;margin:0px;">
+        <header class="Title" style="padding-bottom:40px;padding-top:15px;font-size:15px;">
+          <h1 style="color:blue;">Physicians Information</h1>
+        </header>
+        <section>
+        <article>
+        <div align="center">
+            <apex:commandButton value="Create Physicians" action="{!Save}"/>&nbsp;&nbsp;
+            <apex:commandButton value="Cancel" action="{!Cancel}"/>
+          </div>
+          <apex:pageBlockSection title="Information">
+             <apex:repeat value="{!$ObjectType.Physicians__c.fieldsets.Physicians}" var="p">
+               <apex:inputField value="{!Physicians__c[p]}"/>
+             </apex:repeat>
+          </apex:pageBlockSection><br/>
+          <div align="center">
+            <apex:commandButton value="Create Physicians" action="{!Save}"/>&nbsp;&nbsp;
+            <apex:commandButton value="Cancel" action="{!Cancel}"/>
+          </div>
+         </article>
+        </section>
+      </div>
+    </div>
+   </div>
+  </apex:PageBlock>
+ </apex:form>
+</div>
+</body>
+</apex:page>

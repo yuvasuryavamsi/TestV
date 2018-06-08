@@ -1,0 +1,124 @@
+<apex:page showHeader="true" controller="CallMD_PaginationCtrl" sidebar="false" tabStyle="Doctors__tab">
+ 
+<c:CallMDStyles />
+<style>
+   .headerRow{
+   height:25px;
+  }
+  .col{
+   height:25px;
+   }
+   .t{
+    background-color:#3399fe ;
+  }
+  .TOD-UI .content .Title{
+      background-color:#3399fe;
+    }
+    .TOD-UI h3{
+     color:#3399fe;
+   }
+   .grid-container {
+    display: grid;
+   
+}
+
+.grid-container--fill{
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+}
+
+.grid-container--fit {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+.grid-element {
+ <!--- background-color: deepPink;color: #fff; padding: 20px;--->
+  
+   
+}
+   
+ </style>
+ <body style="margin:0px;">
+ <div style="background-color:white;margin:0px;height:1000px;" class="grid-container grid-container--fit">
+  
+ 
+<apex:form >
+ <!--- <div align="center">
+   <apex:image value="{!$Resource.CallMDLogo}" width="200px"/><br/>
+   
+  </div><br/> --->
+  
+  <apex:pageBlock >
+  
+   <div class="content-wrapper">
+      <div class="TOD-UI grid-container grid-container--fit" id="main-content">
+        <div class="content">
+         <header class="Title" style="padding-bottom:40px;padding-top:15px;font-size:14px;">
+           <h1>Doctors</h1>
+         </header>
+        <section>
+         <article>
+     
+    <apex:pageBlockSection title="Search Doctor">
+       <apex:inputText value="{!firstname}" label="First Name"/>
+       <apex:inputText value="{!LastName}" label="Last Name"/>
+       <apex:inputText value="{!Phone}" label="Phone"/>
+       <apex:selectList value="{!LicenseState}" label="License State">
+       </apex:selectList>
+       <apex:selectRadio value="{!status}" layout="pageDirection" label="Status">
+         <apex:selectOption itemLabel="Active" itemValue="Active"/>
+         <apex:selectOption itemLabel="InActive" itemValue="InActive"/>
+         <apex:selectOption itemLabel="Pending" itemValue="Pending"/>
+         <apex:selectOption itemLabel="All" itemValue=""/>
+       </apex:selectRadio>
+    </apex:pageBlockSection>
+    <br/>
+    <div align="center">
+      <apex:commandButton value="Search" action="{!SearchSObject}"/>&nbsp;&nbsp;&nbsp;&nbsp;
+      <apex:commandButton value="Create Doctor" action="{!NavigateToDoctor}"/>&nbsp;&nbsp;&nbsp;&nbsp;
+    </div>
+    
+    </article>
+    </section>
+   </div>
+    </div>
+    </div>
+    
+  </apex:pageBlock>
+  
+  <apex:pageBlock title="Doctors List" id="pb">
+    <apex:pageBlockTable value="{!doctorsList}" var="d">
+      <apex:column headerValue="Name">
+       <apex:outputLink value="/apex/CallMD_Doctor" target="_blank">
+          <apex:outputText value="{!d.Last_Name__c}, {!d.Name}"/>
+          <apex:param name="id" value="{!d.id}"/>
+          <apex:param name="mode" value="s"/>
+          <apex:param name="retPageName" value="CallMD_SearchDoctors"/>
+       </apex:outputLink>
+      </apex:column>
+      <apex:column headerValue="Login" value="{!d.Username__c}" styleClass="col"/>
+     <!--- <apex:column headerValue="Date of Birth" value="{!d.Date_Of_Birth__c}" styleClass="col"/> --->
+     <apex:column headerValue="Product Type" value="{!d.Product_Type__c}"/>
+      <apex:column headerValue="Email" value="{!d.Email__c}" styleClass="col"/>
+      <apex:column headerValue="Primary phone" value="{!d.Primary_Phone__c}" styleClass="col"/>
+      <apex:column headerValue="Secondary phone" value="{!d.Secondary_Phone__c  }" styleClass="col"/>
+      <apex:column headerValue="Status" value="{!d.Status__c}" styleClass="col"/>
+      <apex:column headerValue="Licenses State" value="{!d.License_States__c}" styleClass="col"/>
+      <apex:column headerValue="Inactive Licenses" value="{!d.InActive_Licenses__c}" styleClass="col"/>
+      
+                       
+    </apex:pageBlockTable>
+    <br/> 
+   <div align="center">
+     <apex:commandLink value="<< First" action="{!first}" reRender="pb"/>&nbsp;&nbsp;
+       <apex:commandLink value="< Previous" action="{!Previous}" reRender="pb"/>&nbsp;&nbsp;
+         <apex:commandLink value="Next >" action="{!Next}" reRender="pb"/>&nbsp;&nbsp;
+           <apex:commandLink value="Last >>" action="{!last}" reRender="pb"/>&nbsp;&nbsp;
+   </div>
+  </apex:pageBlock>
+  
+   
+ </apex:form>
+ 
+ </div>
+ </body>
+</apex:page>

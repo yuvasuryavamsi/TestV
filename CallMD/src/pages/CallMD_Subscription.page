@@ -1,0 +1,80 @@
+<apex:page standardController="Subscriptions__c" extensions="CallMD_SubscriptionCtrl" sidebar="false" tabStyle="Consultations__tab">
+ <c:CallMDStyles />
+ <style>
+  .TOD-UI .content .Title{
+      background-color:#3399fe;
+    }
+    .TOD-UI h3{
+     color:#3399fe;
+   }
+ </style>
+ <apex:form id="f">
+<body style="margin:0px;">
+ <div style="background-color:white;margin:0px;height:1300px;">  
+  <apex:pageBlock id="pb">
+  <div class="content-wrapper" style="width:1400px;margin:0px;">
+      <div class="TOD-UI" id="main-content" style="width:1400px;margin:0px;">
+        <div class="content" style="width:1400px;margin:0px;">
+         <header class="Title" style="padding-bottom:40px;padding-top:15px;font-size:14px;">
+          <h1 style="color:blue;">Subscription</h1>
+        </header>
+         <section>
+          <article>
+          <div>
+            <p>Subscription for Member &nbsp;&nbsp; - <b>{!mem.Full_Name__c}</b></p>
+          </div>
+          <div align="center">
+            <apex:commandButton value="CREATE" action="{!CreateSubscription}" rendered="{!IF($CurrentPage.Parameters.mode=='',true,false)}" reRender="f"/>
+             <apex:commandButton value="UPDATE SUBSCRIPTION" action="{!UPDATESubscription}" rendered="{!IF($CurrentPage.Parameters.ptype=='r',true,false)}"/>
+          </div>
+            <apex:pageBlockSection title="Subscription Details">
+               <apex:selectList value="{!BenefitProvider}" size="1" label="Benefit Provider" rendered="{!IF($CurrentPage.Parameters.mode=='',true,false)}" required="true">
+                  <apex:selectOption itemLabel="-- None --" itemValue=""/> 
+                   <apex:selectOptions value="{!BenefitProvOpt}"/>
+                    <apex:actionSupport event="onchange" action="{!ChangeBenefit}"/>
+               </apex:selectList>
+              <apex:selectList value="{!Program}" size="1" label="Program" rendered="{!IF($CurrentPage.Parameters.mode=='',true,false)}">
+                    <apex:selectOptions value="{!ProgOpt}"/>
+              </apex:selectList>
+              <apex:inputField value="{!Subscriptions__c.Start_Date__c}" rendered="{!IF($CurrentPage.Parameters.mode=='',true,false)}" label="Start Date"/>
+              <apex:inputField value="{!Subscriptions__c.End_Date__c}" rendered="{!IF($CurrentPage.Parameters.mode=='',true,false)}" label="End Date"/>
+              
+              <apex:inputField value="{!Subscriptions__c.Payment_Date__c}" rendered="{!IF($CurrentPage.Parameters.mode=='',true,false)}" label="Payament Date"/>
+              <apex:inputField value="{!Subscriptions__c.Subscription_Type__c}" rendered="{!IF($CurrentPage.Parameters.mode=='',true,false)}" label="Subscription Type"/>
+              <apex:inputField value="{!Subscriptions__c.Transaction_Id__c}" rendered="{!IF($CurrentPage.Parameters.mode=='',true,false)}" label="Transaction ID"/>
+              
+              <!--- <apex:outputText value="{!Subscriptions__c.B2B_D2C__c}" rendered="{!IF($CurrentPage.Parameters.mode=='s',true,false)}" label="B2B / D2C"/> --->
+              <apex:outputText value="{!Subscriptions__c.Provider__r.Name}" rendered="{!IF($CurrentPage.Parameters.mode=='s',true,false)}" label="Benefit Provider"/>
+              <apex:outputText value="{!Subscriptions__c.Program__r.Name}" rendered="{!IF($CurrentPage.Parameters.mode=='s',true,false)}" label="Program"/>
+              <apex:outputField value="{!Subscriptions__c.Start_Date__c}" rendered="{!IF($CurrentPage.Parameters.mode=='s',true,false)}" label="Start Date"/>
+              <apex:outputField value="{!Subscriptions__c.End_Date__c}" rendered="{!IF($CurrentPage.Parameters.mode=='s',true,false)}" label="End Date"/> 
+              <apex:outputField value="{!Subscriptions__c.Status__c}" rendered="{!IF($CurrentPage.Parameters.mode=='s',true,false)}" label="Status"/>
+              <apex:inputField value="{!Subscriptions__c.Consultation_Renewal__c}" rendered="{!IF($CurrentPage.Parameters.ptype=='r',true,false)}" label="Renewal Consultation"/>
+              
+           </apex:pageBlockSection>
+           
+    <br/><br/> <br/>        
+   <apex:pageBlockTable value="{!OpenConsultList}" var="c" rendered="{!IF(OR($CurrentPage.Parameters.mode=='e',$CurrentPage.Parameters.mode=='s'),true,false)}">
+                     
+      <apex:column headerValue="Patient" value="{!c.Member__r.LastName__c} {!c.Member__r.FirstName__c}"/>
+      <apex:column headerValue="Doctor" value="{!c.Doctor__r.Name}"/>
+      <apex:column headerValue="Date" value="{!c.Date__c}"/>
+      <apex:column headerValue="Callback Time" value="{!c.CallBack_Time__c}"/>
+      <apex:column headerValue="Problem Status" value="{!c.Status__c}"/>
+      <apex:column headerValue="Type" value="{!c.Consultation_Type__c}"/>
+      <apex:column headerValue="State" value="{!c.States__c}"/>
+      <apex:column headerValue="Added By" value="{!c.CreatedBy.Name}"/>
+      <apex:column headerValue="Added At" value="{!c.CreatedDate}"/>
+          
+   </apex:pageBlockTable>
+   
+          </article>
+         </section>
+       </div>
+     </div>
+   </div>
+   </apex:pageBlock>
+ </div>
+</body>
+</apex:form>
+</apex:page>

@@ -1,0 +1,66 @@
+<apex:page standardController="Pharamcies__c" showHeader="true" extensions="CallMD_PharmaciesExtCtrl" sidebar="false" applyBodyTag="false" tabstyle="Members__tab">
+  <c:CallMDStyles />
+  <style>
+  .TOD-UI .content .Title{
+      background-color:#3399fe;
+      font-size:14px;
+    }
+    .TOD-UI h3{
+     color:#3399fe;
+   }
+ </style>
+  <html>
+  <body style="padding-left:0px;padding-right:0px;margin:0px;">
+  <div style="background-color:white;height:600px;">
+    <apex:form id="frm">
+      <apex:pageBlock id="pb">
+          
+          <div class="content-wrapper">
+      <div class="TOD-UI" id="main-content">
+        <div class="content">
+          <header class="Title" style="padding-bottom:54px;background-color:;">
+             <h1>Pharmacies</h1>                   
+          </header>
+           <section>
+          <!--- <div class="disclaimer">
+                            <p>
+                            <strong>Note:</strong> Fields marked with asterisk (<span
+                            style="color: red">*</span>) are mandatory
+                            </p>
+                            </div>  --->
+        
+                            
+                      <article>
+                      
+         <center>
+         <apex:commandButton value="Create Pharmacy" styleClass="btn btn-primary" action="{!Save}"/>&nbsp;&nbsp;
+         <apex:commandButton value="Cancel" action="{!Cancel}"/>
+         </center>
+        
+         <apex:pageBlockSection title="Pharmacy Information" columns="2">
+             <apex:inputField value="{!Pharamcies__c.Name}"/>
+             <apex:inputField value="{!Pharamcies__c.Email__c}"/>
+             <apex:inputField value="{!Pharamcies__c.Primary__c}"/>
+             <apex:inputField value="{!Pharamcies__c.Primary_Phone__c}"/>
+             <apex:inputField value="{!Pharamcies__c.Secondary_Phone__c  }"/>
+         </apex:pageBlockSection>       
+         <center>
+         <apex:commandButton value="Create Pharmacy" styleClass="btn btn-primary" action="{!Save}"/>&nbsp;&nbsp;
+         <apex:commandButton value="Cancel" action="{!Cancel}"/>
+         </center>
+       
+         </article>
+         </section>
+         </div>
+         </div>
+         </div>             
+      
+      
+        
+      </apex:pageBlock>
+ 
+</apex:form>
+ </div> 
+ </body>
+ </html>
+</apex:page>

@@ -1,0 +1,14 @@
+<apex:component controller="CallMD_MemberMedicalCondCtrl">
+  <apex:attribute name="memid" type="string" assignTo="{!memberid}" description="member id"/>
+  <apex:attribute name="isCreate" type="boolean" description="show link for creation of Allergies" default="true"/>
+       <apex:pageBlock title="">
+        <apex:outputLink value="/apex/CallMD_Allergies" target="_blank" rendered="{!isCreate}">
+         Create Allergies
+      <apex:param name="mid" value="{!$CurrentPage.Parameters.id}"/>
+    </apex:outputLink><br/><br/>
+         <apex:pageBlockTable value="{!AllergiesList}" var="a">
+           <apex:column headerValue="Name" value="{!a.Name}"/>
+           <apex:column headerValue="Reaction" value="{!a.Reaction__c}"/>
+         </apex:pageBlockTable>
+       </apex:pageBlock> 
+</apex:component>

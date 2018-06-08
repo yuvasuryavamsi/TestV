@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Package</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Package</value>
+    </caseValues>
+    <fields>
+        <label><!-- Copay Yes/No --></label>
+        <name>Copay_Yes_No__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Copay --></label>
+        <name>Copay__c</name>
+    </fields>
+    <fields>
+        <label><!-- Duration --></label>
+        <name>Duration__c</name>
+        <picklistValues>
+            <masterLabel>1 Month</masterLabel>
+            <translation><!-- 1 Month --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12 Month</masterLabel>
+            <translation><!-- 12 Month --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3 Month</masterLabel>
+            <translation><!-- 3 Month --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6 Month</masterLabel>
+            <translation><!-- 6 Month --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Once Time</masterLabel>
+            <translation><!-- Once Time --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Free Consultations --></label>
+        <name>Free_Consultations__c</name>
+    </fields>
+    <fields>
+        <label><!-- No of Consultations --></label>
+        <name>No_of_Consultations__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pricing --></label>
+        <name>Pricing__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

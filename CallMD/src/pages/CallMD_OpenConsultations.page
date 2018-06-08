@@ -1,0 +1,94 @@
+<apex:page showHeader="false" standardStylesheets="false" controller="CallMD_OpenConsultationsCtrl">
+  <apex:composition template="CallMD_Template">
+   <apex:define name="header">
+     <div>
+       <h3 style="text-align:center;color:gray;">OPEN CONSULTATIONS</h3><br/>
+       <h4 style="text-align:right;margin-right:1px;background-color:orange;color:white;width:300px;float:right;padding:5px 5px 5px 5px;">Search</h4><br/>
+     </div>
+    <div style="margin-top:50px;margin-bottom:50px;">
+      <table cellspacing="3" border="0" width="60%" align="center">
+       <tr>
+         <td><div style="width:100px;height:30px;background-color:yellow;">&nbsp;</div></td>
+         <td style="padding-left:10px;"><b>Callback time &lt; 120 min</b></td>
+         <td><div style="width:100px;height:30px;background-color:orange;">&nbsp;</div></td>
+         <td style="padding-left:10px;"><b>Callback time &lt; 60 min</b></td>
+         <td><div style="width:100px;height:30px;background-color:red;">&nbsp;</div></td>
+         <td style="padding-left:10px;"><b>Callback time &lt; 30 min</b></td>
+       </tr>
+      </table>
+    </div>  
+   </apex:define>
+    <apex:define name="body">
+    <apex:form >
+      <div>
+       <table class="table table-striped">
+        <thead>
+          <tr>
+           <th style="vertical-align:top;">Member</th>
+           <th style="vertical-align:top;">Callback Number</th>
+           <th style="vertical-align:top;">Callback Time</th>
+           <th style="vertical-align:top;">Date</th>
+           <th style="vertical-align:top;">Doctor</th>
+           <th style="vertical-align:top;">Drs.Provider</th>
+           <th style="vertical-align:top;">State</th>
+           <th style="vertical-align:top;">Status</th>
+           <th style="vertical-align:top;">Status Chg</th>
+           <th style="vertical-align:top;">Benefit Provider</th>
+           <th style="vertical-align:top;">Added By</th>
+           <th style="vertical-align:top;">Date &amp; Time of Consultation</th>
+           <th style="vertical-align:top;">Conferred By</th>
+           <th style="vertical-align:top;">Meds Prescribed During Consultation</th>
+           <th style="vertical-align:top;">Followed Up By</th>
+           <th style="vertical-align:top;">Rx Follow-up Schedule</th>
+           <th style="vertical-align:top;">Rx Follow-up Date &amp; Time Done</th>
+           <th style="vertical-align:top;">Pharmacy Verifier</th>
+           <th style="vertical-align:top;">Rx Follow-up Remarks</th>
+           <th style="vertical-align:top;">Consultation Remarks</th>
+          </tr>
+        </thead>                                          
+        <tbody>
+         <apex:repeat value="{!openConsultList}" var="c">
+          <tr>
+           <td>
+            <apex:outputLink value="/apex/TestConsultations" target="_blank">
+             <apex:outputField value="{!c.Member__r.FirstName__c}"/>
+             <apex:param name="mid" value="{!c.Member__r.id}"/>
+             <apex:param name="cid" value="{!c.id}"/>
+            </apex:outputLink>
+           </td>
+           <td><apex:outputField value="{!c.CallBack_Number__c}"/></td>
+           <td><apex:outputField value="{!c.CallBack_Time__c}"/></td>
+           <td><apex:outputField value="{!c.Date__c}"/></td>
+           <td><apex:outputField value="{!c.Doctor__r.Name}"/></td>
+           <td>Drs.Provider</td>
+           <td><apex:outputField value="{!c.States__c}"/></td>
+           <td><apex:outputField value="{!c.Status__c}"/></td>
+           <td><apex:outputField value="{!c.StatusChange__c}"/></td>
+           <td>Benefit Providers</td>
+           <td>Added By</td>
+           <td><apex:outputField value="{!c.Date_Time_of_consultation__c}"/></td>
+           <td>Conferred By</td>
+           <td><apex:outputField value="{!c.Meds_Prescribed_During_Consultation__c}"/></td>
+           <td>Follow Up By</td>
+           <td><apex:outputField value="{!c.Rx_Follow_up_Schedule__c}"/></td>
+           <td><apex:outputField value="{!c.Rx_Follow_up_Date_Time_Done__c}"/></td>
+           <td>Pharmacy Verifier</td>
+           <td><apex:outputField value="{!c.Rx_Follow_Up_Remarks__c}"/></td>
+           <td><apex:outputField value="{!c.Consulation_Remarks__c}"/></td>
+          </tr>
+         </apex:repeat>
+        </tbody>
+       </table>
+       <br/>
+       <div>
+         <apex:commandLink value="<< first" action="{!first}" rendered="{!HasPrevious}"/>&nbsp;&nbsp;
+          <apex:commandLink value="< previous" action="{!previous}" rendered="{!HasPrevious}"/>&nbsp;&nbsp;
+           <apex:commandLink value="next >" action="{!next}" rendered="{!HasNext}"/>&nbsp;&nbsp;
+           <apex:commandLink value="last >>" action="{!last}" rendered="{!HasNext}"/>&nbsp;&nbsp;
+          
+       </div>
+      </div>
+       </apex:form>
+    </apex:define> 
+  </apex:composition>
+</apex:page>

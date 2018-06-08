@@ -1,0 +1,127 @@
+<apex:page standardController="Open_Consultants__c" showHeader="true" sidebar="false" extensions="CallMD_OpenConsultations" tabStyle="consultations__tab">
+    <c:CallMDStyles />
+   <style>
+   .headerRow{
+   height:30px;
+  }
+  .col{
+   height:30px;
+  }
+  .h{
+   width:200px;
+  }
+  .t{
+    background-color:#3399fe;
+  }
+  .TODO h3{
+    color:#3399fe;
+    padding:0px;
+  }
+  .grid-container {
+    display: grid;
+   
+}
+
+.grid-container--fill{
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+}
+
+.grid-container--fit {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+.grid-element {
+ <!--- background-color: deepPink;color: #fff; padding: 20px;--->
+  
+  
+  
+
+   
+}
+body {
+  padding:0px;
+  
+}
+
+ </style>
+  
+ <body style="margin:0px;">
+ 
+   
+    <apex:form >
+    
+   <apex:pageBlock id="pb">
+    
+   
+      <div class="grid-container grid-container--fit" id="main-content" style="margin:0px;background-color:white;">
+        <div class="content" style="margin:0px;">
+        <header class="t" style="padding-left:10px;padding-bottom:10px;padding-top:15px;font-size:14px;color:white;font-weight:normal;">
+          <h1>Open Consultations</h1>
+        </header>
+        <section>
+         <article>
+         
+    <!---  <div style="margin-top:50px;margin-bottom:50px;">
+      <table cellspacing="3" border="0" width="60%" align="center">
+       <tr>
+         <td><div style="width:100px;height:30px;background-color:yellow;">&nbsp;</div></td>
+         <td style="padding-left:10px;"><b>Callback time &lt; 120 min</b></td>
+         <td><div style="width:100px;height:30px;background-color:orange;">&nbsp;</div></td>
+         <td style="padding-left:10px;"><b>Callback time &lt; 60 min</b></td>
+         <td><div style="width:100px;height:30px;background-color:red;">&nbsp;</div></td>
+         <td style="padding-left:10px;"><b>Callback time &lt; 30 min</b></td>
+       </tr>
+      </table>
+    </div>    --->
+         
+       <apex:pageBlockTable value="{!OpenConsultList}" var="c">
+         <apex:column headerValue="Member" style="vertical-align:top;margin:10px;width:130px;font-weight:bold;">
+           
+            <apex:image value="{!$Resource.Video}" width="30" height="30" rendered="{!IF(c.Consultation_Type__c=='Video Consultation',true,false)}"/>
+            <apex:image value="{!$Resource.Phone}" width="30" height="30" rendered="{!IF(c.Consultation_Type__c=='Phone consultation',true,false)}"/>
+            <apex:image value="{!$Resource.Chat}" width="30" height="30" rendered="{!IF(c.Consultation_Type__c=='Chat Consultation',true,false)}"/>&nbsp;&nbsp;
+            <apex:outputLink value="/apex/CallMD_PrivateConsultations" target="_blank">
+             <apex:outputText value="{!c.Member__r.Full_Name__c}" style="vertical-align:top;"/>
+             <apex:param name="mid" value="{!c.Member__r.id}"/>
+             <apex:param name="cid" value="{!c.id}"/>
+            </apex:outputLink>
+         </apex:column>
+                                                   
+         <apex:column headerValue="Callback Number" value="{!c.CallBack_Number__c}" style="vertical-align:top;width:130px;"/>
+         <!--- <apex:column headerValue="Callback Time" value="{!c.CallBack_Time__c}"/> --->
+         <apex:column headerValue="Date & Time" value="{!c.CreatedDate}"/>
+         <apex:column headerValue="Doctor" value="{!c.Doctorc__r.Name}"/> 
+         <apex:column headerValue="State" value="{!c.States__c}"/>
+         <apex:column headerValue="Status" value="{!c.Status__c}"/>
+         <apex:column headerValue="Status Chg" value="{!c.StatusChange__c}"/> 
+         <apex:column headerValue="Benefit Provider" value="{!c.Benefit_Provider__c}"/> 
+         <apex:column headerValue="Program" value="{!c.Subscription__r.Program_Name__c}"/>  
+         <apex:column headerValue="Added By" value="{!c.CreatedBy.Name}"/>
+         <!--- <apex:column headerValue="Rx Follow-up Date & Time Done" value="{!c.Rx_Follow_up_Date_Time_Done__c}"/> 
+         <apex:column headerValue="Rx Follow-up Remarks" value="{!c.Rx_Follow_Up_Remarks__c}"/>  --->
+         <apex:column headerValue="Doctor Consultation Remarks" headerClass="h">
+          <apex:outputField value="{!c.Doctor_Consultation_Remark__c}" style="width:200px;height:40px;"/>
+         </apex:column> 
+       </apex:pageBlockTable>
+       
+      <div align="center">
+          <apex:commandLink value="<< First" action="{!first}" reRender="pb" rendered="{!HasPrevious}"/>&nbsp;&nbsp;
+          <apex:commandLink value="< Previous" action="{!Previous}" reRender="pb" rendered="{!HasPrevious}"/>&nbsp;&nbsp;
+          <apex:commandLink value="Next >" action="{!Next}" reRender="pb" rendered="{!HasNext}"/>&nbsp;&nbsp;
+          <apex:commandLink value="Last >>" action="{!last}" reRender="pb" rendered="{!HasNext}"/>&nbsp;&nbsp;
+      </div>
+       </article>
+      </section>
+     </div>
+     
+  </div>
+  
+     
+     </apex:pageBlock>
+     
+    
+    </apex:form>
+ 
+   
+  </body> 
+</apex:page>

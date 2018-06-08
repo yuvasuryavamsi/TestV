@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>License</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Licenses</value>
+    </caseValues>
+    <fields>
+        <label><!-- Created By User --></label>
+        <name>Created_By_User__c</name>
+        <relationshipLabel><!-- Licenses --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Doctor --></label>
+        <name>Doctor__c</name>
+        <relationshipLabel><!-- Licenses --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Expiration date --></label>
+        <name>Expiration_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Next review date --></label>
+        <name>Next_review_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Review date --></label>
+        <name>Review_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reviewer --></label>
+        <name>Reviewer__c</name>
+    </fields>
+    <fields>
+        <label><!-- States --></label>
+        <name>States__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>InActive</masterLabel>
+            <translation><!-- InActive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Suspended</masterLabel>
+            <translation><!-- Suspended --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>License Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Licenses Information --></label>
+            <section>Licenses Information</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Programs / Packages</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Programs / Packages</value>
+    </caseValues>
+    <fields>
+        <label><!-- Access Fee --></label>
+        <name>Access_Fee__c</name>
+    </fields>
+    <fields>
+        <label><!-- Address Line1 --></label>
+        <name>Address_Line1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Admin Fee --></label>
+        <name>Admin_Fee__c</name>
+    </fields>
+    <fields>
+        <label><!-- Alternative Name --></label>
+        <name>Alternative_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attn To --></label>
+        <name>Attn_To__c</name>
+    </fields>
+    <fields>
+        <label><!-- B2B Consultation  Exceeded --></label>
+        <name>B2B_Consultation_Exceeded__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bill On Consultations --></label>
+        <name>Bill_On_Consultations__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billable Member --></label>
+        <name>Billable_Member__c</name>
+    </fields>
+    <fields>
+        <label><!-- City --></label>
+        <name>City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Consultations Done Till Now --></label>
+        <name>Consultations_Done_Till_Now__c</name>
+    </fields>
+    <fields>
+        <label><!-- Consultations Type --></label>
+        <name>Consultations_Type__c</name>
+        <picklistValues>
+            <masterLabel>Chat</masterLabel>
+            <translation><!-- Chat --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Phone</masterLabel>
+            <translation><!-- Phone --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Phone+Chat</masterLabel>
+            <translation><!-- Phone+Chat --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Phone+Video</masterLabel>
+            <translation><!-- Phone+Video --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Phone+Video+Chat</masterLabel>
+            <translation><!-- Phone+Video+Chat --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Video</masterLabel>
+            <translation><!-- Video --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Video+Chat</masterLabel>
+            <translation><!-- Video+Chat --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Contact Person --></label>
+        <name>Contact_Person__c</name>
+    </fields>
+    <fields>
+        <label><!-- Copay Yes/No --></label>
+        <name>Copay_Yes_No__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Copay Amount --></label>
+        <name>Copay__c</name>
+    </fields>
+    <fields>
+        <label><!-- Corp Id --></label>
+        <name>Corp_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Days --></label>
+        <name>Days__c</name>
+    </fields>
+    <fields>
+        <label><!-- Deactivate --></label>
+        <name>Deactivate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description_content --></label>
+        <name>Description_content__c</name>
+    </fields>
+    <fields>
+        <label><!-- Does Not Accept Doctors With Accents --></label>
+        <name>Does_Not_Accept_Doctors_With_Accents__c</name>
+    </fields>
+    <fields>
+        <label><!-- Duration --></label>
+        <name>Duration__c</name>
+        <picklistValues>
+            <masterLabel>1 Month</masterLabel>
+            <translation><!-- 1 Month --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1 Year</masterLabel>
+            <translation><!-- 1 Year --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3 Months</masterLabel>
+            <translation><!-- 3 Months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6 Months</masterLabel>
+            <translation><!-- 6 Months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Month - To - Month</masterLabel>
+            <translation><!-- Month - To - Month --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>One Time</masterLabel>
+            <translation><!-- One Time --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Email --></label>
+        <name>Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Enable Prescription Pad --></label>
+        <name>Enable_Prescription_Pad__c</name>
+    </fields>
+    <fields>
+        <label><!-- End Date --></label>
+        <name>End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fax --></label>
+        <name>Fax__c</name>
+    </fields>
+    <fields>
+        <label><!-- Follow Up Questions --></label>
+        <name>Follow_Up_Questions__c</name>
+    </fields>
+    <fields>
+        <label><!-- Free Consultations --></label>
+        <name>Free_Consultations__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fulfilment Type --></label>
+        <name>Fulfilment_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fullfilment Mailed --></label>
+        <name>Fullfilment_Mailed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fullfilment Record Sent --></label>
+        <name>Fullfilment_Record_Sent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fullfilment --></label>
+        <name>Fullfilment__c</name>
+    </fields>
+    <fields>
+        <label><!-- IT Contact Person --></label>
+        <name>IT_Contact_Person__c</name>
+    </fields>
+    <fields>
+        <label><!-- IT Email --></label>
+        <name>IT_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- IT Phone --></label>
+        <name>IT_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Included Consults --></label>
+        <name>Included_Consults__c</name>
+    </fields>
+    <fields>
+        <label><!-- Instructions/Policies --></label>
+        <name>Instructions_Policies__c</name>
+    </fields>
+    <fields>
+        <label><!-- Length --></label>
+        <name>Length__c</name>
+    </fields>
+    <fields>
+        <label><!-- Member Consult Charge --></label>
+        <name>Member_Consult_Charge__c</name>
+    </fields>
+    <fields>
+        <label><!-- Member --></label>
+        <name>Member__c</name>
+        <relationshipLabel><!-- Programs / Packages --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Name --></label>
+        <name>Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Name in File --></label>
+        <name>Name_in_File__c</name>
+    </fields>
+    <fields>
+        <label><!-- Need Follow Up --></label>
+        <name>Need_Follow_Up__c</name>
+    </fields>
+    <fields>
+        <label><!-- No of Consultations --></label>
+        <name>No_of_Consultations__c</name>
+    </fields>
+    <fields>
+        <label><!-- Notes --></label>
+        <name>Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Nurse Line Phone --></label>
+        <name>Nurse_Line_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent Program  Name --></label>
+        <name>Parent_Program_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phone --></label>
+        <name>Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prefix --></label>
+        <name>Prefix__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prescription Discount Program --></label>
+        <name>Prescription_Discount_Program__c</name>
+        <picklistValues>
+            <masterLabel>-</masterLabel>
+            <translation><!-- - --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Pricing --></label>
+        <name>Pricing__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product SKU --></label>
+        <name>Product_SKU__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product --></label>
+        <name>Product__c</name>
+        <picklistValues>
+            <masterLabel>CallMD</masterLabel>
+            <translation><!-- CallMD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CorrectionsMD</masterLabel>
+            <translation><!-- CorrectionsMD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dental MD</masterLabel>
+            <translation><!-- Dental MD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DiagonosticsMD</masterLabel>
+            <translation><!-- DiagonosticsMD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EducationMD</masterLabel>
+            <translation><!-- EducationMD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fit MD</masterLabel>
+            <translation><!-- Fit MD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HopeMD</masterLabel>
+            <translation><!-- HopeMD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PSYMD</masterLabel>
+            <translation><!-- PSYMD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PetMD</masterLabel>
+            <translation><!-- PetMD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SOSMD</masterLabel>
+            <translation><!-- SOSMD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Travel MD</masterLabel>
+            <translation><!-- Travel MD --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Program ID --></label>
+        <name>Program_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Program Name --></label>
+        <name>Program_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Program Status --></label>
+        <name>Program_Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>InActive</masterLabel>
+            <translation><!-- InActive --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Program Type --></label>
+        <name>Program_Type__c</name>
+        <picklistValues>
+            <masterLabel>B2B</masterLabel>
+            <translation><!-- B2B --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>D2C</masterLabel>
+            <translation><!-- D2C --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Programs --></label>
+        <name>Programs__c</name>
+        <relationshipLabel><!-- Programs / Packages --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Provider Consult Charge --></label>
+        <name>Provider_Consult_Charge__c</name>
+    </fields>
+    <fields>
+        <label><!-- Provider Name --></label>
+        <name>Provider_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Providers --></label>
+        <name>Providers__c</name>
+        <relationshipLabel><!-- Programs / Packages --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Script Finish --></label>
+        <name>Script_Finish__c</name>
+    </fields>
+    <fields>
+        <label><!-- Script Start --></label>
+        <name>Script_Start__c</name>
+    </fields>
+    <fields>
+        <label><!-- Script --></label>
+        <name>Script__c</name>
+    </fields>
+    <fields>
+        <label><!-- Site Url --></label>
+        <name>Site_Url__c</name>
+    </fields>
+    <fields>
+        <label><!-- Start Date --></label>
+        <name>Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- State --></label>
+        <name>State__c</name>
+    </fields>
+    <fields>
+        <label><!-- Thank you page url --></label>
+        <name>Thank_you_page_url__c</name>
+    </fields>
+    <fields>
+        <label><!-- Title_content --></label>
+        <name>Title_content__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Member Count --></label>
+        <name>Total_Member_Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total No Of Consultations For B2B --></label>
+        <name>Total_No_Of_Consultations_For_B2B__c</name>
+    </fields>
+    <fields>
+        <label><!-- User --></label>
+        <name>User__c</name>
+        <relationshipLabel><!-- Programs / Packages --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Utilization Exceeded % --></label>
+        <name>Utilization_Exceeded__c</name>
+    </fields>
+    <fields>
+        <label><!-- Utilization % --></label>
+        <name>Utilization__c</name>
+    </fields>
+    <fields>
+        <label><!-- Zip --></label>
+        <name>Zip__c</name>
+    </fields>
+    <fields>
+        <label><!-- large_image_url --></label>
+        <name>large_image_url__c</name>
+    </fields>
+    <fields>
+        <label><!-- small_image_url --></label>
+        <name>small_image_url__c</name>
+    </fields>
+    <layouts>
+        <layout>Programs Layout</layout>
+        <sections>
+            <label><!-- Billing Information --></label>
+            <section>Billing Information</section>
+        </sections>
+        <sections>
+            <label><!-- Contact Information --></label>
+            <section>Contact Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- General Information --></label>
+            <section>General Information</section>
+        </sections>
+        <sections>
+            <label><!-- Parent Program --></label>
+            <section>Parent Program</section>
+        </sections>
+        <sections>
+            <label><!-- Pricing &amp; Consultation Info --></label>
+            <section>Pricing &amp; Consultation Info</section>
+        </sections>
+        <sections>
+            <label><!-- Program Details --></label>
+            <section>Program Details</section>
+        </sections>
+        <sections>
+            <label><!-- Script --></label>
+            <section>Script</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Providers</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Providers</value>
+    </caseValues>
+    <fields>
+        <label><!-- Absent Files Notifications Frequency --></label>
+        <name>Absent_Files_Notifications_Frequency__c</name>
+        <picklistValues>
+            <masterLabel>Date</masterLabel>
+            <translation><!-- Date --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Month</masterLabel>
+            <translation><!-- Month --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Week</masterLabel>
+            <translation><!-- Week --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Address Line1 --></label>
+        <name>Address_Line1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Address Line2 --></label>
+        <name>Address_Line2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Authentication Token --></label>
+        <name>Authentication_Token__c</name>
+    </fields>
+    <fields>
+        <label><!-- City --></label>
+        <name>City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Consultant Type --></label>
+        <name>Consultant_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Person --></label>
+        <name>Contact_Person__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Type --></label>
+        <name>Customer_Type__c</name>
+        <picklistValues>
+            <masterLabel>B2B</masterLabel>
+            <translation><!-- B2B --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>D2C</masterLabel>
+            <translation><!-- D2C --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Deactivate --></label>
+        <name>Deactivate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Disable State Selector --></label>
+        <name>Disable_State_Selector__c</name>
+    </fields>
+    <fields>
+        <label><!-- Duration --></label>
+        <name>Duration__c</name>
+        <picklistValues>
+            <masterLabel>1 months</masterLabel>
+            <translation><!-- 1 months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1 year</masterLabel>
+            <translation><!-- 1 year --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3 months</masterLabel>
+            <translation><!-- 3 months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6 months</masterLabel>
+            <translation><!-- 6 months --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Email --></label>
+        <name>Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Enable RX Status 11 for Consultations --></label>
+        <name>Enable_RX_Status_11_for_Consultations__c</name>
+    </fields>
+    <fields>
+        <label><!-- Expand Utilization - Individual Program --></label>
+        <name>Expand_Utilization_Individual_Program__c</name>
+        <picklistValues>
+            <masterLabel>10 Completed in BPSite</masterLabel>
+            <translation><!-- 10 Completed in BPSite --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>9 Completed</masterLabel>
+            <translation><!-- 9 Completed --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Fax --></label>
+        <name>Fax__c</name>
+    </fields>
+    <fields>
+        <label><!-- Follow Up Questions --></label>
+        <name>Follow_Up_Questions__c</name>
+    </fields>
+    <fields>
+        <label><!-- Home Page --></label>
+        <name>Home_Page__c</name>
+    </fields>
+    <fields>
+        <label><!-- IT Contact Person --></label>
+        <name>IT_Contact_Person__c</name>
+    </fields>
+    <fields>
+        <label><!-- IT Email --></label>
+        <name>IT_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Instructions/Policies --></label>
+        <name>Instructions_Policies__c</name>
+    </fields>
+    <fields>
+        <label><!-- Logo ID --></label>
+        <name>Logo_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Logo URL --></label>
+        <name>Logo_URL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Logo --></label>
+        <name>Logo__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dummy Name --></label>
+        <name>Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phone1 --></label>
+        <name>Phone1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phone2 --></label>
+        <name>Phone2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Programs --></label>
+        <name>Programs__c</name>
+        <relationshipLabel><!-- Providers --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Report Name --></label>
+        <name>Report_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reporting Contact Email --></label>
+        <name>Reporting_Contact_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reporting Contact --></label>
+        <name>Reporting_Contact__c</name>
+    </fields>
+    <fields>
+        <label><!-- Schedule Consults? --></label>
+        <name>Schedule_Consults__c</name>
+    </fields>
+    <fields>
+        <label><!-- Script Finish --></label>
+        <name>Script_Finish__c</name>
+    </fields>
+    <fields>
+        <label><!-- Script Start --></label>
+        <name>Script_Start__c</name>
+    </fields>
+    <fields>
+        <label><!-- Script --></label>
+        <name>Script__c</name>
+    </fields>
+    <fields>
+        <label><!-- Site url --></label>
+        <name>Site_url__c</name>
+    </fields>
+    <fields>
+        <label><!-- Started Date --></label>
+        <name>Started_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- State --></label>
+        <name>State__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>InActive</masterLabel>
+            <translation><!-- InActive --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- User --></label>
+        <name>User__c</name>
+        <relationshipLabel><!-- Providers --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- ZipCode --></label>
+        <name>ZipCode__c</name>
+    </fields>
+    <layouts>
+        <layout>Providers Layout</layout>
+        <sections>
+            <label><!-- Communication Details --></label>
+            <section>Communication Details</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Logo Details --></label>
+            <section>Logo Details</section>
+        </sections>
+        <sections>
+            <label><!-- Provider Info --></label>
+            <section>Provider Info</section>
+        </sections>
+        <sections>
+            <label><!-- Provider Profile --></label>
+            <section>Provider Profile</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

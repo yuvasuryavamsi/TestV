@@ -1,0 +1,199 @@
+<apex:page showHeader="true" standardController="Member__c" extensions="CallMD_MemberCtrl" sidebar="false" tabStyle="Members__tab" docType="html-5.0" action="{!searchSobject}">
+ <c:CallMDStyles />
+<style>
+   .headerRow{
+   height:25px;
+  }
+  .col{
+   height:25px;
+  }
+  
+   .t{
+    background-color:#3399fe ;
+    padding-left:10px;
+  }
+  .TOD-UI .content .Title{
+      background-color:#3399fe;
+    }
+    .TOD-UI h3{
+     color:#3399fe;
+   }
+   .grid-container--fill{
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+}
+
+.grid-container--fit {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+.grid-element {
+ <!--- background-color: deepPink;color: #fff; padding: 20px;--->
+  
+   
+}
+ </style>
+ <body style="margin:0px;">
+ <div style="background-color:white;margin:0px;height:1000px;">
+  
+ 
+<apex:form >
+ <!--- <div align="center">
+   <apex:image value="{!$Resource.CallMDLogo}" width="200px"/><br/>
+   
+  </div><br/> --->
+  
+  <apex:pageBlock >
+  
+   <div class="content-wrapper" style="width:1400px;margin:0px;">
+      <div class="TOD-UI grid-container grid-container--fit" id="main-content">
+        <div class="content">
+        <header class="t" style="padding-bottom:40px;padding-top:15px;font-size:14px;">
+           <h1>Members</h1>
+         </header>
+        <section>
+         <article>
+     
+    <apex:pageBlockSection title="Search Member" columns="3">
+     <apex:pageBlockSectionItem dataStyle="width:300px;">
+       <apex:outputLabel value="First Name"/>
+       <apex:inputText value="{!firstName}" style="font-weight:bold;"/>
+     </apex:pageBlockSectionItem>
+     <apex:pageBlockSectionItem dataStyle="width:300px;">
+       <apex:outputLabel value="Last Name" style="font-weight:bold;"/>
+       <apex:inputText value="{!lastName}"/>
+    </apex:pageBlockSectionItem>
+    <apex:pageBlockSectionItem dataStyle="width:300px;">
+       <apex:outputLabel value="City"/>
+       <apex:inputText value="{!City}"/>
+    </apex:pageBlockSectionItem>
+    <!--- <apex:pageBlockSectionItem dataStyle="width:300px;">
+       <apex:outputLabel value="Number"/>
+       <apex:inputText value="{!NumberVal}"/>
+    </apex:pageBlockSectionItem>  --->
+    </apex:pageBlockSection>
+    
+    <apex:pageBlockSection columns="3">
+     
+    <apex:pageBlockSectionItem dataStyle="width:300px;">
+       <apex:outputLabel value="CellPhone"/>
+       <apex:inputText value="{!Phone}"/>
+    </apex:pageBlockSectionItem>
+   <apex:pageBlockSectionItem dataStyle="width:300px;">
+       <apex:outputLabel value="Zipcode"/>
+       <apex:inputText value="{!ZipCode}"/>
+    </apex:pageBlockSectionItem>
+    <apex:pageBlockSectionItem dataStyle="width:300px;">
+       <apex:outputLabel value="Date Of Birth"/>
+       <apex:input type="date" value="{!dob}"/>
+    </apex:pageBlockSectionItem>
+   </apex:pageBlockSection>
+   
+   
+   <apex:pageBlockSection columns="2">
+   
+   <apex:pageBlockSectionItem dataStyle="width:300px;">
+       <apex:outputLabel value=" Start Date From"/>
+       <apex:inputField value="{!mem.Start_Date__c}"/>
+    </apex:pageBlockSectionItem>
+    <apex:pageBlockSectionItem dataStyle="width:300px;">
+       <apex:outputLabel value="To Date"/>
+       <apex:inputField value="{!mem.Start_Date__c}"/>
+    </apex:pageBlockSectionItem>  
+   </apex:PageBlockSection>
+   
+   <apex:PageBlockSection columns="3"> 
+   
+    <!--- <apex:pageBlockSectionItem dataStyle="width:300px;">
+       <apex:outputLabel value="Benefit Providers"/>
+         <apex:selectList size="1" label="Benefit Providers" value="{!benefitProvider}">
+             <apex:selectOptions value="{!BenefitProviderOpt}" />
+         </apex:selectList>
+    </apex:pageBlockSectionItem>
+    <apex:pageBlockSectionItem dataStyle="width:300px;">
+       <apex:outputLabel value="Program"/>
+        <apex:selectList label="Program" size="1" value="{!program}">
+              <apex:selectOptions value="{!ProgramOpt}"/>
+        </apex:selectList>
+    </apex:pageBlockSectionItem>  ---> 
+    
+    <apex:PageBlockSectionItem dataStyle="width:300px;">
+     <apex:outputlabel value="Status"/>
+      <apex:selectCheckboxes layout="pageDirection" value="{!status}">
+        <apex:selectOption itemLabel="Primary Only" itemValue="Primary Only"/>     
+        <apex:selectOption itemLabel="Active Only" itemValue="Active"/>
+        <apex:selectOption itemLabel="inActive Only" itemValue="inActive"/>
+      </apex:selectCheckboxes>
+    </apex:PageBlockSectionItem>
+
+   </apex:pageBlockSection> 
+ 
+    <br/>
+     <div align="center">
+      <apex:commandButton value="Search" action="{!searchSobject}"/>&nbsp;&nbsp;&nbsp;&nbsp;
+      <apex:commandButton value="Create Member" action="{!NavigateToMember}" immediate="true"/>
+     <!---  <apex:commandButton value="Clear" action="{!Clear}" immediate="false"/>&nbsp;&nbsp;&nbsp;&nbsp;  --->
+     </div>
+    
+      </article>
+    </section>
+    
+    </div>
+    </div>
+    </div>
+        
+  </apex:pageBlock>
+  
+  <apex:pageBlock id="pb">
+    <apex:pageBlockTable value="{!membersList}" var="m">
+         <apex:column headerValue="Number">
+          <apex:outputLink value="/apex/CallMD_Member" target="_blank">
+           <apex:outputText value="{!m.Name}"/>
+           <apex:param name="id" value="{!m.id}"/>
+           <apex:param name="mode" value="s"/>
+           <apex:param name="type" value="{!m.Customer_Type__c}"/>
+          </apex:outputLink>
+         </apex:column>
+         <apex:column headerValue="Last Name"  style="font-weight:bold;">
+           <apex:outputLink value="/apex/CallMD_Member" target="_blank">
+             <apex:outputText value="{!m.LastName__c}"/>
+             <apex:param name="id" value="{!m.id}"/>
+            <apex:param name="mode" value="s"/>
+            <apex:param name="type" value="{!m.Customer_Type__c}"/>
+             </apex:outputLink>
+           </apex:column>
+         
+         <apex:column headerValue="First Name" style="font-weight:bold;">
+           <apex:outputLink value="/apex/CallMD_Member" target="_blank">
+             <apex:outputText value="{!m.FirstName__c}"/>
+             <apex:param name="id" value="{!m.id}"/>
+            <apex:param name="mode" value="s"/>
+            <apex:param name="type" value="{!m.Customer_Type__c}"/>
+             </apex:outputLink>
+         </apex:column>
+         <apex:column headerValue="Date Of Birth" value="{!m.DateofBirth__c}"/>
+         <apex:column headerValue="Type" value="{!m.Customer_Type__c}"/>
+         <apex:column headerValue="Provider / Program" value="{!m.BenefitsProvider__c}"/>
+         <apex:column headerValue="Program Status" value="{!m.Program_Status__c}"/>
+         <apex:column headerValue="Status" value="{!m.Status__c}"/>
+         <apex:column headerValue="City" value="{!m.City__c}"/>
+         <apex:column headerValue="State" value="{!m.State__c}"/>
+         <apex:column headerValue="Zip" value="{!m.ZipCode__c}"/>
+         <apex:column headerValue="Upload Date"/>
+         <apex:column headerValue="Uploader"/>  
+    </apex:pageBlockTable>
+  <br/><br/>
+   <div align="center">
+         <apex:commandLink value="<< First" action="{!first}" reRender="pb" rendered="{!NOT(HasPrevious)}"/>&nbsp;&nbsp;
+         <apex:commandLink value="< Previous" action="{!previous}" reRender="pb" rendered="{!NOT(HasPrevious)}"/>&nbsp;&nbsp;
+         <apex:commandLink value="Next >" action="{!next}" reRender="pb" rendered="{!NOT(HasNext)}"/>&nbsp;&nbsp;
+         <apex:commandLink value="Last >>" action="{!last}" reRender="pb" rendered="{!NOT(HasNext)}"/>&nbsp;&nbsp;
+   </div>
+  
+  </apex:pageBlock>
+  
+  
+  </apex:form>
+  
+ </div>
+ </body>
+</apex:page>

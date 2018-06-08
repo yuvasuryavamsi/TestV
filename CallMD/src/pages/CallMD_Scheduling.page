@@ -1,0 +1,24 @@
+<apex:page controller="CallMD_SchedulingController" sidebar="false">
+  <apex:outputText value="{!currentTime}"/> <br/><br/>
+  <apex:outputText value="{!currTime}"/>
+  
+  <apex:pageBlock >
+    <apex:pageBlockTable value="{!SchedulingList}" var="schList">
+      <apex:column headerValue="Doctor" value="{!schList.Doctor__r.Name}"/>
+      <apex:column headerValue="Day" value="{!schList.Day_of_Week__r.Name}"/>
+      <apex:column headerValue="State" value="{!schList.Doctor__r.State__c}"/>
+      <apex:column headerValue="Start Time" value="{!schList.Start_Time__c}"/>
+      <apex:column headerValue="End Time" value="{!schList.End_Time__c}"/>
+    </apex:pageBlockTable>
+  </apex:pageBlock>
+  
+  <apex:pageBlock title="UnAvailable Doctors">
+    <apex:pageBlockTable value="{!UnAvailbleSchedulingList}" var="schList">
+      <apex:column headerValue="Doctor" value="{!schList.Doctor__r.Name}"/>
+      <apex:column headerValue="Day" value="{!schList.Day_of_Week__r.Name}"/>
+      <apex:column headerValue="State" value="{!schList.Doctor__r.State__c}"/>
+      <apex:column headerValue="Start Time" value="{!schList.Start_Time__c}"/>
+      <apex:column headerValue="End Time" value="{!schList.End_Time__c}"/>
+    </apex:pageBlockTable>
+  </apex:pageBlock>
+</apex:page>

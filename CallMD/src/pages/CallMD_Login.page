@@ -1,0 +1,38 @@
+<apex:page showHeader="false" standardStylesheets="false">
+ <html lang="en"><head><script type="text/javascript">var NREUMQ=NREUMQ||[];NREUMQ.push(["mark","firstbyte",new Date().getTime()]);</script><meta charset="utf-8" /><title>CallMD</title>
+ <meta charset="UTF-8"/>
+<meta name="description" content="CallMD"/>
+<meta name="keywords" content="CallMD,Medicine,Insurance,Health"/>
+<meta name="author" content="Health Ultimate Corporation"/>
+<link href="/assets/home_member.css?1436432993" media="screen" rel="stylesheet" type="text/css" /><script src="/assets/home_member.js?1428707113" type="text/javascript"></script><meta name="csrf-param" content="authenticity_token"/>
+</head>
+<body>
+<div id="pagewidth">
+<header class="heady">
+<a href="/" class="logo">
+<img alt="CallMD" src="/images/home/logo.png" /></a>
+</header>
+<div class="clearfix" id="wrapper"><div class="login-holder"><h1>Doctor Sign In</h1>
+<form accept-charset="UTF-8" action="/doctor_user_sessions" class="login-form" id="new_doctor_session" method="post">
+<div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" />
+<input name="authenticity_token" type="hidden" value="q78P/uf1WZrow8i1fRfgtGVuPnmloHMZydX7sQbvFNw=" /></div>
+<input class="text" id="doctor_session_login" name="doctor_session[login]" placeholder="Login:" size="30" type="text" />
+<input class="text" id="doctor_session_password" name="doctor_session[password]" placeholder="Password:" size="30" type="password" />
+<p class="txtc"><a href="/doctor_password_reset/new">Forgot password?</a></p>
+<div class="submit-holder"><input class="submit btn" type="submit" value="Sign in" /></div>
+</form></div></div></div>
+<script type="text/javascript">if (!NREUMQ.f) { NREUMQ.f=function() {
+NREUMQ.push(["load",new Date().getTime()]);
+var e=document.createElement("script");
+e.type="text/javascript";
+e.src=(("http:"===document.location.protocol)?"http:":"https:") + "//" +
+  "js-agent.newrelic.com/nr-100.js";
+document.body.appendChild(e);
+if(NREUMQ.a)NREUMQ.a();
+};
+NREUMQ.a=window.onload;window.onload=NREUMQ.f;
+};
+NREUMQ.push(["nrfj","bam.nr-data.net","6b4e15609d","8294625","dl8KTUAMDwlQFhdWXVZEC0sdFhAARztLV0FGWQtXQUwNAEI=",0,10,new Date().getTime(),"","","","",""]);</script></body></html><footer class="footy"><p class="txtc">Health Ultimate Corporation, copyright 2018</p></footer><script type="text/javascript">$(function(){
+  setInterval(function(){$('.flash_notice').not('.dontHide').fadeOut();}, 5000)
+});</script>
+</apex:page>

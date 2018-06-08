@@ -1,0 +1,405 @@
+<apex:page standardController="Member__c" extensions="CallMD_MemberCtrl" showHeader="true" sidebar="false" tabStyle="Members__tab">
+ <c:CallMDStyles />
+ <head>
+ <style>
+  ul{
+    
+  }
+  .subMem{
+    float:left;
+    list-style:none;
+    margin-top:25px;
+    font-size:13px;
+    font-family:verdana;
+    color:white;
+    font-weight:bold;
+    background:;
+    line-height:30px;
+    width:160px;
+    text-align:center;
+    background-color:green;
+  }
+  .subMem2{
+    width:160px;
+    }
+  h3{
+  
+   color:#3399fe;
+  }
+     .t
+     {
+    background-color:#3399fe ;
+    padding-left:10px;
+  }
+  
+  .TOD-UI .content .Title{
+      background-color:#3399fe;
+    }
+    .TOD-UI h3{
+     color:#3399fe;
+   }
+   
+   .grid-container--fill{
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+}
+
+.grid-container--fit {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+.grid-element {
+ <!--- background-color: deepPink;color: #fff; padding: 20px;--->
+  
+   
+}
+    
+  
+</style>
+</head>
+ <!--- <ul>
+   <li>DashBoard</li>
+   <li>Doctor</li>
+   <li>Provider</li>
+   <li>Admin</li>
+   <li>Member</li>
+   <li>Accounting</li>
+ </ul> --->
+  <body style="margin:0px;">
+ <apex:form > 
+
+ <div style="background-color:white;margin:0px;">
+  
+  <apex:pageBlock >
+  
+  
+  <!-- <div align="center">
+   <apex:image value="{!$Resource.CallMDLogo}" width="200px"/><br/>
+   
+  </div><br/> -->
+  
+   <div class="content-wrapper">
+      <div class="TOD-UI grid-container grid-container--fit" id="main-content">
+        <div class="content">
+         <header class="t" style="padding-bottom:40px;padding-top:15px;font-size:14px;">
+          <h1 style="color:blue;">Member</h1>
+        </header>
+         <apex:outputPanel rendered="{!IF($CurrentPage.parameters.mode=='e',true,false)}">
+         <div style="text-align:center;">
+        
+<!--- <ul>           
+<li class="subMem">Member Info</li>
+<li class="subMem">Membership</li>
+<li class="subMem">Consultations</li>
+<li class="subMem">Medical History</li>
+<li class="subMem">Physicians</li>
+<li class="subMem">Pharmacies</li>
+<li class="subMem">Immunization</li>
+</ul>  --->
+
+ </div><br/><br/>
+   </apex:outputPanel>        
+        <section>
+         <article>
+         
+ 
+      <br/><br/>
+         
+    <div align="center">
+     <apex:commandButton value="Save" action="{!save}" rendered="{!if(mode=='',true,false)}"/>&nbsp;&nbsp;
+     <apex:commandButton value="Edit" action="{!edit}" rendered="{!if(mode=='s',true,false)}"/>&nbsp;&nbsp;
+     <apex:commandButton value="Update Member" action="{!UpdateMem}" rendered="{!if(mode=='e',true,false)}"/>&nbsp;&nbsp;
+     <apex:commandButton value="Cancel" action="{!cancel}" rendered="{!if(OR(mode=='e',mode=''),true,false)}"/>&nbsp;&nbsp;
+    </div>
+    
+    <apex:pageBlockSection title="Member Information">
+       <apex:repeat value="{!$ObjectType.Member__c.fieldsets.Member_Information}" var="m">
+         <apex:inputField value="{!Member__c[m]}" rendered="{!IF(OR(mode=='e',mode==''),true,false)}"/>
+         <apex:outputField value="{!Member__c[m]}" rendered="{!IF(mode=='s',true,false)}"/>
+       </apex:repeat>
+       <!--- <apex:selectList value="{!BenefitProvider}" size="1" label="Benefit Provider">
+         <apex:selectOptions value="{!BenefitProvOpt}"/>
+          <apex:actionSupport event="onchange" action="{!ChangeBenefit}" immediate="true"/>
+       </apex:selectList> --->
+       
+       <apex:selectList value="{!mem.Packages__c}" size="1" label="Program" rendered="{!IF(OR(mode=='e',mode==''),true,false)}">
+         <apex:selectOptions value="{!ProgramList}"/>
+       </apex:selectList>  
+       
+       <apex:outputText value="{!mem.Packages__c}" rendered="{!IF(mode=='s',true,false)}" label="Program"/>
+    </apex:pageBlockSection>
+    
+    <apex:pageBlockSection title="Communication Details">
+       <apex:repeat value="{!$ObjectType.Member__c.fieldsets.Communication_Details}" var="m">
+         <apex:inputField value="{!Member__c[m]}" rendered="{!IF(OR(mode=='e',mode==''),true,false)}"/>
+         <apex:outputField value="{!Member__c[m]}" rendered="{!IF(mode=='s',true,false)}"/>
+       </apex:repeat>
+    </apex:pageBlockSection>
+    
+    <apex:pageBlockSection title="Additional Information">
+       <apex:repeat value="{!$ObjectType.Member__c.fieldsets.Additional_Information}" var="m">
+         <apex:inputField value="{!Member__c[m]}" rendered="{!IF(OR(mode=='e',mode==''),true,false)}"/>
+         <apex:outputField value="{!Member__c[m]}" rendered="{!IF(mode=='s',true,false)}"/>
+       </apex:repeat>
+    </apex:pageBlockSection>
+    
+    <apex:pageBlockSection title="User Credentials">
+       <apex:repeat value="{!$ObjectType.Member__c.fieldsets.Member_login_Info}" var="m">
+         <apex:inputField value="{!Member__c[m]}" rendered="{!IF(OR(mode=='e',mode==''),true,false)}"/>
+         <apex:outputField value="{!Member__c[m]}" rendered="{!IF(mode=='s',true,false)}"/>
+       </apex:repeat>
+    </apex:pageBlockSection>
+    
+    </article>
+    </section>
+
+    </div>
+   </div>
+  </div>
+  </apex:pageBlock>
+ 
+ 
+ <br/><br/>
+ 
+ <apex:outputPanel rendered="{!IF($CurrentPage.Parameters.mode=='s',true,false)}">
+ 
+ 
+ <apex:pageBlock title="Subscription Details">
+  <div class="content-wrapper" style="width:1400px;margin:0px;">
+      <div class="TOD-UI" id="main-content" style="width:1400px;margin:0px;">
+        <div class="content" style="width:1400px;margin:0px;">
+        <section>
+        <article>
+        
+      
+        
+   <apex:pageBlockTable value="{!SubscriptionList}" var="s">
+                                      
+      <apex:column headerValue="Member Name">
+        <apex:outputLink value="/apex/CallMD_Subscription" target="_blank">
+          <apex:outputText value="{!s.Member__r.Full_Name__c}"/>
+          <apex:param name="mid" value="{!s.Member__c}"/>
+          <apex:Param name="id" value="{!s.id}"/>
+          <apex:param name="provid" value="{!s.Provider__c}"/>
+          <apex:Param name="mode" value="s"/>
+        </apex:outputLink>
+      </apex:column>   
+      <apex:column headerValue="Benefit Provider " value="{!s.Provider__r.Name}" />   
+      <apex:column headerValue="Program Name" value="{!s.Program__r.Name}" />  
+      <apex:column headerValue="No Of Consultations" value="{!s.Total_Consultation_To_Do__c}"/>    
+      <apex:column headerValue="Remaining Consultations" value="{!s.Remaining_Consultation__c}"/>                                                 
+      <apex:column headerValue="Pricing" value="{!s.Pricing__c}"/> 
+      <apex:column headerValue="Copay" value="{!s.Copay_Amount__c}"/>  
+      <apex:column headerValue="Status" value="{!s.Status__c}"/> 
+      <apex:column headerValue="Start Date" value="{!s.Start_Date__c}"/>   
+      <apex:column headerValue="End Date" value="{!s.End_Date__c}"/>  
+      <apex:column headerValue="Subscription Type" value="{!s.Subscription_Type__c}"/>  
+      <apex:column headerValue="Stage" value="{!s.Stage__c}"/>  
+
+      <apex:column headerValue="Subscription Stage">
+        <apex:outputLink value="/apex/CallMD_Consultations" target="_blank">
+          <apex:outputText value="Create Consultation" rendered="{!IF(s.Stage__c=='New Consultation',true,false)}"/>
+          <apex:param name="mid" value="{!$CurrentPage.Parameters.id}"/>
+          <apex:param name="sid" value="{!s.id}"/>
+          <apex:param name="provId" value="{!s.Provider__c}"/>
+          <apex:param name="progId" value="{!s.Program__c}"/>
+           <apex:param name="type" value="{!$CurrentPage.Parameters.type}"/>
+        </apex:outputLink>
+        
+         <apex:outputLink value="/apex/CallMD_Subscription" target="_blank" rendered="{!IF(s.Stage__c=='Create Subscription',true,false)}">
+            Create Subscription<br/><br/>
+            <apex:param name="mid" value="{!$CurrentPage.Parameters.id}"/>
+           <apex:param name="type" value="{!$CurrentPage.Parameters.type}"/>
+        </apex:outputLink> 
+        
+        <apex:outputLink value="/apex/CallMD_Subscription" target="_blank" rendered="{!IF(s.Stage__c=='Update Consultation',true,false)}">
+            Update Subscription<br/><br/>
+          <apex:param name="mid" value="{!$CurrentPage.Parameters.id}"/>
+          <apex:param name="id" value="{!s.id}"/>
+          <apex:param name="provId" value="{!s.Provider__c}"/>
+          <apex:param name="progId" value="{!s.Program__c}"/>
+           <apex:param name="type" value="{!$CurrentPage.Parameters.type}"/>
+           <apex:param name="ptype" value="r"/>
+          <apex:param name="mode" value="s"/>
+        </apex:outputLink> 
+        
+        
+       
+         
+      </apex:column>
+   </apex:pageBlockTable>
+   
+   </article>
+   </section>
+   
+   </div>
+   </div>
+   </div>
+ </apex:pageBlock>
+ 
+ <apex:pageBlock title="Consultation Details">
+  <div class="content-wrapper" style="width:1400px;margin:0px;">
+      <div class="TOD-UI" id="main-content" style="width:1400px;margin:0px;">
+        <div class="content" style="width:1400px;margin:0px;">
+        <section>
+        <article>
+        
+       <!--- <apex:outputLink value="/apex/CallMD_Consultations">Create Consultations<br/><br/>
+          <apex:param name="mid" value="{!$CurrentPage.Parameters.id}"/>
+        </apex:outputLink>  --->
+   <apex:pageBlockTable value="{!OpenConsultList}" var="c">
+                     
+      <apex:column headerValue="Patient" value="{!c.Member__c}"/>
+      <apex:column headerValue="Doctor" value="{!c.Doctor__r.Name}"/>
+      <apex:column headerValue="Date" value="{!c.Date__c}"/>
+      <!--- <apex:column headerValue="Callback Time" value="{!c.CallBack_Time__c}"/>
+      <apex:column headerValue="Problem Status" value="{!c.Status__c}"/> --->
+      <apex:column headerValue="Type" value="{!c.Consultation_Type__c}"/>
+      <apex:column headerValue="State" value="{!c.States__c}"/>
+     <!--- <apex:column headerValue="Added By"/>
+      <apex:column headerValue="Added At"/>  --->
+          
+   </apex:pageBlockTable>
+   
+   </article>
+   </section>
+   
+   </div>
+   </div>
+   </div>
+ </apex:pageBlock>
+ 
+ 
+ <apex:PageBlock title="Dependent Details">
+  
+   <div class="content-wrapper" style="width:1400px;margin:0px;">
+      <div class="TOD-UI" id="main-content" style="width:1400px;margin:0px;">
+        <div class="content" style="width:1400px;margin:0px;">
+        <section>
+        <article>
+           <apex:outputLink value="/apex/CallMD_Member" target="_blank">
+             Create Dependent
+             <apex:param name="mid" value="{!$CurrentPage.Parameters.id}"/>
+           </apex:outputLink><br/><br/>
+           
+           <apex:pageBlockTable value="{!MemberList}" var="m">
+            
+             <apex:column headerValue="Number">
+              <apex:outputLink value="/apex/CallMD_Member" target="_blank">
+               <apex:outputText value="{!m.name}"/>
+               <apex:param name="id" value="{!m.id}"/>
+               <apex:param name="mode" value="s"/>
+              </apex:outputLink>
+             </apex:column>
+             <apex:column headerValue="First Name" value="{!m.FirstName__c}"/>
+             <apex:column headerValue="Last Name" value="{!m.LastName__c}"/>
+             <apex:column headerValue="Parent Member"> 
+              <apex:outputLink value="/apex/CallMD_Member" target="_blank">
+               <apex:outputText value="{!m.Parent_Member__r.Full_Name__c}"/>
+                <apex:param name="id" value="{!m.Parent_Member__c}"/>
+                 <apex:param name="mode" value="s"/>
+               </apex:outputLink>
+             </apex:column>
+           </apex:pageBlockTable>
+        
+        </article>
+        </section>
+      </div>
+     </div>
+   </div>
+ 
+ </apex:PageBlock>
+ 
+ 
+ <apex:PageBlock title="Medical Conditions">
+  <div class="content-wrapper" style="width:1400px;margin:0px;">
+      <div class="TOD-UI" id="main-content" style="width:1400px;margin:0px;">
+        <div class="content" style="width:1400px;margin:0px;">
+        <section>
+        <article>
+            <c:MedicalConditions /><br/>
+            <c:Allergies /><br/>
+            <c:Surgeries /><br/>
+            <c:Medications />
+        </article>
+        </section>
+     </div>
+   </div>
+  </div>
+ 
+ </apex:PageBlock>
+ 
+ <apex:PageBlock title="Physicians">
+   <div class="content-wrapper" style="width:1400px;margin:0px;">
+      <div class="TOD-UI" id="main-content" style="width:1400px;margin:0px;">
+        <div class="content" style="width:1400px;margin:0px;">
+        <section>
+        <article>
+      <apex:outputLink value="/apex/CallMD_Physicians">Create Physicians
+        <apex:param name="mid" value="{!$CurrentPage.Parameters.id}"/>
+       </apex:outputLink>   <br/><br/> 
+     <apex:pageBlockTable value="{!PhysiciansList}" var="p">                  
+      <apex:column headerValue="Name" value="{!p.Name}"/>
+      <apex:column headerValue="Specialty" value="{!p.Speciality__c}"/>
+      <apex:column headerValue="Primary Phone" value="{!p.Phone__c}"/>
+      <apex:column headerValue="Fax" value="{!p.Fax__c}"/>
+      <apex:column headerValue="Address" value="{!p.Address__c}"/>
+      <apex:column headerValue="Email" value="{!p.Email__c}"/>  
+   </apex:pageBlockTable>
+        </article>
+        </section>
+     </div>
+   </div>
+  </div>
+ </apex:PageBlock>
+ 
+ <apex:PageBlock title="Pharmacies">
+   <div class="content-wrapper" style="width:1400px;margin:0px;">
+      <div class="TOD-UI" id="main-content" style="width:1400px;margin:0px;">
+        <div class="content" style="width:1400px;margin:0px;">
+        <section>
+        <article>
+      <apex:outputLink value="/apex/CallMD_Pharmacies">Create Pharmacies
+        <apex:param name="mid" value="{!$CurrentPage.Parameters.id}"/>
+       </apex:outputLink>   <br/><br/>  
+     <apex:pageBlockTable value="{!PharmaciesList}" var="p">                  
+      <apex:column headerValue="Name" value="{!p.Name}"/>
+      <apex:column headerValue="Primary" value="{!p.Primary__c}"/>
+      <apex:column headerValue="Phone" value="{!p.Primary_Phone__c}"/> 
+     </apex:pageBlockTable>
+        </article>
+        </section>
+     </div>
+   </div>
+  </div>
+ </apex:PageBlock>
+ 
+ <apex:PageBlock title="Immunizations">
+  <div class="content-wrapper" style="width:1400px;margin:0px;">
+      <div class="TOD-UI" id="main-content" style="width:1400px;margin:0px;">
+        <div class="content" style="width:1400px;margin:0px;">
+        <section>
+        <article>
+       <apex:outputLink value="/apex/CallMD_Immunization">Create Immunization
+        <apex:param name="mid" value="{!$CurrentPage.Parameters.id}"/>
+       </apex:outputLink>   <br/><br/> 
+     <apex:pageBlockTable value="{!ImmunizationsList}" var="p">                  
+      <apex:column headerValue="Immunization" value="{!p.name}"/>
+      <apex:column headerValue="Date" value="{!p.Date__c}"/>
+      <apex:column headerValue="Comment" value="{!p.Comments__c}"/> 
+     </apex:pageBlockTable>
+     
+        </article>
+        </section>
+     </div>
+   </div>
+  </div>
+ </apex:PageBlock>
+ 
+ </apex:outputPanel>
+ </div>
+ 
+ 
+ 
+ </apex:form>
+ </body>
+</apex:page>

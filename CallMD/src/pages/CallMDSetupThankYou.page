@@ -1,0 +1,41 @@
+<apex:page controller="CallMDSetupCtrl" showHeader="false">
+ <c:CallMDStyles />
+  <div class="content-wrapper">
+      <div class="TOD-UI" id="maout-content">
+        <div class="content">
+          <header class="Title" style="padding-bottom:58px;background-color:;">
+             <h1>Thank You</h1>                   
+          </header>
+           <section>
+           <article>
+             <p><b>Thank You for Confirmation with CallMD.</b></p><br/>
+              
+              <apex:pageBlock >
+                <apex:pageBlockSection columns="1">
+                  <apex:outputField value="{!MemDetails.FirstName__c}" label="First Name"/>
+         <apex:outputField value="{!MemDetails.LastName__c}" label="Last Name"/>
+         <apex:outputField value="{!MemDetails.DateofBirth__c}" label="Date of Birth"/>
+         <apex:outputField value="{!MemDetails.Cell_Phone__c}" label="Cell Phone"/>
+         <apex:outputField value="{!MemDetails.State__c}"/>
+         <apex:outputField value="{!MemDetails.Pin__c}" label="Member Pin"/>
+         <apex:outputField value="{!MemDetails.Email__c}"/>
+                </apex:pageBlockSection>
+              </apex:pageBlock>
+              
+              <br/>
+              
+              <div style="font-weight:bold;">
+                <b>CallMD Customer Number :</b>&nbsp;&nbsp;<apex:outputText value="{!MemDetails.Name}"/><br/><br/>
+                
+                <apex:outputLink value="/apex/CallMD_MemberDependent" target="_blank">
+                   Add Dependents
+                   <apex:param name="mid" value="{!$CurrentPage.Parameters.mid}"/>
+                </apex:outputLink>
+              </div>
+              
+           </article>
+          </section>
+        </div>
+      </div>
+    </div>
+</apex:page>

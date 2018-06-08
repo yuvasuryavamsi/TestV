@@ -1,0 +1,1237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fieldSets>
+        <fullName>Additional_Information</fullName>
+        <description>Additional Information</description>
+        <displayedFields>
+            <field>Start_Date__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Expiration_Date__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Deactivated_Date__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Insurance_Carrier__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Patient_Id__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Group_id__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Additional Information</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>Communication_Details</fullName>
+        <description>Communication Details</description>
+        <displayedFields>
+            <field>Address_Line1__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Address_Line2__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>City__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>State__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>ZipCode__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Communication Details</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>Member_Information</fullName>
+        <description>Member Info</description>
+        <displayedFields>
+            <field>FirstName__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>LastName__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>DateofBirth__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Email__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Program_Status__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Status__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Member_Type__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Customer_Type__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Cell_Phone__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Work_Phone__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Home_Phone__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Carrier_Phone__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Gender__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Height__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Weight__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Packages__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Member Information</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>Member_login_Info</fullName>
+        <description>Member login information</description>
+        <displayedFields>
+            <field>Name</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Pin__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Member  login Info</label>
+    </fieldSets>
+    <fields>
+        <fullName>Address_Line1__c</fullName>
+        <externalId>false</externalId>
+        <label>Address Line1</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Address_Line2__c</fullName>
+        <externalId>false</externalId>
+        <label>Address Line2</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Age__c</fullName>
+        <externalId>false</externalId>
+        <formula>YEAR(TODAY()) - YEAR(DateofBirth__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Age</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Answer__c</fullName>
+        <externalId>false</externalId>
+        <label>Answer</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>B2B_Programs__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>B2B Programs</label>
+        <referenceTo>Programs__c</referenceTo>
+        <relationshipLabel>Members</relationshipLabel>
+        <relationshipName>Members</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>BIN__c</fullName>
+        <externalId>false</externalId>
+        <label>BIN</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BenefitsProvider__c</fullName>
+        <externalId>false</externalId>
+        <label>Benefits Provider</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Benefit services of America</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CallMD</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CallMD sample</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Car Spa</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Careington</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Competitive Health</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>eDoc America</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Family Care</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Future Benefits Corportation</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Med Watch</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>National Benefit Builders.Inc</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Ncs Medical Group</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Pine Creek Medical Center</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Professional Center Pharmacy</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SBAofAmerica(National Administration Co.Inc)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Telerian Inc</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>UHPOA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>US Health</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Visionary Healthcare Solutions</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>White Glove Health</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CallMDUserName__c</fullName>
+        <externalId>false</externalId>
+        <label>CallMDUserName</label>
+        <length>8</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Carrier_Phone__c</fullName>
+        <externalId>false</externalId>
+        <label>Carrier Phone</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Cell_Phone__c</fullName>
+        <externalId>false</externalId>
+        <label>Cell Phone</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>City__c</fullName>
+        <externalId>false</externalId>
+        <label>City</label>
+        <length>100</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Confirm_Member_Pin__c</fullName>
+        <externalId>false</externalId>
+        <label>Confirm Member Pin</label>
+        <length>10</length>
+        <maskChar>X</maskChar>
+        <maskType>all</maskType>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>EncryptedText</type>
+    </fields>
+    <fields>
+        <fullName>Customer_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Customer Type</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>D2C</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>B2B</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DateofBirth__c</fullName>
+        <externalId>false</externalId>
+        <label>Date of Birth</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Deactivated_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Deactivated Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Email__c</fullName>
+        <externalId>false</externalId>
+        <label>Email</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Employer__c</fullName>
+        <externalId>false</externalId>
+        <label>Employer</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Expiration_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Expiration Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>FirstName__c</fullName>
+        <externalId>false</externalId>
+        <label>First Name</label>
+        <length>50</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Full_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>FirstName__c&amp;&quot; &quot;&amp;LastName__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Full Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Fullfillment_Mailed_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Fullfillment Mailed Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Gender__c</fullName>
+        <externalId>false</externalId>
+        <label>Gender</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Male</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Female</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Group_id__c</fullName>
+        <externalId>false</externalId>
+        <label>Group id</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Height__c</fullName>
+        <externalId>false</externalId>
+        <label>Height</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Home_Phone__c</fullName>
+        <externalId>false</externalId>
+        <label>Home Phone</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>IVR_UI_Flow__c</fullName>
+        <externalId>false</externalId>
+        <label>IVR/UI Flow</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Update Consultation</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>New Subscription</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>New Consultation</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Insurance_Carrier__c</fullName>
+        <externalId>false</externalId>
+        <label>Insurance Carrier</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LastName__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Name</label>
+        <length>50</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Last_Disposition__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Disposition</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Member_Pin__c</fullName>
+        <externalId>false</externalId>
+        <label>Member Pin</label>
+        <length>10</length>
+        <maskChar>X</maskChar>
+        <maskType>all</maskType>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>EncryptedText</type>
+    </fields>
+    <fields>
+        <fullName>Member_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Member Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Primary</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Dependent</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Number__c</fullName>
+        <displayFormat>MID#{00000}</displayFormat>
+        <externalId>false</externalId>
+        <label>Number</label>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>PCN__c</fullName>
+        <externalId>false</externalId>
+        <label>PCN</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Packages__c</fullName>
+        <externalId>false</externalId>
+        <label>Packages</label>
+        <length>255</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Parent_Member__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Parent Member</label>
+        <referenceTo>Member__c</referenceTo>
+        <relationshipLabel>Members</relationshipLabel>
+        <relationshipName>Parent_Members</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Patient_Id__c</fullName>
+        <externalId>false</externalId>
+        <label>Patient Id</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Pin__c</fullName>
+        <externalId>false</externalId>
+        <label>Pin</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Program_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Program Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Active</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>InActive</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Program__c</fullName>
+        <externalId>false</externalId>
+        <label>Program</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>American Independent Business Coalition</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>USHealth</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>USHealth Group</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Benefit Services of America</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OnCall Doctor</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CallMD 24/7 Family Annual</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CallMD 24/7 Family Monthly</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Call BAA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CallMD Complimentary</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CallMD One Time Consultation</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Doctors</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Family Care</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Visionary</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CallMD Sample</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Platinum</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>American Health Advantage True Care Discount Medical</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>American Seniors Association Discount Plan</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Benefit Services Of America-Test</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CiProduct</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Health Insurance Innovations-Extra Care Packag</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Med Shield Discount Plan</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Southwest Advantage discount Plan</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>USH-PADD</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Wellness Sheild-CallMD,Labs And Imaging</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Wellness Shield-CallMD</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CareExpress</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Colonial Life</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>EnergyPlus</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>GlobalLife</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>LifeStyle</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Med LifePlus</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>National Health Patners/Care Express</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>The Access Organization(TAO)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>U.S.HealthCare Association</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>WellCard</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Access Plans</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Arrow Electric</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Five Points Benefits</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>LifePerks</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>McNabb Carpets</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Babbitt Stream Specialty Co</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Baker Benefits Administrators.Inc</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Ben-e-lect</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Benefit Assistance Corporation Ripley</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Benefit Management,LLC Commercial Groups</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>City of Pasco</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Classic Cars Limited Partnership</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Comunity Living.Inc</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Deboer&amp;Sons Trucking Inc</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Dental Service Advisors LLC</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Donald J.Lowe</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Engines Inc</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Fleis And Vandenbrink</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Group Administrators.LTD</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Group Insurance Service Center,Inc</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Health Plans</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Henry Mast Greenhouses,Inc</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Hougen Manufacturing</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Housing Authority of the city of Fort Wayne</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>India Network Foundation,Inc</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Iwaki America</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Luttmann Precision Mold,Inc</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MedWatch-Complex</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MidWest Fastener Corp</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Missouri Cooperatives Employees Health Care Fund</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Pro-Claim Plus,Inc</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Professional Benefits Services</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Professional Benefits Services,Inc</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Professional Benefits Services Staff</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Textile Processors Union Local No1 Disability Benefit Fund</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>The Cadmus Group</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>UMass Memorial Health Care</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Union Leader Corporation</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>University of Saint Francis</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Upton County</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Varipro</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Varipro staff</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Waltonen Engineering,Inc</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Waltonen Independence Tooling System</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Waltonen WS3,LLC</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>West Michigan Conference of the United Methodist Church</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>24 Hour On Call Doc</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>National Congress of Employers</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NBBI</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Phoenix MD</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Physician Synergy Group LLC</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Pine Creek Medical Center</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Programs__c</fullName>
+        <externalId>false</externalId>
+        <label>Programs</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Provider__c</fullName>
+        <externalId>false</externalId>
+        <label>Provider</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>State__c</fullName>
+        <externalId>false</externalId>
+        <label>State</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>States</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Active</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>InActive</fullName>
+                    <default>true</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Verification_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Verification Code</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Weight__c</fullName>
+        <externalId>false</externalId>
+        <label>Weight</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Work_Phone__c</fullName>
+        <externalId>false</externalId>
+        <label>Work Phone</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>ZipCode__c</fullName>
+        <externalId>false</externalId>
+        <label>ZipCode</label>
+        <length>6</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>isMemberPin__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>isMemberPin</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Member</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>FirstName__c</columns>
+        <columns>LastName__c</columns>
+        <columns>Email__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>{00000}</displayFormat>
+        <label>Number</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Members</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>FirstName__c</customTabListAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>CallMD_User_Account_Number</fullName>
+        <active>false</active>
+        <errorConditionFormula>NOT(REGEX(CallMDUserName__c,&quot;[0-9]+&quot;))</errorConditionFormula>
+        <errorDisplayField>CallMDUserName__c</errorDisplayField>
+        <errorMessage>CallMD Username must be numeric</errorMessage>
+    </validationRules>
+</CustomObject>

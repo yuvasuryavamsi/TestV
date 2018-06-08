@@ -1,0 +1,191 @@
+<apex:page standardController="Open_Consultants__c" showHeader="true" extensions="CallMD_ConsultationsCtrl" sidebar="false">
+ <c:CallMDStyles />
+ <head>
+  <style>
+   .headerRow{
+   height:25px;
+  }
+  .col{
+   height:25px;
+  }
+  .mem{
+    font-weight:bold;
+    color:green;
+  }
+  .memSec{
+    width:250px;
+  }
+  th{
+   height:38px;
+   color:green;
+  }
+ </style>
+ </head>
+ <body style="margin:0px;">
+ <div style="background-color:white;margin:0px;height:1200px;">
+  
+ 
+<apex:form >
+  
+ <!--- <div align="center">
+      <apex:image value="{!$Resource.CallMDLogo}" width="200px"/><br/>
+  </div><br/>  --->
+  
+  
+  <apex:pageBlock >
+    <div class="content-wrapper" style="width:1400px;margin:0px;">
+      <div class="TOD-UI" id="main-content" style="width:1400px;margin:0px;">
+        <div class="content" style="width:1400px;margin:0px;">
+    
+        <section>
+         <article>
+   <!--- <apex:pageBlockSection title="Member Information" columns="4">
+     <apex:pageBlockSectionItem dataStyle="width:250px;">
+       <apex:outputLabel value="First Name" styleClass="mem"/>
+       <apex:outputField value="{!MemberDetails.FirstName__c}"/>
+    </apex:pageBlockSectionItem>
+    <apex:pageBlockSectionItem dataStyle="width:250px;">
+       <apex:outputLabel value="Last Name" styleClass="mem"/>
+       <apex:outputField value="{!MemberDetails.LastName__c}"/>
+     </apex:pageBlockSectionItem>
+    <apex:pageBlockSectionItem dataStyle="width:350px;">
+       <apex:outputLabel value="Date of Birth" styleClass="mem"/>
+       <apex:outputField value="{!MemberDetails.DateofBirth__c}"/>
+     </apex:pageBlockSectionItem>
+     <apex:pageBlockSectionItem dataStyle="width:400px;">
+       <apex:outputLabel value="Age" styleClass="mem"/>
+       <apex:outputText value="{!MemberDetails.Age__c}"/>
+     </apex:pageBlockSectionItem>
+     
+     <apex:pageBlockSectionItem dataStyle="width:250px;">
+       <apex:outputLabel value="Gender" styleClass="mem"/>
+       <apex:outputText value="{!MemberDetails.Gender__c}"/>
+     </apex:pageBlockSectionItem>
+     <apex:pageBlockSectionItem dataStyle="width:250px;">
+       <apex:outputLabel value="Address Line1" styleClass="mem"/>
+       <apex:outputText value="{!MemberDetails.Address_Line1__c}"/>
+     </apex:pageBlockSectionItem>
+     <apex:pageBlockSectionItem dataStyle="width:350px;">
+       <apex:outputLabel value="City" styleClass="mem"/>
+       <apex:outputText value="{!MemberDetails.City__c}"/>
+     </apex:pageBlockSectionItem>
+     <apex:pageBlockSectionItem dataStyle="width:400px;">
+       <apex:outputLabel value="State" styleClass="mem"/>
+       <apex:outputText value="{!MemberDetails.State__c}"/>
+     </apex:pageBlockSectionItem>
+     
+     <apex:pageBlockSectionItem dataStyle="width:250px;">
+       <apex:outputLabel value="Home Phone" styleClass="mem"/>
+       <apex:outputText value="{!MemberDetails.Home_Phone__c}"/>
+     </apex:pageBlockSectionItem>
+     <apex:pageBlockSectionItem dataStyle="width:250px;">
+       <apex:outputLabel value="Work Phone" styleClass="mem"/>
+       <apex:outputText value="{!MemberDetails.Work_Phone__c}"/>
+     </apex:pageBlockSectionItem>
+     <apex:pageBlockSectionItem dataStyle="width:250px;">
+       <apex:outputLabel value="Cell Phone" styleClass="mem"/>
+       <apex:outputText value="{!MemberDetails.Cell_Phone__c}"/>
+     </apex:pageBlockSectionItem>
+     <apex:pageBlockSectionItem dataStyle="width:350px;">
+       <apex:outputLabel value="Height" styleClass="mem"/>
+       <apex:outputText value="{!MemberDetails.Height__c}"/>
+     </apex:pageBlockSectionItem>
+     <apex:pageBlockSectionItem dataStyle="width:400px;">
+       <apex:outputLabel value="Weight" styleClass="mem"/>
+       <apex:outputText value="{!MemberDetails.Weight__c}"/>
+     </apex:pageBlockSectionItem>
+     
+    </apex:pageBlockSection> --->
+       
+       
+   <div style="height:160px;border:0px solid black;padding-left:10px;">
+    <h4 style="color:green;font-weight:bold;text-align:right;"><u>MEMBER INFORMATION</u></h4><br/><br/>
+    <table class="table table-striped" width="100%" cellpadding="6" cellspacing="6" align="center"> 
+     <colgroup span="6" width="15%"/>
+     <tr>
+      <th>Member:</th><td>{!MemberDetails.FirstName__c}&nbsp;{!MemberDetails.LastName__c}</td>  <th>DOB: </th><td><apex:outputField value="{!MemberDetails.DateofBirth__c}"/></td>   <th>Gender:</th><td>{!MemberDetails.Gender__c}</td>
+     </tr>
+     <tr>
+      <th>Age:</th><td>{!MemberDetails.Age__c}</td>  <th>Weight:</th><td>{!MemberDetails.Weight__c}</td>   <th>Height:</th><td>{!MemberDetails.Height__c}</td>
+     </tr>
+     <tr>
+      <th>Address:</th><td>{!MemberDetails.Address_Line1__c}</td>  <th>City:</th><td>{!MemberDetails.City__c}</td>   <th>State:</th><td>{!MemberDetails.State__c}</td>
+     </tr>
+     <tr>
+      <th>Home Phone:</th><td>{!MemberDetails.Home_Phone__c}</td>  <th>Work Phone:</th><td>{!MemberDetails.Work_Phone__c}</td>   <th>Cell Phone:</th><td>{!MemberDetails.Cell_Phone__c}</td>
+     </tr>
+    </table>
+    
+    
+  </div> 
+    
+       
+       </article>
+       </section>
+    </div>
+    </div>
+    </div>
+  </apex:pageBlock>
+  
+  <apex:pageBlock >
+  
+   <div class="content-wrapper" style="width:1400px;margin:0px;">
+      <div class="TOD-UI" id="main-content" style="width:1400px;margin:0px;">
+        <div class="content" style="width:1400px;margin:0px;">
+    
+        <section>
+         <article>
+         
+          <div align="center">
+            <apex:commandButton value="Create Consultation" action="{!save}"/>
+          </div>
+         
+    <apex:pageBlockSection title="Consultation Details">
+       <apex:repeat value="{!$ObjectType.Open_Consultants__c.fieldsets.Open_Consultation_Details}" var="c">
+         <apex:inputField value="{!Open_Consultants__c[c]}"/>
+       </apex:repeat>
+    </apex:pageBlockSection>
+     
+    <apex:pageBlockSection title="Consultation Summary" rendered="false">
+       <apex:repeat value="{!$ObjectType.Open_Consultants__c.fieldsets.Consultation_Summary}" var="c">
+         <apex:inputField value="{!Open_Consultants__c[c]}"/>
+       </apex:repeat>
+    </apex:pageBlockSection>
+    
+    <apex:pageBlockSection title="Triage">
+       <apex:selectList value="{!consultationType}" size="1" label="Consultation Type">
+         <apex:selectOptions value="{!consultOpt}"/>
+       </apex:selectList>
+       <apex:repeat value="{!$ObjectType.Open_Consultants__c.fieldsets.Triage}" var="c">
+         <apex:inputField value="{!Open_Consultants__c[c]}"/>
+       </apex:repeat>
+    </apex:pageBlockSection>
+    
+    <apex:pageBlockSection title="Rx Follow Up" rendered="false">
+       <apex:repeat value="{!$ObjectType.Open_Consultants__c.fieldsets.Rx_Follow_Up}" var="c">
+         <apex:inputField value="{!Open_Consultants__c[c]}"/>
+       </apex:repeat>
+    </apex:pageBlockSection>
+    
+    <apex:pageBlockSection title="Rx Status" rendered="false">
+       <apex:repeat value="{!$ObjectType.Open_Consultants__c.fieldsets.Rx_Status}" var="c">
+         <apex:inputField value="{!Open_Consultants__c[c]}"/>
+       </apex:repeat>
+    </apex:pageBlockSection>
+   
+     <div align="center">
+            <apex:commandButton value="Create Consultation" action="{!save}"/>
+          </div>
+   
+     </article>
+    </section>
+    
+    </div>
+    </div>
+    </div>
+  </apex:pageBlock>
+  
+  </apex:form>
+ </div>
+ </body>
+</apex:page>

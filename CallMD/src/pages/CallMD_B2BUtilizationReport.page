@@ -1,0 +1,127 @@
+<apex:page controller="CallMD_B2BUtilizationReport" sidebar="false" docType="html-5.0">
+<head>
+ <c:CallMDStyles />
+ <style>
+   .headerRow{
+   height:30px;
+  }
+  .col{
+   height:30px;
+  }
+  .h{
+   width:200px;
+  }
+  .t{
+    background-color:#3399fe;
+  }
+  .TODO h3{
+    color:#3399fe;
+    padding:0px;
+  }
+  .grid-container {
+    display: grid; 
+  }
+  .grid-container--fill{
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+  .grid-container--fit {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+  body {
+   padding:0px;
+  } 
+</style>
+</head>
+<apex:form >
+<body style="margin:0px;">
+  <apex:pageBlock >
+     <div class="grid-container grid-container--fit" id="main-content" style="margin:0px;background-color:white;">
+        <div class="content" style="margin:0px;">
+        <header class="t" style="padding-left:10px;padding-bottom:10px;padding-top:15px;font-size:14px;color:white;font-weight:normal;">
+          <h1>Utilization Report</h1>
+        </header>
+        <section>
+         <article>
+         
+     <apex:pageBlockButtons location="top">
+       
+     </apex:pageBlockButtons>
+     
+     <apex:pageBlockSection title="Date">
+      <apex:pageBlockSectionItem >
+        <apex:outputLabel value="Start Date"/>
+        <apex:input type="date" value="{!startDate}" label="Start Date"/>
+     </apex:pageBlockSectionItem>
+      
+     <apex:pageBlockSectionItem >  
+        <apex:outputLabel value="End Date"/>
+        <apex:input type="date" value="{!endDate}" label="End Date"/>
+     </apex:pageBlockSectionItem>
+     
+     <apex:pageBlockSectionItem >
+       <apex:outputLabel value="Provider"/>
+       <apex:selectList size="1" value="{!providerValue}" label="Provider" style="width:height:40px;">
+          <apex:selectOptions value="{!providerOpt}"/>
+          <apex:actionSupport event="onchange" action="{!change}"/> 
+        </apex:selectList>
+    </apex:pageBlockSectionItem>
+    
+    <apex:pageBlockSectionItem >
+        <apex:outputLabel value="Program"/>
+        <apex:selectList size="1" value="{!programValue}" label="Program" style="width:height:40px;">
+          <apex:selectOptions value="{!programOption}"/>
+        </apex:selectList>
+    </apex:pageBlockSectionItem> 
+ 
+  </apex:pageBlockSection>    
+     
+     
+     <div align="center">
+        <apex:commandButton value="CreateReport" action="{!CreateReport}"/>
+     </div>
+     
+    <apex:pageBlockTable value="{!mapProgProvName}" var="p">
+       
+     <apex:column >
+       <b>Provider:</b>&nbsp;&nbsp; <apex:outputText value="{!mapProviderName[p]}"/> <br/><br/>
+          
+          <b>Utilization::&nbsp;</b><br/><br/>
+        
+           <apex:pageBlockTable value="{!mapProgProvName[p]}" var="pp" >
+           
+              <apex:column headerValue="Program Name">
+                  <apex:outputText value="{!mapProgramName[pp]}"/>
+               </apex:column>
+               
+               <apex:column headerValue="Utilization">
+                 <apex:outputText value="{!mapFinal[pp]} %"/>
+               </apex:column>
+              
+              </apex:pageBlockTable>
+               
+      </apex:column>
+           
+    </apex:pageBlockTable>
+    
+       <div>
+         <apex:commandButton value="Generate PDF" action="{!generatePdf}"/>
+      </div>
+     </article>
+    </section>
+   </div>
+  </div>
+        
+ </apex:pageBlock>
+ 
+</body>
+</apex:form>
+
+ <!---<apex:pageBlockTable value="{!mapProgProvName[p]}" var="pp">
+             <apex:outputText value="{!pp}"/>  
+             
+          </apex:pageBlockTable>  
+             <!--- <apex:pageBlockTable value="{!mapFinal[mapProgProvName[p]]}" var="f">
+              <apex:column headerValue="Program Name" value="{!mapProgramName[f]}"/>
+              <apex:column headerValue="Program Count" value="{!mapFinal[f]}"/>
+          </apex:pageBlockTable>   --->
+</apex:page>

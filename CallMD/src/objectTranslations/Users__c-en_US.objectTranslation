@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Users</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Users</value>
+    </caseValues>
+    <fields>
+        <label><!-- Active --></label>
+        <name>Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Confirm Password --></label>
+        <name>Confirm_Password__c</name>
+    </fields>
+    <fields>
+        <label><!-- Country --></label>
+        <name>Country__c</name>
+    </fields>
+    <fields>
+        <label><!-- DOB --></label>
+        <name>DOB__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email --></label>
+        <name>Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- LastName --></label>
+        <name>LastName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Nurse ? --></label>
+        <name>Nurse__c</name>
+    </fields>
+    <fields>
+        <label><!-- Password --></label>
+        <name>Password__c</name>
+    </fields>
+    <fields>
+        <label><!-- Roles --></label>
+        <name>Roles__c</name>
+        <picklistValues>
+            <masterLabel>Account manager</masterLabel>
+            <translation><!-- Account manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Admin</masterLabel>
+            <translation><!-- Admin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Call Center CSR</masterLabel>
+            <translation><!-- Call Center CSR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Costa Rica Supervisor</masterLabel>
+            <translation><!-- Costa Rica Supervisor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Director of Medical Development</masterLabel>
+            <translation><!-- Director of Medical Development --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Doctor</masterLabel>
+            <translation><!-- Doctor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finance</masterLabel>
+            <translation><!-- Finance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Head Nurse</masterLabel>
+            <translation><!-- Head Nurse --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nurse</masterLabel>
+            <translation><!-- Nurse --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Support Team1</masterLabel>
+            <translation><!-- Support Team1 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Skype Phone --></label>
+        <name>Skype_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Skype --></label>
+        <name>Skype__c</name>
+    </fields>
+    <fields>
+        <label><!-- Start Date --></label>
+        <name>Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Time zone --></label>
+        <name>Time_zone__c</name>
+        <picklistValues>
+            <masterLabel>-</masterLabel>
+            <translation><!-- - --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Username --></label>
+        <name>Username__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

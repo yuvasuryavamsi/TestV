@@ -1,0 +1,126 @@
+<apex:page standardController="Doctor__c" extensions="CallMD_DoctorExtCtrl" showHeader="false">
+ <c:CallMDStyles />
+
+<style>
+ .t{
+   background-color:#3399fe;
+   padding-left:20px;
+ }
+.TOD-UI .content .Title{
+      background-color:#3399fe;
+    }
+    .TOD-UI h3{
+     color:#3399fe;
+   }
+   grid-container--fill{
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+}
+
+.grid-container--fit {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+.grid-element {
+ <!--- background-color: deepPink;color: #fff; padding: 20px;--->
+  
+   
+}
+</style>
+
+<body style="margin:0px;">
+
+<apex:form >
+ 
+  <div style="background-color:white;margin:0px;">
+  <apex:image value="{!$Resource.CallMDLogo}" width="200" height="80"/>
+  <apex:pageBlock >
+
+  
+   <div class="content-wrapper" style="margin:0px;">
+      <div class="TOD-UI grid-container grid-container--fit" id="main-content" style="margin:0px;">
+        <div class="content" style="margin:0px;">
+        <header class="t" style="padding-bottom:40px;padding-top:15px;font-size:14px;">
+          <h1 style="color:blue;">Doctor</h1>
+        </header>
+           
+        <section>
+         <article>
+       <div align="center">
+     
+     <apex:commandButton value="Update Doctor" action="{!UpdateDoctor2}"/>&nbsp;&nbsp;
+     <apex:commandButton value="Cancel" action="{!CancelDoctor}"/>&nbsp;&nbsp;
+    </div>
+    <apex:pageMessages />
+     <!--- <apex:pageBlockSection columns="2" title="Personal Info">
+      <apex:repeat value="{!$ObjectType.Doctor__c.Fieldsets.Personal_Info}" var="d">
+        <apex:inputField value="{!Doctor__c[d]}"/>
+        
+      </apex:repeat>
+    </apex:pageBlockSection>    
+     
+    <apex:pageBlockSection columns="2" title="Communication Details">
+      <apex:repeat value="{!$ObjectType.Doctor__c.Fieldsets.Communication_Details}" var="d">
+        <apex:inputField value="{!Doctor__c[d]}"/>
+         
+      </apex:repeat>
+    </apex:pageBlockSection>
+    
+    <apex:pageBlockSection columns="2" title="Doctor Profile">
+      <apex:repeat value="{!$ObjectType.Doctor__c.Fieldsets.Doctor_Profile}" var="d">
+       <apex:inputField value="{!Doctor__c[d]}"/>
+         
+      </apex:repeat>
+    </apex:pageBlockSection>
+    
+    
+    <apex:pageBlockSection columns="2" title="Doctor Payable" rendered="false">
+      <apex:repeat value="{!$ObjectType.Doctor__c.Fieldsets.Doctor_Payable}" var="d">
+       <apex:inputField value="{!Doctor__c[d]}"/>
+         
+      </apex:repeat>
+    </apex:pageBlockSection>
+    
+    
+    <apex:pageBlockSection columns="2" title="User Credentials">
+      <apex:repeat value="{!$ObjectType.Doctor__c.Fieldsets.User_Credentials}" var="d">
+       <apex:inputField value="{!Doctor__c[d]}"/>
+         
+      </apex:repeat>
+    </apex:pageBlockSection>
+    
+    <apex:pageBlockSection columns="2" title="Security Details">
+      <apex:repeat value="{!$ObjectType.Doctor__c.Fieldsets.Security}" var="d">
+       <apex:inputField value="{!Doctor__c[d]}"/>
+        
+      </apex:repeat>
+    </apex:pageBlockSection>  --->
+    
+    
+    <apex:pageBlockSection columns="2" title="Information">
+      <apex:repeat value="{!$ObjectType.Doctor__c.Fieldsets.Doctor_edit_account}" var="d">
+       <apex:inputField value="{!Doctor__c[d]}"/>
+      </apex:repeat>
+    </apex:pageBlockSection> 
+    
+   
+    
+    <br/><br/>
+    <div align="center">
+    
+     <apex:commandButton value="Update Doctor" action="{!UpdateDoctor2}"/>&nbsp;&nbsp;
+     <apex:commandButton value="Cancel" action="{!CancelDoctor}"/>&nbsp;&nbsp;
+    </div>
+   
+     </article>
+    </section>
+     </div>
+</div>
+</div>
+
+  </apex:pageBlock>
+  </div>
+  </apex:form>
+  
+  </body>
+  
+</apex:page>

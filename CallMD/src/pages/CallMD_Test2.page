@@ -1,0 +1,10 @@
+<apex:page showHeader="false" standardStylesheets="false">
+
+  <style>
+    body{
+      background:URl('{!$Resource.CallMDGirl}');
+    }
+  </style>
+ <body>
+ </body>
+</apex:page>

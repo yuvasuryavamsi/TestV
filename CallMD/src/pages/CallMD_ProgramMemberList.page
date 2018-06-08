@@ -1,0 +1,41 @@
+<apex:page renderAs="pdf" standardController="Programs__c" applyHtmlTag="false" showHeader="false" standardStylesheets="false">
+ <head> 
+  <style>
+    @page
+    {
+        size:landscape;
+    }
+    th{
+      background:blue;
+      padding:5px 5px 5px 5px;
+      color:white;
+    }
+</style>
+</head>
+  <apex:image value="{!$Resource.CallMDLogo}" width="200" height="90"/>
+  <h2 style="color:blue;">Member Program List</h2><br/>
+  <table width="100%" cellspacing="0">
+   <tr>
+     <th>Number</th>
+     <th>Full Name</th>
+     <th>Gender</th>
+     <th>Email</th>
+     <th>Phone</th>
+     <th>Type</th>
+   </tr>
+    
+    
+    <apex:repeat value="{!Programs__c.Members__r}" var="m">
+      <tr> 
+       <td>{!m.Name}</td>
+       <td>{!m.Full_Name__c}</td>
+       <td>{!m.Gender__c}</td>
+       <td>{!m.Email__c}</td>
+       <td>{!m.Cell_Phone__c}</td>
+       <td>{!m.Member_Type__c}</td>
+      </tr> 
+    </apex:repeat>
+  
+  </table>
+  
+</apex:page>

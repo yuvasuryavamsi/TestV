@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Scheduling</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Scheduling</value>
+    </caseValues>
+    <fields>
+        <label><!-- Day of Week --></label>
+        <name>Day_of_Week__c</name>
+        <relationshipLabel><!-- Schedullng --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Doctor --></label>
+        <name>Doctor__c</name>
+        <relationshipLabel><!-- Schedullng --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- End Time --></label>
+        <name>End_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Period --></label>
+        <name>Period__c</name>
+        <picklistValues>
+            <masterLabel>Normal</masterLabel>
+            <translation><!-- Normal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unavailable</masterLabel>
+            <translation><!-- Unavailable --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Start Time --></label>
+        <name>Start_Time__c</name>
+    </fields>
+    <layouts>
+        <layout>Scheduling Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel>Scheduling ID</nameFieldLabel>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

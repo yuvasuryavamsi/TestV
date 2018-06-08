@@ -1,0 +1,111 @@
+<apex:page standardController="Providers__c" extensions="ProviderCtrl" sidebar="false" showHeader="true" docType="html-5.0" tabStyle="Providers__tab">
+<c:CallMDStyles />
+<style>
+   .headerRow{
+   height:25px;
+  }
+  .col{
+   height:25px;
+   }
+   .t{
+    background-color:#3399fe ;
+  }
+  .TOD-UI .content .Title{
+      background-color:#3399fe;
+      font-size:14px;
+    }
+    .TOD-UI h3{
+     color:#3399fe;
+   }
+   .grid-container--fill{
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+}
+
+.grid-container--fit {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+.grid-element {
+ <!--- background-color: deepPink;color: #fff; padding: 20px;--->
+  
+   
+}
+ </style>
+ <body style="margin:0px;">
+ <div style="background-color:white;margin:0px;height:1000px;">
+  
+ 
+<apex:form >
+<!--- <div align="center">
+   <apex:image value="{!$Resource.CallMDLogo}" width="200px"/><br/>
+   
+  </div><br/>  --->
+  
+  <apex:pageBlock id="pb">
+  
+   <div class="content-wrapper">
+      <div class="TOD-UI grid-container grid-container--fit" id="main-content">
+        <div class="content">
+         <header class="Title" style="padding-bottom:40px;padding-top:15px;font-size:14px;">
+           <h1 style="font-size:20px;">Provider List </h1>
+          </header>
+        <section>
+         <article>
+   <apex:pageBlockSection title="Search Provider" columns="2" >
+     <apex:inputText value="{!ProviderName}" html-placeholder="Provider Name" label="Provider Name"/>
+     <apex:selectRadio label="Provider Status" value="{!ProviderStatus}" layout="pageDirection">
+       <apex:selectOption itemLabel="All" itemValue=""/>
+       <apex:selectOption itemLabel="Active" itemValue="Active"/>
+       <apex:selectOption itemLabel="In Active" itemValue="InActive"/>
+     </apex:selectRadio>
+   </apex:pageBlockSection>   
+   <div align="center">
+    <apex:commandButton value="Search Provider" action="{!searchSobjects}" reRender="pb"/>&nbsp;&nbsp;
+    &nbsp;&nbsp;
+     <apex:commandButton value="Clear" action="{!Clear}" reRender="pb"/>&nbsp;&nbsp;&nbsp;&nbsp;
+     
+      <apex:commandButton value="Create Provider" action="{!NavigateToProvider}"/>&nbsp;&nbsp;
+   </div>
+    <br/><br/>
+   <apex:PageBlockTable value="{!ProvidersList}" var="p" rendered="{!IF(OR(hasNext,hasPrevious),true,false)}">
+     <apex:column headerValue="Name">
+      <apex:outputLink value="/apex/CallMD_Provider" target="_Blank">
+         <apex:outputText value="{!p.Name}"/>
+         <apex:param name="id" value="{!p.id}"/>
+         <apex:param name="mode" value="s"/>
+       </apex:outputLink>
+     </apex:column>
+     
+     <apex:column headerValue="Started Date">
+       <apex:outputField value="{!p.Started_Date__c}"/>
+     </apex:column>
+      <apex:column headerValue="Status" value="{!p.Status__c}"/>
+      <apex:column headerValue="Address Line1" value="{!p.Address_Line1__c}"/>
+      <apex:column headerValue="Address Line2" value="{!p.Address_Line2__c}"/>
+      <apex:column headerValue="City" value="{!p.City__c}"/>
+      <apex:column headerValue="State" value="{!p.State__c}"/>
+      <apex:column headerValue="Zip" value="{!p.ZipCode__c}"/>
+      <apex:column headerValue="Phone 1" value="{!p.Phone1__c}"/>
+      <apex:column headerValue="Phone 2" value="{!p.Phone2__c}"/>
+      <apex:column headerValue="Fax" value="{!p.Fax__c}"/>
+      <apex:column headerValue="Email" value="{!p.Email__c}"/>
+      <apex:column headerValue="Contact Person" value="{!p.Contact_Person__c}"/>
+      <apex:column headerValue="Home Page" value="{!p.Home_Page__c}"/>                    
+   </apex:PageBlockTable>
+   <br/> 
+   <div align="center">
+     <apex:commandButton value="<< First" action="{!first}" reRender="pb" disabled="{!HasPrevious}"/>&nbsp;&nbsp;
+       <apex:commandButton value="< Previous" action="{!Previous}" reRender="pb" disabled="{!HasPrevious}"/>&nbsp;&nbsp;
+         <apex:commandButton value="Next >" action="{!Next}" reRender="pb" disabled="{!HasNext}"/>&nbsp;&nbsp;
+           <apex:commandButton value="Last >>" action="{!last}" reRender="pb" disabled="{!HasNext}"/>&nbsp;&nbsp;
+   </div>
+   </article>
+   </section>
+   </div>
+   </div>
+  </div>   
+ </apex:pageBlock>
+ </apex:form>
+ </div>
+ </body>
+</apex:page>

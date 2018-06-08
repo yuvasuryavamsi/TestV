@@ -1,0 +1,48 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false">
+  <style>
+  .header{
+   position: fixed;
+   left: 0;
+   top: 0;
+   width: 100%;
+   background-color:silver;
+   color:black;
+   padding:5px 5px 5px 5px;
+   height:50px;
+   line-height:50px;
+   font-size:13px;
+    }
+    
+  .footer{
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color:silver;
+   color:white;
+   text-align: center;
+   padding:5px 5px 5px 5px;
+   height:30px;
+   line-height:30px;
+   font-size:13px;
+    }
+  </style>
+  
+  <c:CallMDHeader />
+  
+  <apex:insert name="header">
+    
+  </apex:insert>
+  
+  <apex:insert name="body">
+    
+  </apex:insert>
+  
+  <apex:insert name="footer">
+    
+  </apex:insert>
+  
+  
+  <c:CallMDFooter />
+  
+</apex:page>

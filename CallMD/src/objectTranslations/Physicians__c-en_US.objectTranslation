@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Physicians</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Physicians</value>
+    </caseValues>
+    <fields>
+        <label><!-- Address --></label>
+        <name>Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email --></label>
+        <name>Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fax --></label>
+        <name>Fax__c</name>
+    </fields>
+    <fields>
+        <label><!-- Member --></label>
+        <name>Member__c</name>
+        <relationshipLabel><!-- Physicians --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Phone --></label>
+        <name>Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Primary --></label>
+        <name>Primary__c</name>
+    </fields>
+    <fields>
+        <label><!-- Speciality --></label>
+        <name>Speciality__c</name>
+        <picklistValues>
+            <masterLabel>ENT</masterLabel>
+            <translation><!-- ENT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Family Medicine</masterLabel>
+            <translation><!-- Family Medicine --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

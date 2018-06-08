@@ -1,0 +1,36 @@
+<apex:page standardController="Medical_Conditions__c" sidebar="false" extensions="CallMD_MedicalMemCondExt" tabStyle="Members__tab">
+ <c:CallMDStyles />
+<div style="background-color:white;margin:0px;position:relative;top:0;height:800px;">
+
+  <apex:form >
+  <apex:PageBlock >
+    <div class="content-wrapper" style="width:1400px;margin:0px;">
+      <div class="TOD-UI" id="main-content" style="width:1400px;margin:0px;">
+        <div class="content" style="width:1400px;margin:0px;">
+        <header class="Title" style="padding-bottom:40px;padding-top:15px;font-size:14px;">
+          <h1 style="color:blue;">Medical Conditions</h1>
+        </header>
+        <section>
+        <article>
+        <div align="center">
+            <apex:commandButton value="Create Medical Conditions" action="{!Save}"/>&nbsp;&nbsp;
+            <apex:commandButton value="Cancel" action="{!Cancel}"/>
+          </div>
+          <apex:pageBlockSection title="Information">
+             <apex:repeat value="{!$ObjectType.Medical_Conditions__c.fieldsets.Medical_Conditions}" var="m">
+               <apex:inputField value="{!Medical_Conditions__c[m]}"/>
+             </apex:repeat>
+          </apex:pageBlockSection><br/>
+          <div align="center">
+            <apex:commandButton value="Create Medical Conditions" action="{!Save}"/>&nbsp;&nbsp;
+            <apex:commandButton value="Cancel" action="{!Cancel}"/>
+          </div>
+         </article>
+        </section>
+      </div>
+    </div>
+   </div>
+  </apex:PageBlock>
+ </apex:form>
+</div>
+</apex:page>

@@ -1,0 +1,68 @@
+<apex:page standardController="MedicalTypes__c" showHeader="true" extensions="CallMD_MedicalTypesExtCtrl" sidebar="false">
+ <!--- <style>
+  ul{
+    
+  }
+  li{
+    float:left;
+    list-style:none;
+    margin-top:25px;
+    font-size:13px;
+    font-family:verdana;
+    color:white;
+    font-weight:bold;
+    background-color:#337ab7;
+    line-height:30px;
+    width:200px;
+    text-align:center;
+    padding:3px;
+  }
+</style>--->
+<style>
+ .TOD-UI .content .Title{
+      background-color:#3399fe;
+      font-size:14px;
+    }
+    .TOD-UI h3{
+     color:#3399fe;
+   }
+</style>
+<c:CallMDStyles />
+<body style="margin:0px;">
+<div style="backgroun-color:white;height:700px;">
+<apex:form >
+ <!--- <ul>
+   <li>DashBoard</li>
+   <li>Doctor</li>
+   <li><apex:outputLink value="/apex/CallMD_Provider" target="_blank">Provider</apex:outputLink></li>
+   <li>Admin</li>
+   <li>Member</li>
+   <li>Accounting</li>
+ </ul>  --->
+  <apex:PageBlock >
+   <div class="content-wrapper" style="width:1400px;margin:0px;">
+      <div class="TOD-UI" id="main-content" style="width:1400px;margin:0px;">
+        <div class="content" style="width:1400px;margin:0px;">
+        <header class="Title" style="padding-bottom:30px;">
+          <h1 style="">New Medical Types</h1>
+        </header>
+        <section>
+        <article>
+            <apex:pageBlockSection >
+               <apex:inputField value="{!MedicalTypes__c.Name__c}"/>
+            </apex:pageBlockSection>
+            <br/>
+            <div align="center">
+              <apex:commandButton value="Create Medical Types" action="{!save}" rendered="{!IF($CurrentPage.parameters.mode='',true,false)}"/>
+              <apex:commandButton value="Update" action="{!updateMed}" rendered="{!IF($CurrentPage.parameters.mode='e',true,false)}"/>
+            </div>
+        </article>
+        </section>
+      </div>
+    </div>
+  </div>
+ </apex:PageBlock>
+ </apex:form>
+ </div>
+ </body>
+</apex:page>
